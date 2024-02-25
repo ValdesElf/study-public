@@ -169,7 +169,6 @@
                             <img src="./img/svg/avatar.svg" alt="Профиль" class="header__avatar">
                         </a>
                     </div>
-                    <hr noshade>
                     <div class="header__logout">
                         <a href="#">
                             <img src="./img/svg/logout.svg" alt="Выйти">
@@ -179,51 +178,51 @@
 
         </div>
         <main class="main">
-            <selection class="intro">
-                <div class="analytics">
-                    <div class="analytics__text">
-                        <h1>Аналитика</h1>
-                    </div>
-                    <div class="analytics__container">
-                        <div class="analytics__item">
-                            <div class="analytics__item-text">
-                                <b>Наиболее попуолярный товар</b>
-                            </div>
-                            <div class="analytics__item-list">
-                                <div class="analytics__item-list-text">
-                                    <li>Джинсы Бойфренд S</li>
-                                    <li>Джинсы Бойфренд L</li>
-                                    <li>Джинсы Бойфренд XL</li>
-                                </div>
-                                <div class="analytics__item-list-numbers">
-                                    <li>6</li>
-                                    <li>6</li>
-                                    <li>6</li>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="analytics__item">
-                            <div class="analytics__item-text">
-                                <b>Наиболее попуолярный товар</b>
-                            </div>
-                            <div class="analytics__item-list">
-                                <div class="analytics__item-list-text">
-                                    <li>Джинсы Бойфренд S</li>
-                                    <li>Джинсы Бойфренд L</li>
-                                    <li>Джинсы Бойфренд XL</li>
-                                </div>
-                                <div class="analytics__item-list-numbers">
-                                    <li>6</li>
-                                    <li>6</li>
-                                    <li>6</li>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="analytics">
+                <div class="analytics__text">
+                    <h1>Аналитика</h1>
                 </div>
+                <div class="analytics__container">
+                    <div class="analytics__item">
+                        <div class="analytics__item-text">
+                            <b>Наиболее попуолярный товар</b>
+                        </div>
+                        <div class="analytics__item-list">
+                            <div class="analytics__item-list-text">
+                                <li>Джинсы Бойфренд S</li>
+                                <li>Джинсы Бойфренд L</li>
+                                <li>Джинсы Бойфренд XL</li>
+                            </div>
+                            <div class="analytics__item-list-numbers">
+                                <li>6</li>
+                                <li>6</li>
+                                <li>6</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analytics__item">
+                        <div class="analytics__item-text">
+                            <b>Наиболее попуолярный товар</b>
+                        </div>
+                        <div class="analytics__item-list">
+                            <div class="analytics__item-list-text">
+                                <li>Джинсы Бойфренд S</li>
+                                <li>Джинсы Бойфренд L</li>
+                                <li>Джинсы Бойфренд XL</li>
+                            </div>
+                            <div class="analytics__item-list-numbers">
+                                <li>6</li>
+                                <li>6</li>
+                                <li>6</li>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="subscribtion">
+                </div>
+            </div>
+
+            <div class="subscription">
+                <div class="subscription__header">
                     <div class="subscribtion__text">
                         <h1>Подписки</h1>
                     </div>
@@ -238,82 +237,53 @@
                             <li>Ожидают поступления: 1;</li>
                         </div>
                     </div>
-                </div class="filter">
+                </div>
+                <div class="subscription__action filter">
                     <input class="filter__search" placeholder="Фильтр">
                     <button class="filter__btn">Фильтровать</button>
+                </div>
+                <div class="subscription__body">
 
+                    <ul class="subscription__list">
+                        <li class="subscription__item subscription__item_header">
+                            <div class="subscription__item-status">Статус</div>
+                            <div class="subscription__item-email">Email</div>
+                            <div class="subscription__item-id">ID товара > ID варианта</div>
+                            <div class="subscription__item-title">Название</div>
+                            <div class="subscription__item-time">Время подписки</div>
+                        </li>
+                        <li class="subscription__item">
+                            <div class="subscription__item-status subscription__item-status_green">Ожидает товар</div>
+                            <div class="subscription__item-email">pateder@yandex.ru</div>
+                            <div class="subscription__item-id">297356885 > 51565021</div>
+                            <div class="subscription__item-title">Джинсы Бойфренд S</div>
+                            <div class="subscription__item-time">00:41  1-4-2022</div>
+                        </li>
+                        <li class="subscription__item">
+                            <div class="subscription__item-status subscription__item-status_yellow">Ожидает товар</div>
+                            <div class="subscription__item-email">pateder@yandex.ru</div>
+                            <div class="subscription__item-id">297356885 > 51565021</div>
+                            <div class="subscription__item-title">Джинсы Бойфренд S</div>
+                            <div class="subscription__item-time">00:41  1-4-2022</div>
+                        </li>
+                        <li class="subscription__item">
+                            <div class="subscription__item-status">Ожидает товар</div>
+                            <div class="subscription__item-email">pateder@yandex.ru</div>
+                            <div class="subscription__item-id">297356885 > 51565021</div>
+                            <div class="subscription__item-title">Джинсы Бойфренд S</div>
+                            <div class="subscription__item-time">00:41  1-4-2022</div>
+                        </li>
+                        <li class="subscription__item">
+                            <div class="subscription__item-status">Ожидает товар</div>
+                            <div class="subscription__item-email">pateder@yandex.ru</div>
+                            <div class="subscription__item-id">297356885 > 51565021</div>
+                            <div class="subscription__item-title">Джинсы Бойфренд S</div>
+                            <div class="subscription__item-time">00:41  1-4-2022</div>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="status">
-                    <div class="status__name">
-                        <li class="stats__name">Статус</li>
-                        <li class="stats__name">Email</li>
-                        <li class="stats__name">ID товара > ID варианта</li>
-                        <li class="stats__name">Название</li>
-                        <li class="stats__name">Время подписки</li>
-                    </div>
-                    <div class="status__item">
-                        <div class="status__item-status">
-                            <li class="status__list-status">Ожидает товар</li>
-                            <li class="status__list-status">Уведомлен о наличии</li>
-                            <li class="status__list-status">Уведомлен о наличии</li>
-                            <li class="status__list-status">Уведомлен о наличии</li>
-                            <li class="status__list-status">Уведомлен о наличии</li>
-                            <li class="status__list-status">Ожидает товар</li>
-                            <li class="status__list-status">Уведомлен о наличии</li>
-                            <li class="status__list-status">Уведомлен о наличии</li>
-                        </div>
-                    </div>
-                    <div class="status__item">
-                        <div class="status__item-email">
-                            <li class="status__list-status">digitalfashion@mail.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                            <li class="status__list-status">pateder@yandex.ru</li>
-                        </div>
-                    </div>
-                    <div class="status__item">
-                        <div class="status__item-id">
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                            <li class="status__list-status">297356885 > 51565021</li>
-                        </div>
-                    </div>
-                    <div class="status__item">
-                        <div class="status__item-name">
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                            <li class="status__list-status">Джинсы Бойфренд S</li>
-                        </div>
-                    </div>
-                    <div class="status__item">
-                        <div class="status__item-time">
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                            <li class="status__list-status">00:41  1-4-2022</li>
-                        </div>
-                    </div>
-                </div>
-            </selection>
+            </div>
+
         </main>
     </div>
 </body>
