@@ -1,0 +1,120 @@
+/* @font-face{
+    font-family: 'Montserrat', sans-serif;
+    src: local('Montserrat'),
+        url('/fonts/Montserrat-VariableFont_wght.ttf')
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap'); */
+
+html{
+    box-sizing: border-box;
+    background-color: #F8F8FB;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #000000;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+.aside{
+    background-color:   RGB(68,68,68);
+    /* max-height: fit-content;
+    max-width: fit-content; */
+}
+
+.menu__header{
+    height: 100px;
+    width: 100px;
+    background-color: #7437FD;
+    margin: 0 auto; 
+    /* top: 30px;
+    left: 25px; */
+    padding: 25px;
+}
+
+.menu__header-img{
+    width: 50px;
+    height: 40px;
+    top: 30px;
+    left: 25px;
+}
+
+.menu{
+    height: 1080px;
+    margin: 0;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation{
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.end{ /*информация*/
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: auto;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    background-color: #fff;
+}
+
+
+.wrapper{
+    /* max-width: 1820px;
+    width: 1820px; */
+    margin: 0 auto;
+}
+
+.header__wrapper{
+    /* padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header__user{
+    text-align: right;
+    /* border-right: 1px solid #EFF4F6; */
+}
+
+.header__username-link{
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+
+.header__user-status{
+    text-decoration: none;
+    font-size: 12px;
+    color: #A6ACBE;
+}
