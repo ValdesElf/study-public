@@ -298,7 +298,6 @@ filter{
     width: 1000px;
     margin: 40px 0 0 60px;
     border-radius: 30px;
-    display: none;
 }
 
 .filter__btn{
@@ -307,7 +306,6 @@ filter{
     width: 300px;
     color: white;
     border-radius: 30px;
-    display: none;
 }
 
 .status{
