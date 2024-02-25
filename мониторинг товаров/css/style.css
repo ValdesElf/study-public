@@ -297,6 +297,8 @@ filter{
     height: 60px;
     width: 1000px;
     margin: 40px 0 0 60px;
+    border-radius: 30px;
+    display: none;
 }
 
 .filter__btn{
@@ -304,4 +306,26 @@ filter{
     height: 60px;
     width: 300px;
     color: white;
+    border-radius: 30px;
+    display: none;
 }
+
+.status{
+    display:flex;
+    background-color: white;
+}
+
+.status__name{
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status__item{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 500;
+}
+
