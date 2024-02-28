@@ -206,12 +206,14 @@ button.navigation__home:hover {
 .header__user{
     text-align: right;
     margin-right: 14px;
+    
 }
 
 .header__username-link{
     text-decoration: none;
     color: #000000;
     font-size: 14px;
+    margin-bottom: 4px;
 }
 
 .header__user-status{
