@@ -218,8 +218,6 @@ button.navigation__home:hover {
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
     background-color: #fff;
-
-    
 }
 
 
@@ -331,12 +329,12 @@ button.navigation__home:hover {
 
 .analytics__item:first-child .analytics__item-text,
 .analytics__item:first-child .analytics__item-number {
-    margin-top: 16px;
+    padding-top: 26px;
 }
 
 .analytics__item:last-child .analytics__item-text,
 .analytics__item:last-child .analytics__item-number {
-    margin-bottom: 16px;
+    padding-bottom: 26px;
 }
 
 
@@ -348,7 +346,7 @@ button.navigation__home:hover {
 }
 
 .analytics__item-text, .analytics__item-number {
-    padding: 8px 30px 17px;
+    padding: 8px 30px 8px;
 }
 
 
@@ -522,7 +520,7 @@ button.navigation__home:hover {
 
 }
 
-.pagination a:not(:last-child) {
+.pagination li:not(:last-child) {
     border-right: 1px solid red;
 }
 
