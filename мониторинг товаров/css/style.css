@@ -81,12 +81,12 @@ ol, ul{
 .aside {
     height: 100vh;
     width: 100px;
+    position: absolute;
+
 }
 
 .aside_active {
     width: 340px;
-    background: #444444;
-    position: fixed;
 }
 
 
@@ -114,14 +114,14 @@ ol, ul{
     font-family: Floripa;
     font-weight: 400;
     font-size: 12px;
-    padding-left: 18px;
+    padding-left: 25px;
     color: #fff;
 }
 
 .menu{
     height: calc(100% - var(--header-height));
     margin: 0;
-    width: 100px;
+    width: 100%;
     display: flex;
     background-color: RGB(68,68,68);
     padding: 32px 0 59px;
@@ -129,7 +129,7 @@ ol, ul{
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .menu:second-child{
@@ -165,7 +165,7 @@ ol, ul{
 }
 
 .navigation__link-text {
-    padding-left: 16px;
+    padding-left: 23px;
     font-size: 14px;
     color: #AFAFAF;
     font-weight: 600;
@@ -178,9 +178,12 @@ ol, ul{
     color: #fff;
 } */
 
-.navigation__item a:hover {
+.navigation__item a:hover .navigation__link-text,
+.navigation__item a:hover .navigation__link-preview {
     color: #fff;
 }
+
+
 
 /* .navigation__link:focus {
     color: #452DAB;
@@ -208,6 +211,8 @@ ol, ul{
 }
 
 
+
+
 /* .navigation__item:hover .navigation__item_active {
     fill: #452DAB;
 } */
@@ -220,7 +225,6 @@ ol, ul{
 .body{
     width: calc(100% - 100px);
     height: 100vh;
-
     margin-left: 100px;
 }
 
