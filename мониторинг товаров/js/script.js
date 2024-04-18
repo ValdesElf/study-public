@@ -17,7 +17,7 @@ const button = document.querySelector("#asideActiveBtn")
 const aside = document.querySelector('.aside')
 const subscriptionArray = [
     {
-      status: 'new',
+      status: 'Уведомлен о наличии',
       email: 'pateder@yandex.ru',
       productId: 23423423,
       variantId: 45235646,
@@ -25,7 +25,7 @@ const subscriptionArray = [
       createAt: new Date('24.10.2023')
     },
     {
-      status: 'new',
+      status: 'Ожидает товара',
       email: 'pateder@yandex.ru',
       productId: 23423423,
       variantId: 45235646,
@@ -33,7 +33,7 @@ const subscriptionArray = [
       createAt: new Date('25.11.2023')
     },
     {
-      status: 'new',
+      status: 'Уведомлен о наличии',
       email: 'pateder@yandex.ru',
       productId: 23423423,
       variantId: 45235646,
@@ -41,7 +41,7 @@ const subscriptionArray = [
       createAt: new Date('13.12.2023')
     },
     {
-      status: 'new',
+      status: 'Уведомлен о наличии',
       email: 'pateder@yandex.ru',
       productId: 23423423,
       variantId: 45235646,
@@ -49,20 +49,38 @@ const subscriptionArray = [
       createAt: new Date('12.11.2023')
     },
     {
-      status: 'new',
+      status: 'Уведомлен о наличии',
       email: 'pateder@yandex.ru',
       productId: 23423423,
       variantId: 45235646,
       title: 'Джинсы Бойфренд S',
       createAt: new Date('12.12.2022')
     }
-]
+];
+
+const subscriptioinWrapper = document.querySelector('#subscription-wrapper')
+let statusMode = '';
 subscriptionArray.forEach(function(item) {
-  let row = document.createElement('tr')
-  row.innerHTML = `
-    subscription__item
-  `
-})
+  if (item.status == 'Уведомлен о наличии') {
+    statusMode = 'subscription__item-status_green'
+   } else if (item.status == 'Ожидает товара') {
+     statusMode = 'subscription__item-status_yellow'
+   };
+  const subscriptionItem = `
+  <li class="subscription__item">
+    <div class="subscription__item-status ${statusMode}">${item.status}</div>
+    <div class="subscription__item-email">${item.email}</div>
+    <div class="subscription__item-product-id">${item.productId}</div>
+    <div class="subscription__item-variant-id">${item.variantId}</div>
+    <div class="subscription__item-title">${item.title}</div>
+    <div class="subscription__item-time">${item.createAt}</div>
+  </li>`;
+  subscriptioinWrapper.innerHTML += subscriptionItem;
+});
+
+
+
+
 
 
 const container = document.querySelector('.subscription__item');
