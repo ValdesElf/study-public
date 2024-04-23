@@ -26,6 +26,10 @@ p {
     display: none !important;
 }
 
+.title-wrapper {
+    margin-bottom: 60px;
+}
+
 .title {
     margin-bottom: 17px;
 
@@ -44,6 +48,24 @@ p {
     text-transform: uppercase;
 }
 
+.common-section {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.common-section--dark {
+    background-color: #192024;
+}
+
+.common-section--dark * {
+    color: #fff;
+}
+
+.common-section--dark .subtitle {
+    color: #E8E8E8;
+}
+
+
 /* header -------------------------- */
 
 .header {
@@ -56,6 +78,7 @@ p {
     z-index: 100;
 
     background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header__container {
@@ -188,27 +211,64 @@ p {
 /* ABOUT ------------------------------ */
 
 .about {
-    text-align: center;
-}
-
-.common-section {
 
 }
 
-.container {
-
+.about .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
-.title-wrapper {
+.about .card {
+    padding: 35px 15px 23px;
+    width: 300px;
+    border: 1px solid #DCEBF7;
+    border-radius: 5px;
+}
 
+.about .card img {
+    margin-bottom: 20px;
+    width: 94px;
+    height: 94px;
+    object-fit: contain;
+}
+
+.about .card h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #676770;
 }
 
 
+/* ABOUT (WHAT WE DO)======================= */
 
-.cards-wrapper {
-
+.services {
 }
 
-.card {
+.services .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
+.services .card {
+    width: 45%;
+}
+
+.services .card img {
+    margin-bottom: 20px;
+}
+
+.services .card h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+
+.services .link {
+    margin-top: 15px;
 }
