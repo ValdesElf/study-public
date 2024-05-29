@@ -1,0 +1,2381 @@
+/*! For license information please see widget.js.LICENSE.txt */
+(()=>{"use strict";var t={};function e(){try{if(window.ym){const t=document.cookie.match("(?:^|;)\\s*_ym_uid=([^;]*)");return t?decodeURIComponent(t[1]):void 0}}catch(t){return}}function i(){try{if(window.ga){return window.ga.getAll()[0].get("clientId")}}catch(t){return}}function n(){let t=!1;return function(e){(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(e)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(e.substr(0,4)))&&(t=!0)}(navigator.userAgent||navigator.vendor||window.opera),t}t.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(t){if("object"==typeof window)return window}}(),(()=>{var e;t.g.importScripts&&(e=t.g.location+"");var i=t.g.document;if(!e&&i&&(i.currentScript&&(e=i.currentScript.src),!e)){var n=i.getElementsByTagName("script");if(n.length)for(var o=n.length-1;o>-1&&(!e||!/^http(s?):/.test(e));)e=n[o--].src}if(!e)throw new Error("Automatic publicPath is not supported in this browser");e=e.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),t.p=e})();const o=Symbol("isLocationPatched");function r(){return n()?"mobile":"desktop"}const a=t=>t&&t[0].toUpperCase()+t.slice(1)||"";function s(t){return fetch(`https://widget.yourgood.app/api/settings/get-for-external?id=${t}`).then((t=>t.json())).then((t=>{let{data:e}=t;return e}))}function l(t,n){let{name:o,wazzupId:a,hid:s,integrations:l}=n;const c=r();/^\d{8}$/.test(a)&&(a="mobile"===c?"WM"+a:"WW"+a);const d={settingsId:t,wazzupId:a,hid:s,name:o,cookies:document.cookie,referrer:document.referrer,url:window.location.toString(),ymId:e(),gaId:i(),deviceType:c,coMagicId:window?.Comagic?.getSessionId(),callTouchId:window.call_value||null};return fetch("https://widget.yourgood.app/api/statistics",{method:"POST",headers:{"Content-Type":"application/json;charset=UTF-8"},body:JSON.stringify(d)}).then((t=>t.json())).then((t=>{let{data:e}=t;return e}))}function c(t){return fetch(`https://widget.yourgood.app/api/integrations/get-by-settings?id=${t}`).then((t=>(t.ok||console.warn("Can not get integrations. Http",t.status),t.json()))).then((t=>{let{data:e}=t;return e??[]})).catch((()=>[]))}function d(t){return fetch(`https://widget.yourgood.app/api/statistics/dialog-events?settingsId=${t}`).then((t=>t.json())).then((t=>{let{data:e}=t;return e??[]})).catch((()=>[]))}function u(t){return fetch(`https://widget.yourgood.app/api/actions/for-external?id=${t}`).then((t=>t.json())).then((t=>{let{data:e}=t;return e??[]})).catch((()=>[]))}function p(t){return fetch(`https://widget.yourgood.app/api/subscriptions/external?widgetId=${t}`).then((t=>t.json())).then((t=>{let{data:e}=t;return e})).catch((()=>null))}function h(t){return fetch(`https://widget.yourgood.app/api/ab-tests/customers-tests?widgetId=${t}`).then((t=>t.json())).then((t=>{let{data:e}=t;return e})).catch((()=>null))}let f=t=>crypto.getRandomValues(new Uint8Array(t)),g=(t,e=21)=>((t,e,i)=>{let n=(2<<Math.log(t.length-1)/Math.LN2)-1,o=-~(1.6*n*e/t.length);return(r=e)=>{let a="";for(;;){let e=i(o),s=o;for(;s--;)if(a+=t[e[s]&n]||"",a.length===r)return a}}})(t,e,f);function m(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var n in i)t[n]=i[n]}return t}var v=function t(e,i){function n(t,n,o){if("undefined"!=typeof document){"number"==typeof(o=m({},i,o)).expires&&(o.expires=new Date(Date.now()+864e5*o.expires)),o.expires&&(o.expires=o.expires.toUTCString()),t=encodeURIComponent(t).replace(/%(2[346B]|5E|60|7C)/g,decodeURIComponent).replace(/[()]/g,escape);var r="";for(var a in o)o[a]&&(r+="; "+a,!0!==o[a]&&(r+="="+o[a].split(";")[0]));return document.cookie=t+"="+e.write(n,t)+r}}return Object.create({set:n,get:function(t){if("undefined"!=typeof document&&(!arguments.length||t)){for(var i=document.cookie?document.cookie.split("; "):[],n={},o=0;o<i.length;o++){var r=i[o].split("="),a=r.slice(1).join("=");try{var s=decodeURIComponent(r[0]);if(n[s]=e.read(a,s),t===s)break}catch(t){}}return t?n[t]:n}},remove:function(t,e){n(t,"",m({},e,{expires:-1}))},withAttributes:function(e){return t(this.converter,m({},this.attributes,e))},withConverter:function(e){return t(m({},this.converter,e),this.attributes)}},{attributes:{value:Object.freeze(i)},converter:{value:Object.freeze(e)}})}({read:function(t){return'"'===t[0]&&(t=t.slice(1,-1)),t.replace(/(%[\dA-F]{2})+/gi,decodeURIComponent)},write:function(t){return encodeURIComponent(t).replace(/%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,decodeURIComponent)}},{path:"/"});const w=window,y=w.ShadowRoot&&(void 0===w.ShadyCSS||w.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,b=Symbol(),P=new WeakMap;class x{constructor(t,e,i){if(this._$cssResult$=!0,i!==b)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if(y&&void 0===t){const i=void 0!==e&&1===e.length;i&&(t=P.get(e)),void 0===t&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),i&&P.set(e,t))}return t}toString(){return this.cssText}}const F=(t,...e)=>{const i=1===t.length?t[0]:e.reduce(((e,i,n)=>e+(t=>{if(!0===t._$cssResult$)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+t[n+1]),t[0]);return new x(i,t,b)},M=y?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let e="";for(const i of t.cssRules)e+=i.cssText;return(t=>new x("string"==typeof t?t:t+"",void 0,b))(e)})(t):t;var $;const C=window,k=C.trustedTypes,A=k?k.emptyScript:"",W=C.reactiveElementPolyfillSupport,B={toAttribute(t,e){switch(e){case Boolean:t=t?A:null;break;case Object:case Array:t=null==t?t:JSON.stringify(t)}return t},fromAttribute(t,e){let i=t;switch(e){case Boolean:i=null!==t;break;case Number:i=null===t?null:Number(t);break;case Object:case Array:try{i=JSON.parse(t)}catch(t){i=null}}return i}},_=(t,e)=>e!==t&&(e==e||t==t),S={attribute:!0,type:String,converter:B,reflect:!1,hasChanged:_},I="finalized";class T extends HTMLElement{constructor(){super(),this._$Ei=new Map,this.isUpdatePending=!1,this.hasUpdated=!1,this._$El=null,this._$Eu()}static addInitializer(t){var e;this.finalize(),(null!==(e=this.h)&&void 0!==e?e:this.h=[]).push(t)}static get observedAttributes(){this.finalize();const t=[];return this.elementProperties.forEach(((e,i)=>{const n=this._$Ep(i,e);void 0!==n&&(this._$Ev.set(n,i),t.push(n))})),t}static createProperty(t,e=S){if(e.state&&(e.attribute=!1),this.finalize(),this.elementProperties.set(t,e),!e.noAccessor&&!this.prototype.hasOwnProperty(t)){const i="symbol"==typeof t?Symbol():"__"+t,n=this.getPropertyDescriptor(t,i,e);void 0!==n&&Object.defineProperty(this.prototype,t,n)}}static getPropertyDescriptor(t,e,i){return{get(){return this[e]},set(n){const o=this[t];this[e]=n,this.requestUpdate(t,o,i)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)||S}static finalize(){if(this.hasOwnProperty(I))return!1;this[I]=!0;const t=Object.getPrototypeOf(this);if(t.finalize(),void 0!==t.h&&(this.h=[...t.h]),this.elementProperties=new Map(t.elementProperties),this._$Ev=new Map,this.hasOwnProperty("properties")){const t=this.properties,e=[...Object.getOwnPropertyNames(t),...Object.getOwnPropertySymbols(t)];for(const i of e)this.createProperty(i,t[i])}return this.elementStyles=this.finalizeStyles(this.styles),!0}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const i=new Set(t.flat(1/0).reverse());for(const t of i)e.unshift(M(t))}else void 0!==t&&e.push(M(t));return e}static _$Ep(t,e){const i=e.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}_$Eu(){var t;this._$E_=new Promise((t=>this.enableUpdating=t)),this._$AL=new Map,this._$Eg(),this.requestUpdate(),null===(t=this.constructor.h)||void 0===t||t.forEach((t=>t(this)))}addController(t){var e,i;(null!==(e=this._$ES)&&void 0!==e?e:this._$ES=[]).push(t),void 0!==this.renderRoot&&this.isConnected&&(null===(i=t.hostConnected)||void 0===i||i.call(t))}removeController(t){var e;null===(e=this._$ES)||void 0===e||e.splice(this._$ES.indexOf(t)>>>0,1)}_$Eg(){this.constructor.elementProperties.forEach(((t,e)=>{this.hasOwnProperty(e)&&(this._$Ei.set(e,this[e]),delete this[e])}))}createRenderRoot(){var t;const e=null!==(t=this.shadowRoot)&&void 0!==t?t:this.attachShadow(this.constructor.shadowRootOptions);return((t,e)=>{y?t.adoptedStyleSheets=e.map((t=>t instanceof CSSStyleSheet?t:t.styleSheet)):e.forEach((e=>{const i=document.createElement("style"),n=w.litNonce;void 0!==n&&i.setAttribute("nonce",n),i.textContent=e.cssText,t.appendChild(i)}))})(e,this.constructor.elementStyles),e}connectedCallback(){var t;void 0===this.renderRoot&&(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),null===(t=this._$ES)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostConnected)||void 0===e?void 0:e.call(t)}))}enableUpdating(t){}disconnectedCallback(){var t;null===(t=this._$ES)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostDisconnected)||void 0===e?void 0:e.call(t)}))}attributeChangedCallback(t,e,i){this._$AK(t,i)}_$EO(t,e,i=S){var n;const o=this.constructor._$Ep(t,i);if(void 0!==o&&!0===i.reflect){const r=(void 0!==(null===(n=i.converter)||void 0===n?void 0:n.toAttribute)?i.converter:B).toAttribute(e,i.type);this._$El=t,null==r?this.removeAttribute(o):this.setAttribute(o,r),this._$El=null}}_$AK(t,e){var i;const n=this.constructor,o=n._$Ev.get(t);if(void 0!==o&&this._$El!==o){const t=n.getPropertyOptions(o),r="function"==typeof t.converter?{fromAttribute:t.converter}:void 0!==(null===(i=t.converter)||void 0===i?void 0:i.fromAttribute)?t.converter:B;this._$El=o,this[o]=r.fromAttribute(e,t.type),this._$El=null}}requestUpdate(t,e,i){let n=!0;void 0!==t&&(((i=i||this.constructor.getPropertyOptions(t)).hasChanged||_)(this[t],e)?(this._$AL.has(t)||this._$AL.set(t,e),!0===i.reflect&&this._$El!==t&&(void 0===this._$EC&&(this._$EC=new Map),this._$EC.set(t,i))):n=!1),!this.isUpdatePending&&n&&(this._$E_=this._$Ej())}async _$Ej(){this.isUpdatePending=!0;try{await this._$E_}catch(t){Promise.reject(t)}const t=this.scheduleUpdate();return null!=t&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){var t;if(!this.isUpdatePending)return;this.hasUpdated,this._$Ei&&(this._$Ei.forEach(((t,e)=>this[e]=t)),this._$Ei=void 0);let e=!1;const i=this._$AL;try{e=this.shouldUpdate(i),e?(this.willUpdate(i),null===(t=this._$ES)||void 0===t||t.forEach((t=>{var e;return null===(e=t.hostUpdate)||void 0===e?void 0:e.call(t)})),this.update(i)):this._$Ek()}catch(t){throw e=!1,this._$Ek(),t}e&&this._$AE(i)}willUpdate(t){}_$AE(t){var e;null===(e=this._$ES)||void 0===e||e.forEach((t=>{var e;return null===(e=t.hostUpdated)||void 0===e?void 0:e.call(t)})),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$Ek(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$E_}shouldUpdate(t){return!0}update(t){void 0!==this._$EC&&(this._$EC.forEach(((t,e)=>this._$EO(e,this[e],t))),this._$EC=void 0),this._$Ek()}updated(t){}firstUpdated(t){}}var E;T[I]=!0,T.elementProperties=new Map,T.elementStyles=[],T.shadowRootOptions={mode:"open"},null==W||W({ReactiveElement:T}),(null!==($=C.reactiveElementVersions)&&void 0!==$?$:C.reactiveElementVersions=[]).push("1.6.3");const z=window,O=z.trustedTypes,L=O?O.createPolicy("lit-html",{createHTML:t=>t}):void 0,H="$lit$",R=`lit$${(Math.random()+"").slice(9)}$`,j="?"+R,D=`<${j}>`,U=document,Q=()=>U.createComment(""),N=t=>null===t||"object"!=typeof t&&"function"!=typeof t,q=Array.isArray,V=t=>q(t)||"function"==typeof(null==t?void 0:t[Symbol.iterator]),Z="[ \t\n\f\r]",G=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Y=/-->/g,J=/>/g,K=RegExp(`>|${Z}(?:([^\\s"'>=/]+)(${Z}*=${Z}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`,"g"),X=/'/g,tt=/"/g,et=/^(?:script|style|textarea|title)$/i,it=t=>(e,...i)=>({_$litType$:t,strings:e,values:i}),nt=it(1),ot=(it(2),Symbol.for("lit-noChange")),rt=Symbol.for("lit-nothing"),at=new WeakMap,st=U.createTreeWalker(U,129,null,!1);function lt(t,e){if(!Array.isArray(t)||!t.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==L?L.createHTML(e):e}const ct=(t,e)=>{const i=t.length-1,n=[];let o,r=2===e?"<svg>":"",a=G;for(let e=0;e<i;e++){const i=t[e];let s,l,c=-1,d=0;for(;d<i.length&&(a.lastIndex=d,l=a.exec(i),null!==l);)d=a.lastIndex,a===G?"!--"===l[1]?a=Y:void 0!==l[1]?a=J:void 0!==l[2]?(et.test(l[2])&&(o=RegExp("</"+l[2],"g")),a=K):void 0!==l[3]&&(a=K):a===K?">"===l[0]?(a=null!=o?o:G,c=-1):void 0===l[1]?c=-2:(c=a.lastIndex-l[2].length,s=l[1],a=void 0===l[3]?K:'"'===l[3]?tt:X):a===tt||a===X?a=K:a===Y||a===J?a=G:(a=K,o=void 0);const u=a===K&&t[e+1].startsWith("/>")?" ":"";r+=a===G?i+D:c>=0?(n.push(s),i.slice(0,c)+H+i.slice(c)+R+u):i+R+(-2===c?(n.push(void 0),e):u)}return[lt(t,r+(t[i]||"<?>")+(2===e?"</svg>":"")),n]};class dt{constructor({strings:t,_$litType$:e},i){let n;this.parts=[];let o=0,r=0;const a=t.length-1,s=this.parts,[l,c]=ct(t,e);if(this.el=dt.createElement(l,i),st.currentNode=this.el.content,2===e){const t=this.el.content,e=t.firstChild;e.remove(),t.append(...e.childNodes)}for(;null!==(n=st.nextNode())&&s.length<a;){if(1===n.nodeType){if(n.hasAttributes()){const t=[];for(const e of n.getAttributeNames())if(e.endsWith(H)||e.startsWith(R)){const i=c[r++];if(t.push(e),void 0!==i){const t=n.getAttribute(i.toLowerCase()+H).split(R),e=/([.?@])?(.*)/.exec(i);s.push({type:1,index:o,name:e[2],strings:t,ctor:"."===e[1]?gt:"?"===e[1]?vt:"@"===e[1]?wt:ft})}else s.push({type:6,index:o})}for(const e of t)n.removeAttribute(e)}if(et.test(n.tagName)){const t=n.textContent.split(R),e=t.length-1;if(e>0){n.textContent=O?O.emptyScript:"";for(let i=0;i<e;i++)n.append(t[i],Q()),st.nextNode(),s.push({type:2,index:++o});n.append(t[e],Q())}}}else if(8===n.nodeType)if(n.data===j)s.push({type:2,index:o});else{let t=-1;for(;-1!==(t=n.data.indexOf(R,t+1));)s.push({type:7,index:o}),t+=R.length-1}o++}}static createElement(t,e){const i=U.createElement("template");return i.innerHTML=t,i}}function ut(t,e,i=t,n){var o,r,a,s;if(e===ot)return e;let l=void 0!==n?null===(o=i._$Co)||void 0===o?void 0:o[n]:i._$Cl;const c=N(e)?void 0:e._$litDirective$;return(null==l?void 0:l.constructor)!==c&&(null===(r=null==l?void 0:l._$AO)||void 0===r||r.call(l,!1),void 0===c?l=void 0:(l=new c(t),l._$AT(t,i,n)),void 0!==n?(null!==(a=(s=i)._$Co)&&void 0!==a?a:s._$Co=[])[n]=l:i._$Cl=l),void 0!==l&&(e=ut(t,l._$AS(t,e.values),l,n)),e}class pt{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){var e;const{el:{content:i},parts:n}=this._$AD,o=(null!==(e=null==t?void 0:t.creationScope)&&void 0!==e?e:U).importNode(i,!0);st.currentNode=o;let r=st.nextNode(),a=0,s=0,l=n[0];for(;void 0!==l;){if(a===l.index){let e;2===l.type?e=new ht(r,r.nextSibling,this,t):1===l.type?e=new l.ctor(r,l.name,l.strings,this,t):6===l.type&&(e=new yt(r,this,t)),this._$AV.push(e),l=n[++s]}a!==(null==l?void 0:l.index)&&(r=st.nextNode(),a++)}return st.currentNode=U,o}v(t){let e=0;for(const i of this._$AV)void 0!==i&&(void 0!==i.strings?(i._$AI(t,i,e),e+=i.strings.length-2):i._$AI(t[e])),e++}}class ht{constructor(t,e,i,n){var o;this.type=2,this._$AH=rt,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=i,this.options=n,this._$Cp=null===(o=null==n?void 0:n.isConnected)||void 0===o||o}get _$AU(){var t,e;return null!==(e=null===(t=this._$AM)||void 0===t?void 0:t._$AU)&&void 0!==e?e:this._$Cp}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return void 0!==e&&11===(null==t?void 0:t.nodeType)&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=ut(this,t,e),N(t)?t===rt||null==t||""===t?(this._$AH!==rt&&this._$AR(),this._$AH=rt):t!==this._$AH&&t!==ot&&this._(t):void 0!==t._$litType$?this.g(t):void 0!==t.nodeType?this.$(t):V(t)?this.T(t):this._(t)}k(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}$(t){this._$AH!==t&&(this._$AR(),this._$AH=this.k(t))}_(t){this._$AH!==rt&&N(this._$AH)?this._$AA.nextSibling.data=t:this.$(U.createTextNode(t)),this._$AH=t}g(t){var e;const{values:i,_$litType$:n}=t,o="number"==typeof n?this._$AC(t):(void 0===n.el&&(n.el=dt.createElement(lt(n.h,n.h[0]),this.options)),n);if((null===(e=this._$AH)||void 0===e?void 0:e._$AD)===o)this._$AH.v(i);else{const t=new pt(o,this),e=t.u(this.options);t.v(i),this.$(e),this._$AH=t}}_$AC(t){let e=at.get(t.strings);return void 0===e&&at.set(t.strings,e=new dt(t)),e}T(t){q(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let i,n=0;for(const o of t)n===e.length?e.push(i=new ht(this.k(Q()),this.k(Q()),this,this.options)):i=e[n],i._$AI(o),n++;n<e.length&&(this._$AR(i&&i._$AB.nextSibling,n),e.length=n)}_$AR(t=this._$AA.nextSibling,e){var i;for(null===(i=this._$AP)||void 0===i||i.call(this,!1,!0,e);t&&t!==this._$AB;){const e=t.nextSibling;t.remove(),t=e}}setConnected(t){var e;void 0===this._$AM&&(this._$Cp=t,null===(e=this._$AP)||void 0===e||e.call(this,t))}}class ft{constructor(t,e,i,n,o){this.type=1,this._$AH=rt,this._$AN=void 0,this.element=t,this.name=e,this._$AM=n,this.options=o,i.length>2||""!==i[0]||""!==i[1]?(this._$AH=Array(i.length-1).fill(new String),this.strings=i):this._$AH=rt}get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}_$AI(t,e=this,i,n){const o=this.strings;let r=!1;if(void 0===o)t=ut(this,t,e,0),r=!N(t)||t!==this._$AH&&t!==ot,r&&(this._$AH=t);else{const n=t;let a,s;for(t=o[0],a=0;a<o.length-1;a++)s=ut(this,n[i+a],e,a),s===ot&&(s=this._$AH[a]),r||(r=!N(s)||s!==this._$AH[a]),s===rt?t=rt:t!==rt&&(t+=(null!=s?s:"")+o[a+1]),this._$AH[a]=s}r&&!n&&this.j(t)}j(t){t===rt?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=t?t:"")}}class gt extends ft{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===rt?void 0:t}}const mt=O?O.emptyScript:"";class vt extends ft{constructor(){super(...arguments),this.type=4}j(t){t&&t!==rt?this.element.setAttribute(this.name,mt):this.element.removeAttribute(this.name)}}class wt extends ft{constructor(t,e,i,n,o){super(t,e,i,n,o),this.type=5}_$AI(t,e=this){var i;if((t=null!==(i=ut(this,t,e,0))&&void 0!==i?i:rt)===ot)return;const n=this._$AH,o=t===rt&&n!==rt||t.capture!==n.capture||t.once!==n.once||t.passive!==n.passive,r=t!==rt&&(n===rt||o);o&&this.element.removeEventListener(this.name,this,n),r&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){var e,i;"function"==typeof this._$AH?this._$AH.call(null!==(i=null===(e=this.options)||void 0===e?void 0:e.host)&&void 0!==i?i:this.element,t):this._$AH.handleEvent(t)}}class yt{constructor(t,e,i){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=i}get _$AU(){return this._$AM._$AU}_$AI(t){ut(this,t)}}const bt=z.litHtmlPolyfillSupport;null==bt||bt(dt,ht),(null!==(E=z.litHtmlVersions)&&void 0!==E?E:z.litHtmlVersions=[]).push("2.8.0");const Pt=(t,e,i)=>{var n,o;const r=null!==(n=null==i?void 0:i.renderBefore)&&void 0!==n?n:e;let a=r._$litPart$;if(void 0===a){const t=null!==(o=null==i?void 0:i.renderBefore)&&void 0!==o?o:null;r._$litPart$=a=new ht(e.insertBefore(Q(),t),t,void 0,null!=i?i:{})}return a._$AI(t),a};var xt,Ft;class Mt extends T{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var t,e;const i=super.createRenderRoot();return null!==(t=(e=this.renderOptions).renderBefore)&&void 0!==t||(e.renderBefore=i.firstChild),i}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=Pt(e,this.renderRoot,this.renderOptions)}connectedCallback(){var t;super.connectedCallback(),null===(t=this._$Do)||void 0===t||t.setConnected(!0)}disconnectedCallback(){var t;super.disconnectedCallback(),null===(t=this._$Do)||void 0===t||t.setConnected(!1)}render(){return ot}}Mt.finalized=!0,Mt._$litElement$=!0,null===(xt=globalThis.litElementHydrateSupport)||void 0===xt||xt.call(globalThis,{LitElement:Mt});const $t=globalThis.litElementPolyfillSupport;null==$t||$t({LitElement:Mt});(null!==(Ft=globalThis.litElementVersions)&&void 0!==Ft?Ft:globalThis.litElementVersions=[]).push("3.3.3");const Ct=t.p+"images/logo-by-gifski.gif",kt=t.p+"images/logo-whatsapp.gif",At=t.p+"images/logo-telegram.gif";function Wt(t,e,i){return t?e():null==i?void 0:i()}const Bt=1,_t=t=>(...e)=>({_$litDirective$:t,values:e});class St{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}const It=_t(class extends St{constructor(t){var e;if(super(t),t.type!==Bt||"class"!==t.name||(null===(e=t.strings)||void 0===e?void 0:e.length)>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(t){return" "+Object.keys(t).filter((e=>t[e])).join(" ")+" "}update(t,[e]){var i,n;if(void 0===this.it){this.it=new Set,void 0!==t.strings&&(this.nt=new Set(t.strings.join(" ").split(/\s/).filter((t=>""!==t))));for(const t in e)e[t]&&!(null===(i=this.nt)||void 0===i?void 0:i.has(t))&&this.it.add(t);return this.render(e)}const o=t.element.classList;this.it.forEach((t=>{t in e||(o.remove(t),this.it.delete(t))}));for(const t in e){const i=!!e[t];i===this.it.has(t)||(null===(n=this.nt)||void 0===n?void 0:n.has(t))||(i?(o.add(t),this.it.add(t)):(o.remove(t),this.it.delete(t)))}return ot}}),Tt="important",Et=" !"+Tt,zt=_t(class extends St{constructor(t){var e;if(super(t),t.type!==Bt||"style"!==t.name||(null===(e=t.strings)||void 0===e?void 0:e.length)>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(t){return Object.keys(t).reduce(((e,i)=>{const n=t[i];return null==n?e:e+`${i=i.includes("-")?i:i.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${n};`}),"")}update(t,[e]){const{style:i}=t.element;if(void 0===this.ht){this.ht=new Set;for(const t in e)this.ht.add(t);return this.render(e)}this.ht.forEach((t=>{null==e[t]&&(this.ht.delete(t),t.includes("-")?i.removeProperty(t):i[t]="")}));for(const t in e){const n=e[t];if(null!=n){this.ht.add(t);const e="string"==typeof n&&n.endsWith(Et);t.includes("-")||e?i.setProperty(t,e?n.slice(0,-11):n,e?Tt:""):i[t]=n}}return ot}}),Ot=()=>`https://widget.yourgood.ru/?utm_source=${encodeURIComponent(window.location.host)}&utm_medium=cta_modal&utm_content=viral`,Lt=F`
+  font-family: 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+`,Ht=F`
+  font-family: 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.15px;
+`,Rt=F`
+  font-family: 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.15px;
+`,jt=F`
+  .PFMessage,
+  .PFChat,
+  .PFModal {
+    --pf-primary: #212121;
+    --pf-secondary: #757575;
+    --pf-disabled: #9e9e9e;
+    --pf-main-blue: #2962ff;
+    --pf-main-blue-dark: #1d4ed6;
+    --pf-main-blue-light: #5481ff;
+    --pf-blue-shade-50: #94b0ff;
+    --pf-blue-shade-8: #eef3ff;
+    --pf-blue-shade-4: #f7f9ff;
+    --pf-background: #f8f9fb;
+    --pf-main-yellow: #ffa726;
+    --pf-yellow-shade-12: #fff4e5;
+    --pf-main-green: #4caf50;
+    --pf-green-shade-8: #f3faf3;
+    --pf-main-red: #d32f2f;
+    --pf-red-shade-50: #e99797;
+    --pf-red-shade-8: #fbeeee;
+    --pf-red-shade-4: #fdf7f7;
+    --pf-grey-900: #212121;
+    --pf-grey-800: #424242;
+    --pf-grey-700: #616161;
+    --pf-grey-600: #757575;
+    --pf-grey-500: #9e9e9e;
+    --pf-grey-400: #bdbdbd;
+    --pf-grey-300: #e0e0e0;
+    --pf-grey-200: #eee;
+    --pf-grey-100: #f5f5f5;
+    --pf-white: #fff;
+    --pf-modal-telegram-color: #2aabee;
+    --pf-modal-whatsapp-color: #5ed169;
+    --pf-chat-whatsapp-background: #f6f6f6;
+  }
+`;function Dt(t,e,i){const n=new URL(window.location.href);if(!t)return;const o=t.personalOffers;if(o){if(!i){if(!e)return;if(!e.subscriptionPlan.features.includes("personal_offer"))return;const t=Date.now();if(new Date(e.subscriptionPlan.dueDate).getTime()<t)return}for(let t=0;t<o.length;t++)if(o[t]&&o[t].utm){const e=n.searchParams.get("utm_source"),i=n.searchParams.get("utm_content"),r=n.searchParams.get("utm_medium"),a=n.searchParams.get("utm_term"),s=n.searchParams.get("utm_campaign");if(!(e||i||r||a||s))continue;const l=""===o[t].utm.utm_source||o[t].utm.utm_source===e,c=""===o[t].utm.utm_content||o[t].utm.utm_content===i,d=""===o[t].utm.utm_medium||o[t].utm.utm_medium===r,u=""===o[t].utm.utm_term||o[t].utm.utm_term===a,p=""===o[t].utm.utm_campaign||o[t].utm.utm_campaign===s;if(l&&c&&d&&u&&p)return o[t]}}}function Ut(){return nt`
+        <svg xmlns="http://www.w3.org/2000/svg" width="114" height="20" fill="none" viewBox="0 0 138 24"><g clip-path="url(#a)"><path fill="currentColor" d="M48.1 8.3a3.9 3.9 0 1 0 0 7.8 3.9 3.9 0 0 0 0-7.8Zm0 6.3a2.4 2.4 0 1 1 0-4.7 2.4 2.4 0 0 1 0 4.7ZM13.3 8.3a3.9 3.9 0 1 0 0 7.8 3.9 3.9 0 0 0 0-7.8Zm0 6.3a2.4 2.4 0 0 1 0-4.7c1.3 0 2.3 1 2.3 2.3 0 1.3-1 2.4-2.3 2.4ZM56.8 8.3a3.9 3.9 0 1 0 0 7.8 3.9 3.9 0 0 0 0-7.8Zm0 6.3a2.4 2.4 0 1 1 2.3-2.4c0 1.3-1 2.4-2.3 2.4Z"/><path fill="#1C7EF1" d="m8.2 6-1-1.2a5 5 0 0 1-5.5.2L.8 6.3A6.4 6.4 0 0 0 8.2 6Z"/><path fill="currentColor" d="M67.8 6v3a3.9 3.9 0 0 0-6.2 3.2 3.9 3.9 0 1 0 7.8 0V6h-1.6Zm-2.3 8.6a2.4 2.4 0 1 1 2.3-2.4c0 1.3-1 2.4-2.3 2.4ZM41.8 9c-.6-.4-1.4-.7-2.3-.7a3.9 3.9 0 0 0-.1 7.8 2.4 2.4 0 1 1-2.4 2.4h-1.5a3.9 3.9 0 1 0 6.3-3.2c1-.7 1.6-1.8 1.6-3.1v-4h-1.6v.9Zm-2.3 5.6a2.4 2.4 0 1 1 2.3-2.4c0 1.3-1 2.4-2.3 2.4ZM24.3 12.2a2.4 2.4 0 0 1-4.7 0V8.5H18v4a4 4 0 0 0 4 3.6 4 4 0 0 0 3.8-3.8V8.5h-1.5v3.7ZM6.9 12.2c0 1.3-1.1 2.4-2.4 2.4-1.3 0-2.4-1.1-2.4-2.4V8.5H.6v4A4 4 0 0 0 4.5 16a2.4 2.4 0 0 1 0 4.7c-1.3 0-2.4-1-2.4-2.3H.6a3.9 3.9 0 1 0 6.2-3.2c1-.6 1.5-1.7 1.6-3V8.5H6.8v3.7ZM30.9 8.3c-1 0-1.7.3-2.4.8v-.6H27V16h1.5v-3.7c0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.3 1.1 2.3 2.4h1.6c0-2.1-1.8-3.9-4-3.9Z"/><path fill="#B6D7FF" d="M75.5 5.2C75.5 2.3 78 0 80.7 0h51.6c2.9 0 5.2 2.3 5.2 5.2v13.6c0 2.9-2.3 5.2-5.2 5.2H80.7a5.2 5.2 0 0 1-5.2-5.2V5.2Z"/><path fill="#1B1B1B" d="M131.4 8.6v1.6h-4.9V8.6h4.9Zm-3.8-2h2.2v7.5l.1.5.3.3h.4a2 2 0 0 0 .6 0l.3 1.6a6.3 6.3 0 0 1-1.2.2c-.5 0-1 0-1.4-.2a2 2 0 0 1-1-.8c-.2-.3-.3-.7-.3-1.3V6.6ZM121.6 16.8c-.8 0-1.5-.2-2.1-.5-.6-.4-1-.9-1.4-1.5-.3-.6-.5-1.3-.5-2.2 0-.8.2-1.5.5-2.2.3-.6.8-1 1.4-1.4a4 4 0 0 1 2-.5c.6 0 1 0 1.5.2a3.3 3.3 0 0 1 2 2l.3 1.8v.7h-6.8v-1.4h4.7c0-.3 0-.6-.2-.9l-.6-.6-.8-.2c-.4 0-.7.1-1 .3-.2.1-.4.3-.5.6-.2.2-.3.5-.3.8v1.4c0 .4.1.7.3 1 .1.3.3.5.6.7l1 .2.6-.1c.3 0 .4-.2.6-.3l.3-.5 2 .1c0 .5-.2 1-.6 1.3-.3.4-.7.7-1.2.9-.5.2-1.1.3-1.8.3ZM112 19.8c-.8 0-1.4-.1-1.9-.3a3 3 0 0 1-1.2-.8c-.3-.3-.5-.7-.6-1.1l2-.3a1.4 1.4 0 0 0 .9.8l.8.1a2 2 0 0 0 1.2-.4c.3-.2.5-.6.5-1.1v-1.5h-.1a2.1 2.1 0 0 1-1.2 1.1l-1.1.2c-.6 0-1.2-.1-1.6-.4a3 3 0 0 1-1.2-1.3 5 5 0 0 1-.5-2.2c0-1 .2-1.7.5-2.3.3-.6.7-1 1.2-1.4a3 3 0 0 1 2.7-.2c.3.1.6.3.8.6l.4.6V8.6h2.3v8c0 .8-.2 1.4-.5 1.8a3 3 0 0 1-1.4 1c-.6.3-1.3.4-2 .4Zm0-5c.4 0 .7 0 1-.2l.5-.8.2-1.2c0-.5 0-1-.2-1.3-.1-.3-.3-.6-.6-.8-.2-.2-.5-.3-.9-.3s-.7.1-1 .3l-.5.8-.2 1.3c0 .4 0 .8.2 1.2.1.3.3.6.6.7.2.2.5.3 1 .3ZM101.6 16.7a3 3 0 0 1-1.6-.4c-.5-.3-1-.8-1.2-1.4-.3-.6-.4-1.4-.4-2.3 0-1 .1-1.7.4-2.3.3-.6.7-1 1.2-1.4a3 3 0 0 1 2.7-.2c.4.1.6.3.8.6l.4.6V6h2.3v10.7H104v-1.3l-.5.7-.8.5c-.3.2-.6.2-1 .2Zm.7-1.7c.4 0 .7-.1 1-.3.2-.2.4-.5.5-.9.2-.3.2-.7.2-1.2s0-1-.2-1.3l-.5-.8c-.3-.2-.6-.3-1-.3l-.9.3-.6.9-.2 1.2.2 1.2.6.9c.3.2.6.3 1 .3ZM94.3 16.6v-8h2.3v8h-2.3Zm1.2-9c-.4 0-.6-.2-.9-.4a1 1 0 0 1-.3-.8c0-.3 0-.6.3-.8.3-.2.5-.3.9-.3.3 0 .6 0 .8.3.3.2.4.5.4.8 0 .3-.1.6-.4.8-.2.2-.5.3-.8.3ZM83 16.6l-2.1-8h2.3l1.2 5.4 1.4-5.4H88l1.3 5.3 1.3-5.3H93l-2.2 8h-2.4l-1.4-5-1.4 5H83Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h137v24H0z" transform="translate(.5)"/></clipPath></defs></svg>
+    `}function Qt(){return nt`
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="${arguments.length>0&&void 0!==arguments[0]?arguments[0]:""}" viewBox="0 0 24 24"><path fill="currentColor" d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 1 0-1.4 1.4l4.9 4.9-4.9 4.9a1 1 0 1 0 1.4 1.4l4.9-4.9 4.9 4.9a1 1 0 1 0 1.4-1.4L13.4 12l4.9-4.9c.4-.4.4-1 0-1.4Z"/></svg>
+    `}const Nt=F`
+  .PFMessage:not([dark=true]) .PFMessageCtx {
+    background-color: var(--pf-white);
+  }
+
+  .PFMessage:not([dark=true]) .PFMessageShape {
+    color: var(--pf-white);
+  }
+
+  .PFMessage:not([dark=true]) .PFMessageFooter {
+    color: #1b1b1b;
+  }
+
+  .PFMessage:not([dark=true]) .PFMessageButtonClose {
+    color: var(--pf-grey-400);
+  }
+
+  .PFMessage:not([dark=true]) .PFMessageMainText,
+  .PFMessage:not([dark=true]) .PFMessageHeaderText {
+    color: var(--pf-primary);
+  }
+
+  .PFMessage:not([dark=true]) .PFMessageLine {
+    background-color: var(--pf-grey-200);
+  }
+
+  .PFMessage:not([dark=true]) .PFMessageAvatar {
+    background-color: var(--pf-grey-200);
+  }
+`,qt=F`
+  .PFMessage[dark=true] .PFMessageCtx {
+    background-color: var(--pf-grey-900);
+  }
+
+  .PFMessage[dark=true] .PFMessageShape {
+    color: var(--pf-grey-900);
+  }
+
+  .PFMessage[dark=true] .PFMessageFooter {
+    color: #fff;
+  }
+
+  .PFMessage[dark=true] .PFMessageButtonClose {
+    color: var(--pf-grey-700);
+  }
+
+  .PFMessage[dark=true] .PFMessageMainText,
+  .PFMessage[dark=true] .PFMessageHeaderText {
+    color: var(--pf-white);
+  }
+
+  .PFMessage[dark=true] .PFMessageLine {
+    background-color: var(--pf-grey-800);
+  }
+
+  .PFMessage[dark=true] .PFMessageAvatar {
+    background-color: var(--pf-grey-800);
+  }
+`;class Vt extends Mt{timerIdForAnimation=null;body={id:"default-uuid",redirect:"whatsapp/telegram/whatsapp-and-telegram",title:"string",text:"string",avatarEnabled:!1,avatar:{url:null},branding:!0,isDark:!0};static properties={widget:{type:Object},_isOpen:{type:Boolean},position:{type:String},subscription:{type:Object}};constructor(){super()}afterTransition(t){t.target.classList.contains("PFHidden")&&(t.target.style.display="none")}open(t){this._isOpen=!0,this.body=t,window.currentlyOpenedAction={currentPersonalOffer:Dt(this.body,this.subscription)};const e=this.shadowRoot.getElementById("PFMessage"),i=this.shadowRoot.getElementById("PFMessageCtx");clearTimeout(this.timerIdForAnimation),e.addEventListener("transitionend",this.afterTransition,!0),e.addEventListener("webkitTransitionEnd",this.afterTransition,!0),i.classList.remove("PFMessageAnimateOut"),i.classList.add("PFMessageAnimateIn","PFAnimated"),e.classList.remove("PFHidden"),e.style.display="flex",this.timerIdForAnimation=setTimeout((()=>{e.style.opacity=1,i.classList.remove("PFAnimated")}),100)}close(){this._isOpen=!1;const t=this.shadowRoot.getElementById("PFMessage"),e=this.shadowRoot.getElementById("PFMessageCtx");e.classList.remove("PFMessageAnimateIn"),e.classList.add("PFMessageAnimateOut","PFAnimated"),t.classList.add("PFHidden"),this.widget.hidden&&document.dispatchEvent(new Event("hideWidgetComponent")),this.timerIdForAnimation=setTimeout((()=>{t.style.opacity=0,e.classList.remove("PFAnimated")}),100),window.currentlyOpenedAction=void 0}cButtonClose(){return nt`
+      <button class="PFMessageButtonClose" @click="${this.close}">
+        ${Qt("PFMessageButtonCloseIcon")}
+      </button>
+    `}cHeader(){const{avatarEnabled:t,avatar:e,title:i}=this.body,n=this.getMessageTitleString();return nt`
+      <header class="PFMessageHeader">
+        <div class="PFMessageHeaderGroup">
+          ${Wt(t,(()=>nt`<img src="${e.url}" class="PFMessageAvatar" alt="">`),(()=>rt))}
+          <span 
+            class=${It({PFMessageHeaderText:!0,PFMessageHeaderTextWithout:null===t})}""
+          >
+            ${n}
+          </span>
+        </div>
+        ${this.cButtonClose()}
+      </header>
+      <div class="PFMessageLine"></div>
+    `}cFooter(){return nt`
+      <a href="${Ot()}" target="_blank" class="PFMessageFooter">
+          ${Ut()}
+      </a>
+    `}getMessageTitleString(){const t=Dt(this.body,this.subscription);return t?t.message.hasTitle?t.message.title:null:this.body.title}render(){const{title:t,text:e,branding:i,isDark:n}=this.body,o=this.position,r=Dt(this.body,this.subscription),a=this.getMessageTitleString(),s=r?r.message.text:e;return nt`
+      <div
+        id="PFMessage"
+        class="${It({PFMessage:!0,PFMessageAnimationPositionTopLeft:"top-left"===o,PFMessageAnimationPositionBottomLeft:"bottom-left"===o,PFMessageAnimationPositionTopRight:"top-right"===o,PFMessageAnimationPositionBottomRight:"bottom-right"===o})}"
+        dark="${n}"
+      >
+        <div
+          id="PFMessageCtx"
+          class="PFMessageCtx"
+        >
+          <section class="PFMessageBody">
+            ${Wt(a,(()=>this.cHeader()),(()=>rt))}
+
+            <div class="PFMessageMain">
+              <span class=${It({PFMessageMainText:!0,PFMessageMainTextWithButton:null===a})}>
+                ${s}
+              </span>
+              ${Wt(null===a,(()=>nt`<div>${this.cButtonClose()}</div>`),(()=>rt))}
+            </div>
+
+            ${Wt(i,(()=>this.cFooter()),(()=>rt))}
+          </section>
+          ${function(){return nt`
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="${arguments.length>0&&void 0!==arguments[0]?arguments[0]:""}" viewBox="0 0 10 14"><path fill="currentColor" fill-rule="evenodd" d="M1 0c.5 5 2.35 8.07 7.33 10.01l.33.13a1 1 0 0 1 .22 1.77C7.12 13.1 4.28 13.8.36 14 1 10.5 1 6.5 1 0Z" clip-rule="evenodd"/></svg>
+    `}("PFMessageShape")}
+        </div>
+      </div>
+    `}static styles=F`
+    ${jt}
+    ${Nt}
+    ${qt}
+
+    .PFMessage {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1), transform 0.3s;
+      transform-origin: right bottom;
+      display: none;
+    }
+
+    .PFMessageCtx {
+      all: unset;
+      box-sizing: border-box;
+      display: flex;
+      position: absolute;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(33, 33, 33, 0.04), 0 20px 40px rgba(33, 33, 33, 0.04);
+      transform-origin: right bottom;
+    }
+
+    @media (max-width: 959.98px) {
+      .PFMessage {
+        transform: scale(0.65);
+      }
+    }
+
+    .PFMessageBody {
+      all: unset;
+      box-sizing: border-box;
+      width: 324px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .PFMessageShape {
+      all: unset;
+      height: 14px;
+      width: 10px;
+      position: absolute;
+    }
+
+    .PFMessageButtonClose {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .PFMessageButtonCloseIcon {
+      --s: 24px;
+
+      all: unset;
+      display: flex;
+      width: var(--s);
+      height: var(--s);
+      color: currentColor;
+    }
+
+    .PFMessageMain {
+      all: unset;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .PFMessageMainText {
+      all: unset;
+      display: inline-block;
+      max-width: 100%;
+      word-wrap: break-word;
+
+      ${Rt}
+    }
+
+    .actionTypeMessagePreviewMainText .actionTypeMessagePreviewMainTextWithButton {
+      max-width: calc(100% - 32px);
+    }
+
+    .PFMessageHeader {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .PFMessageLine {
+      all: unset;
+      display: flex;
+      width: 100%;
+      height: 1px;
+    }
+
+    .PFMessageHeaderGroup {
+      all: unset;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .PFMessageAvatar {
+      --s: 56px;
+
+      all: unset;
+      display: flex;
+      width: var(--s);
+      height: var(--s);
+      border-radius: 50%;
+      overflow: hidden;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .PFMessageHeaderText {
+      all: unset;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      width: 185px;
+      overflow: hidden;
+      word-wrap: anywhere;
+
+      ${Lt}
+    }
+
+    .PFMessageHeaderText.PFMessageHeaderTextWithout {
+      width: 257px;
+    }
+
+    .PFMessageFooter {
+      all: unset;
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+
+      ${Ht}
+    }
+
+    .PFMessageAnimateIn {
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.3);
+      transform: translate3d(0) rotate(0deg);
+    }
+    
+    .PFMessageAnimateIn.PFAnimated {
+      transform: translate3d(15px, 30px, 0) rotate(-5deg);
+    }
+    
+    .PFMessageAnimateOut {
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1);
+      transform: translate3d(10px, 10px, 0) rotate(-2deg);
+    }
+
+    .PFMessageAnimationPositionTopLeft {
+      top: 50%;
+      left: calc(100% + 24px);
+    }
+    
+    .PFMessageAnimationPositionTopLeft .PFMessageCtx {
+      top: 0;
+      left: 0;
+    }
+    
+    .PFMessageAnimationPositionTopLeft .PFMessageShape {
+      left: -8px;
+      top: 7px;
+      transform: scale(-1, -1);
+    }
+    
+    .PFMessageAnimationPositionBottomLeft {
+      bottom: 50%;
+      left: calc(100% + 24px);
+    }
+    
+    .PFMessageAnimationPositionBottomLeft .PFMessageCtx {
+      bottom: 0;
+      left: 0;
+    }
+    
+    .PFMessageAnimationPositionBottomLeft .PFMessageShape {
+      left: -8px;
+      bottom: 7px;
+      transform: scale(-1, 1);
+    }
+    
+    .PFMessageAnimationPositionTopRight {
+      top: 50%;
+      right: calc(100% + 24px);
+    }
+    
+    .PFMessageAnimationPositionTopRight .PFMessageCtx {
+      top: 0;
+      right: 0;
+    }
+    
+    .PFMessageAnimationPositionTopRight .PFMessageShape {
+      right: -8px;
+      top: 7px;
+      transform: scale(1, -1);
+    }
+    
+    .PFMessageAnimationPositionBottomRight {
+      bottom: 50%;
+      right: calc(100% + 24px);
+    }
+    
+    .PFMessageAnimationPositionBottomRight .PFMessageCtx {
+      bottom: 0;
+      right: 0;
+    }
+    
+    .PFMessageAnimationPositionBottomRight .PFMessageShape {
+      right: -8px;
+      bottom: 7px;
+    }
+  `}customElements.get("pf-message")||customElements.define("pf-message",Vt);const Zt="::$wazzupIdPlaceholder",Gt=(t,e,i)=>{let{appendWazzupId:n,whatsappGreetingMessage:o,wazzupId:r}=t,a=e?.whatsappGreetingMessage?e.whatsappGreetingMessage:o;if(window.currentlyOpenedAction&&window.currentlyOpenedAction.currentPersonalOffer&&(a=window.currentlyOpenedAction.currentPersonalOffer.whatsappGreetingMessage),i){const t=Dt(e,null,!0);t&&(a=t.whatsappGreetingMessage)}return(n||i&&Dt(e,null,!0)?.appendWazzupId)&&(a.includes(` ${Zt} `)&&(a=a.replaceAll(Zt,`${r}`)),a=a.replaceAll(Zt,` ${r} `)),a};function Yt(t,e){let{appendWazzupId:i,whatsappGreetingMessage:n,whatsappNumber:o}=t;const r=Gt({appendWazzupId:i,whatsappGreetingMessage:n,wazzupId:e},arguments.length>2&&void 0!==arguments[2]?arguments[2]:null,!(arguments.length>3&&void 0!==arguments[3])||arguments[3]);return`https://wa.me/${encodeURIComponent(o.replace("+",""))}?text=${encodeURIComponent(r)}`}const Jt=t.p+"images/whatsapp-background.png";function Kt(){return nt`
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="14" fill="none" class="PFChatMessageShapeIcon"><path fill="currentColor" fill-rule="evenodd" d="M9 0c0 5-2 8-7 10H1a1 1 0 0 0 0 2l9 2L9 0Z" clip-rule="evenodd"/></svg>
+    `}class Xt extends Mt{timerIdForAnimation=null;body={id:"default-uuid",operatorName:"string",messageNumber1:"string",messageNumber2:"string",quickAnswerEnabled:!1,quickAnswer:{answer:[]},avatar:{url:null},branding:!0};static properties={_isOpen:{type:Boolean},widget:{type:Object},wazzupId:{type:String},integrationsService:{type:Object},subscription:{type:Object},position:{type:String},hid:{type:String}};constructor(){super()}startMessageAnimation(){const{messageNumber1:t,messageNumber2:e,quickAnswer:i,quickAnswerEnabled:n}=this.body,{answer:o}=i,r=Dt(this.body,this.subscription);let a=!1;e&&(a=!0);const s=r?r.chat.messageNumber1:t,l=r?r.chat.messageNumber2:e,c=r?r.chat.hasMessageNumber2:a;let d=o&&o.length&&n;r&&(d=r.chat.hasAnswer),s&&setTimeout((()=>{this.handleFakeSubmit(s),c?(setTimeout((()=>{this.handleFakeSubmit(l)}),1e3),d&&this.startQuickAnswerAnimation()):d&&this.startQuickAnswerAnimation()}),1e3)}startQuickAnswerAnimation(){const t=this.shadowRoot.getElementById("PFChatFooterQuickAnswerCtxAnimation");setTimeout((()=>{t.classList.add("PFChatFooterQuickAnswerCtxAnimationStart")}),2200)}clearChatBody(){this.shadowRoot.getElementById("PFChatFooterQuickAnswerCtxAnimation").classList.remove("PFChatFooterQuickAnswerCtxAnimationStart"),this.shadowRoot.getElementById("PFChatBody").innerHTML=""}afterTransition(t){t.target.classList.contains("PFHidden")&&(t.target.style.display="none")}open(t){this._isOpen=!0,this.body=t;const e=this.shadowRoot.getElementById("PFChatOverlay"),i=this.shadowRoot.getElementById("PFChat");clearTimeout(this.timerIdForAnimation),e.addEventListener("transitionend",this.afterTransition,!0),e.addEventListener("webkitTransitionEnd",this.afterTransition,!0),i.classList.remove("PFChatAnimateOut"),i.classList.add("PFChatAnimateIn","PFAnimated"),e.classList.remove("PFHidden"),e.style.display="flex",this.clearChatBody(),this.startMessageAnimation(),this.timerIdForAnimation=setTimeout((()=>{e.style.opacity=1,i.classList.remove("PFAnimated")}),100),setTimeout((()=>{const t=this.shadowRoot.getElementById("PFChatBody");t.style.display="block",t.scrollTop=t.scrollHeight}),4e3)}close(){this._isOpen=!1;const t=this.shadowRoot.getElementById("PFChatOverlay"),e=this.shadowRoot.getElementById("PFChat");e.classList.remove("PFChatAnimateIn"),e.classList.add("PFChatAnimateOut","PFAnimated"),t.classList.add("PFHidden"),this.widget.hidden&&document.dispatchEvent(new Event("hideWidgetComponent")),this.timerIdForAnimation=setTimeout((()=>{t.style.opacity=0,e.classList.remove("PFAnimated")}),100)}cIsMineMessage(t){return`\n      <div class="PFChatMessage PFChatMessageMy">\n        <span class="PFChatMessageText">\n          ${t}\n        </span>\n        <span class="PFChatMessageTime">\n          ${(new Date).toLocaleTimeString("en-US",{hour12:!1}).substring(0,5)}\n        </span>\n        <div class="PFChatMessageShape">\n          ${Kt()}\n        </div>\n      </div>\n    `}cMessage(t){return`\n      <div class="PFChatMessage">\n        <span class="PFChatMessageText">\n          ${t}\n        </span>\n        <span class="PFChatMessageTime">\n          ${(new Date).toLocaleTimeString("en-US",{hour12:!1}).substring(0,5)}\n        </span>\n        <div class="PFChatMessageShape">\n          ${Kt()}\n        </div>\n      </div>\n    `}cHeader(){const{avatar:t,operatorName:e}=this.body,i=Dt(this.body,this.subscription),n=i?i.chat.operatorName:e;return nt`
+      <header class="PFChatHeader">
+        <div class="PFChatHeaderAvatarCtx">
+          <img
+            src="${t.url}"
+            alt=""
+            class="PFChatHeaderAvatar"
+          >
+          <div class="PFChatHeaderAvatarLabel">
+            <span class="PFChatHeaderOperatorName">
+              ${n}
+            </span>
+            <span class="PFChatHeaderStatus">
+              Online
+            </span>
+          </div>
+        </div>
+
+        <div class="PFChatHeaderCloseCtx">
+          <button class="PFChatHeaderCloseButton" @click="${this.close}">
+            ${Qt("PFChatHeaderCloseButtonIcon")}
+          </button>
+        </div>
+      </header>
+    `}generateMessage(t){let e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;const i=e?this.cIsMineMessage(t):this.cMessage(t),n=document.createElement("div");return n.classList.add("PFChatBodyItem",e&&"PFChatBodyItemMy"),n.innerHTML=i,n}handleFakeSubmit(t){const e=this.generateMessage(t);this.shadowRoot.getElementById("PFChatBody").appendChild(e)}handleSubmit(t){let e=this.widget.appendWazzupId;const i=Dt(this.body,this.subscription);i&&(e=i.appendWazzupId);const o=this.generateMessage(t,!0);this.shadowRoot.getElementById("PFChatBody").appendChild(o);const r=n()?`WM${this.wazzupId}`:`WW${this.wazzupId}`;l(this.widget.id,{name:"whatsapp_simulator_click",wazzupId:r,hid:this.hid}),window.open(Yt({...this.widget,whatsappGreetingMessage:e?`${t} ::$wazzupIdPlaceholder`:t},r,this.body,!1),"_blank")}cFooter(){const{quickAnswerEnabled:t,quickAnswer:e,branding:i,messageNumber1:n,messageNumber2:o}=this.body,{answer:r}=e,a=Dt(this.body,this.subscription),s=a?a.chat.hasAnswer?a.chat.answer:[]:r,l=a?a.whatsappGreetingMessage.replace("::$wazzupIdPlaceholder",""):"",c=a?a.chat.hasAnswer:t,d=t=>nt`
+        <button
+          class="PFChatFooterQuickAnswer"
+          @click="${()=>{this.handleSubmit(t)}}"
+        >
+          ${t}
+        </button>
+      `;return nt`
+      <footer class="PFChatFooter">
+        <div id="PFChatFooterQuickAnswerCtxAnimation">
+          ${Wt(s&&s.length&&c,(()=>nt`
+              <div class="PFChatFooterQuickAnswerCtx">
+                ${s.map((t=>d(t)))}
+              </div>
+            `),(()=>rt))}
+        </div>
+
+        <div class="PFChatFooterCtx">
+          <form onsubmit="return false" class="PFChatFooterInputCtx">
+            <input
+              id="PFChatInput"
+              type="text"
+              class="PFChatFooterInput"
+              value="${l}"
+            >
+            <button
+              class="PFChatFooterInputSubmit"
+              @click="${()=>{const t=this.shadowRoot.getElementById("PFChatInput");if(t){const{value:e}=t;this.handleSubmit(e),setTimeout((()=>{t.value=""}),0)}}}"
+            >
+              ${nt`
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="PFChatFooterInputSubmitIcon" viewBox="0 0 44 44"><path fill="#007AFF" fill-rule="evenodd" d="M32.5 11.5a.7.7 0 0 1 .2.8l-7 20a.8.8 0 0 1-1.4 0l-3.9-8.7-8.7-4a.8.8 0 0 1 0-1.3l20-7a.7.7 0 0 1 .8.2Zm-3.4 2.3-15 5.3 6.7 3 8.3-8.3ZM22 23.2l8.3-8.3-5.3 15-3-6.7Z" clip-rule="evenodd"/></svg>
+    `}
+            </button>
+          </form>
+          ${Wt(i,(()=>nt`
+              <div class="PFChatFooterBranding">
+                <a href="${Ot()}" target="_blank" class="PFChatFooterBrandingLink">
+                    ${Ut()}
+                </a>
+              </div>
+            `),(()=>rt))}
+        </div>
+      </footer>
+    `}render(){const t=this.position;return nt`
+      <div
+        id="PFChatOverlay"
+        class="PFChatReset"
+        class="${It({PFChatReset:!0,PFChatOverlayPositionTopLeft:"top-left"===t,PFChatOverlayPositionBottomLeft:"bottom-left"===t,PFChatOverlayPositionTopRight:"top-right"===t,PFChatOverlayPositionBottomRight:"bottom-right"===t})}"
+        aria-hidden="${!this._isOpen}"
+      >
+        <section
+          id="PFChat"
+          class="PFChat"
+        >
+          ${this.cHeader()}
+
+          <div id="PFChatBody" class="PFChatBody"></div>
+
+          ${this.cFooter()}
+          
+          <img class="bg" src="${Jt}"/>
+        </section>
+      </div>
+    `}static styles=F`
+    ${jt}
+
+    .PFChatReset {
+      position: absolute;
+      opacity: 0;
+      display: none;
+      transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+
+    .PFChat {
+      all: unset;
+      position: fixed;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #e5dcd5;
+      box-shadow: 0 10px 20px -4px rgba(33, 33, 33, 0.04), 0 20px 40px -6px rgba(33, 33, 33, 0.04);
+      overflow: hidden;
+    }
+    
+    .PFChat .bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -10;
+    }
+    
+    @media (max-width: 611.2px) {
+      .PFChat {
+        inset: 0;
+      }
+    }
+    @media (min-width: 612px) {
+      .PFChat {
+        position: absolute;
+        width: 312px;
+        height: calc(100vh - 170px);
+        max-height: 555px;
+        border-radius: 20px;
+      }
+    }
+
+    .PFChatBody {
+      overflow-y: auto !important;
+      all: unset;
+      box-sizing: border-box;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    @keyframes PFChatMessageFadeIn {
+      from {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transform: translate3d(-5px, 0, 0);
+      }
+
+      to {
+        max-height: 200px;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .PFChatBodyItem {
+      all: unset;
+      display: flex;
+      padding-top: 8px;
+      position: relative;
+      animation-name: PFChatMessageFadeIn;
+      animation-duration: 1s;
+    }
+
+    .PFChatBodyItem.PFChatBodyItemMy {
+      justify-content: flex-end;
+    }
+
+    .PFChatHeader {
+      all: unset;
+      box-sizing: border-box;
+      position: sticky;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px;
+      background-color: var(--pf-chat-whatsapp-background);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .PFChatHeaderAvatarCtx {
+      all: unset;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      width: calc(100% - 40px);
+    }
+
+    .PFChatHeaderCloseCtx {
+      all: unset;
+      flex-shrink: 0;
+    }
+
+    .PFChatHeaderAvatar {
+      --s: 40px;
+
+      all: unset;
+      display: flex;
+      width: var(--s);
+      height: var(--s);
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .PFChatHeaderAvatarLabel {
+      all: unset;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: calc(100% - 40px);
+    }
+
+    .PFChatHeaderOperatorName {
+      all: unset;
+      display: inline;
+      font-family: 'SF Pro Display', sans-serif !important;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: -0.3px;
+      color: #000;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .PFChatHeaderStatus {
+      all: unset;
+      display: inline;
+      font-family: 'SF Pro Display', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #8e8e93;
+    }
+
+    .PFChatHeaderCloseButton {
+      all: unset;
+      display: flex;
+      cursor: pointer;
+    }
+
+    .PFChatHeaderCloseButtonIcon {
+      --s: 24px;
+
+      all: unset;
+      display: flex;
+      width: var(--s);
+      height: var(--s);
+      color: var(--pf-disabled);
+    }
+
+    .PFChatFooter {
+      all: unset;
+      box-sizing: border-box;
+      position: sticky;
+      z-index: 9;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .PFChatFooterCtx {
+      all: unset;
+      box-sizing: border-box;
+      padding: 12px 16px 24px 16px;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--pf-chat-whatsapp-background);
+      gap: 8px;
+    }
+
+    .PFChatFooterBranding {
+      all: unset;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: -8px;
+    }
+
+    .PFChatFooterBrandingLink {
+      all: unset;
+      display: inline-flex;
+      cursor: pointer;
+      color: #1b1b1b;
+    }
+
+    .PFChatFooterInputCtx {
+      all: unset;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .PFChatFooterInput {
+      all: unset;
+      width: 100%;
+      display: flex;
+      background: #fff;
+      border: 1px solid #e9e9e9;
+      border-radius: 18px;
+      padding: 10px 16px;
+      font-size: 16px;
+      line-height: 1;
+      font-family: 'SF Pro Display', sans-serif !important;
+      cursor: text;
+      color: var(--pf-primary);
+    }
+
+    .PFChatFooterInputSubmit {
+      all: unset;
+      flex-shrink: 0;
+      cursor: pointer;
+      margin-right: -8px;
+    }
+
+    .PFChatFooterInputSubmitIcon {
+      --s: 44px;
+
+      all: unset;
+      display: flex;
+      width: var(--s);
+      height: var(--s);
+    }
+
+    #PFChatFooterQuickAnswerCtxAnimation {
+      background-color: #ede8e6;
+      position: relative;
+      overflow: hidden;
+      max-height: 0px;
+      opacity: 0;
+      transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1), max-height 1s cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+    #PFChatFooterQuickAnswerCtxAnimation.PFChatFooterQuickAnswerCtxAnimationStart {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .PFChatFooterQuickAnswerCtx {
+      all: unset;
+      box-sizing: border-box;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .PFChatFooterQuickAnswerCtx .PFChatFooterQuickAnswer:last-child:nth-child(2n+1) {
+      grid-column: 1 / -1;
+    }
+
+    .PFChatFooterQuickAnswer {
+      all: unset;
+      user-select: none;
+      display: block;
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: #fafafa;
+      box-shadow: 0 1px 2px rgba(33, 33, 33, 0.16);
+      border-radius: 8px;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: #007aff;
+      font-family: 'Roboto', sans-serif !important;
+      cursor: pointer;
+    }
+
+    .PFChatFooterQuickAnswer:hover {
+      background-color: #037aff;
+      color: #fafafa;
+    }
+
+    .PFChatFooterQuickAnswer:active {
+      background-color: #015bc2;
+      color: #fafafa;
+    }
+
+    .PFChatMessage {
+      all: unset;
+      position: relative;
+      box-sizing: border-box;
+      display: inline-flex;
+      flex-direction: column;
+      padding: 14px 14px 27px 14px;
+      background: #fafafa;
+      border-radius: 8px;
+      margin-left: 4px;
+      max-width: calc(100% - 25px);
+      min-width: 80px;
+    }
+
+    .PFChatMessage.PFChatMessageMy {
+      margin-left: 0;
+    }
+
+    .PFChatMessageText {
+      all: unset;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 5 !important;
+      -webkit-box-orient: vertical !important;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-wrap: anywhere;
+      max-width: 100%;
+      color: #000;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      font-family: 'SF Pro Display', sans-serif !important;
+    }
+
+    .PFChatMessageTime {
+      all: unset;
+      position: absolute;
+      bottom: 10px;
+      right: 14px;
+      display: inline;
+      word-wrap: anywhere;
+      max-width: 100%;
+      color: rgba(0, 0, 0, 0.25);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+      font-family: 'SF Pro Display', sans-serif !important;
+    }
+
+    .PFChatMessageShape {
+      all: unset;
+      position: absolute;
+      z-index: 1;
+      bottom: 6px;
+      right: calc(100% - 4px);
+    }
+
+    .PFChatMessageMy .PFChatMessageShape {
+      right: auto;
+      left: calc(100% - 4px);
+      transform: scaleX(-1);
+    }
+
+    .PFChatMessageShapeIcon {
+      all: unset;
+      display: flex;
+      color: #fafafa;
+      width: 10px;
+      height: 14px;
+    }
+
+    @media (min-width: 612px) {
+      .PFChatAnimateIn {
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+        transform: translate3d(0);
+      }
+
+      .PFChatAnimateIn.PFAnimated {
+        transform: translate3d(0, 30px, 0);
+      }
+
+      .PFChatAnimateOut {
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1);
+        transform: translate3d(0, 30px, 0);
+      }
+    }
+
+    @media (min-width: 612px) {
+      .PFChatOverlayPositionTopLeft {
+        left: 50%;
+        top: calc(100% + 24px);
+      }
+
+      .PFChatOverlayPositionTopLeft .PFChat {
+        left: 0;
+        top: 0;
+      }
+
+      .PFChatOverlayPositionBottomLeft {
+        left: 50%;
+        bottom: calc(100% + 24px);
+      }
+
+      .PFChatOverlayPositionBottomLeft .PFChat {
+        left: 0;
+        bottom: 0;
+      }
+
+      .PFChatOverlayPositionTopRight {
+        right: 50%;
+        top: calc(100% + 24px);
+      }
+
+      .PFChatOverlayPositionTopRight .PFChat {
+        right: 0;
+        top: 0;
+      }
+
+      .PFChatOverlayPositionBottomRight {
+        right: 50%;
+        bottom: calc(100% + 24px);
+      }
+
+      .PFChatOverlayPositionBottomRight .PFChat {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  `}function te(t){return t.background?t.background:t.backgroundColor?t.backgroundColor:ne(t)?"#212121":"#ffffff"}function ee(t){return t.redirect||"whatsapp-and-telegram"}function ie(t){if(re(t)){const e="whatsapp"===t.redirect||"telegram"===t.redirect,i=oe(t);return e&&!i?t.redirect:void 0}if(ae(t)){const e="whatsapp"===t.redirect||"telegram"===t.redirect;return n()?e?t.redirect:void 0:e&&!oe(t)?t.redirect:void 0}}function ne(t){return t.isDark||!1}function oe(t){return t.qrCodeEnabled||!1}function re(t){return"modal"===t.format}function ae(t){return"dropdown"===t.format}function se(t){return!t.format||!("dropdown"===t.format)}function le(t,e,i,o,r,a){const s=n()?`WM${i}`:`WW${i}`;if(a)try{r.fireEvent("WP_click_widget"),l(t.id,{name:"click",wazzupId:s,hid:o}).then((e=>{e&&l(t.id,{name:"whatsapp_click",wazzupId:s,hid:o})}))}catch(t){console.log(t)}else l(t.id,{name:"whatsapp_click",wazzupId:s,hid:o});r.fireEvent("WP_click_whatsapp"),window.open(Yt(t,s,e),"_blank")}function ce(t,e,i,o,r,a){const s=n()?`WM${i}`:`WW${i}`;if(a)try{r.fireEvent("WP_click_widget"),l(t.id,{name:"click",wazzupId:s,hid:o}).then((e=>{e&&l(t.id,{name:"telegram_click",wazzupId:s,hid:o})}))}catch(t){console.log(t)}else l(t.id,{name:"telegram_click",wazzupId:s,hid:o});r.fireEvent("WP_click_telegram"),window.open(function(t,e){return t.telegramUsername.toLowerCase().endsWith("bot")?`https://t.me/${encodeURIComponent(t.telegramUsername)}?start=${e}`:`https://t.me/${encodeURIComponent(t.telegramUsername)}`}(t,s),"_blank")}function de(t,e,i){const n=e&&i?"whatsapp-and-telegram":e?"whatsapp":"telegram",o=new URL("https://widget.yourgood.app");return o.pathname="/api/qr/generate",o.searchParams.append("url",t),o.searchParams.append("type",n),o.toString()}customElements.get("pf-chat")||customElements.define("pf-chat",Xt);const ue=F`
+  .PFModalButtonWhatsapp .PFModalButtonIcon {
+    --icon: url('data:image/svg+xml,%3Csvg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M21.5732 6.91667C19.6916 5.04167 17.1829 4 14.5348 4C9.02961 4 4.56969 8.44444 4.56969 13.9306C4.56969 15.6667 5.05749 17.4028 5.89373 18.8611L4.5 24L9.79617 22.6111C11.2596 23.375 12.8624 23.7917 14.5348 23.7917C20.0401 23.7917 24.5 19.3472 24.5 13.8611C24.4303 11.2917 23.4547 8.79167 21.5732 6.91667ZM19.3432 17.4722C19.1341 18.0278 18.1585 18.5833 17.6707 18.6528C17.2526 18.7222 16.6951 18.7222 16.1376 18.5833C15.7892 18.4444 15.3014 18.3056 14.7439 18.0278C12.2352 16.9861 10.6324 14.4861 10.493 14.2778C10.3537 14.1389 9.44774 12.9583 9.44774 11.7083C9.44774 10.4583 10.0749 9.90278 10.284 9.625C10.493 9.34722 10.7718 9.34722 10.9808 9.34722C11.1202 9.34722 11.3293 9.34722 11.4686 9.34722C11.608 9.34722 11.8171 9.27778 12.0261 9.76389C12.2352 10.25 12.723 11.5 12.7927 11.5694C12.8624 11.7083 12.8624 11.8472 12.7927 11.9861C12.723 12.125 12.6533 12.2639 12.5139 12.4028C12.3746 12.5417 12.2352 12.75 12.1655 12.8194C12.0261 12.9583 11.8868 13.0972 12.0261 13.3056C12.1655 13.5833 12.6533 14.3472 13.4199 15.0417C14.3955 15.875 15.162 16.1528 15.4408 16.2917C15.7195 16.4306 15.8589 16.3611 15.9983 16.2222C16.1376 16.0833 16.6254 15.5278 16.7648 15.25C16.9042 14.9722 17.1132 15.0417 17.3223 15.1111C17.5314 15.1806 18.7857 15.8056 18.9948 15.9444C19.2735 16.0833 19.4129 16.1528 19.4826 16.2222C19.5523 16.4306 19.5523 16.9167 19.3432 17.4722Z" fill="currentColor"/%3E%3C/svg%3E%0A');
+  }
+
+  .PFModalButtonTelegram .PFModalButtonIcon {
+    --icon: url('data:image/svg+xml,%3Csvg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M21.5 7.53138L18.6528 21.3755C18.6528 21.3755 18.2544 22.3354 17.16 21.8751L10.5907 17.017L10.5602 17.0027C11.4476 16.2342 18.3286 10.2671 18.6293 9.99658C19.0949 9.57767 18.8059 9.32829 18.2653 9.64473L8.10117 15.8703L4.17987 14.5977C4.17987 14.5977 3.56277 14.386 3.5034 13.9257C3.44326 13.4646 4.20018 13.2152 4.20018 13.2152L20.1861 7.16672C20.1861 7.16672 21.5 6.60994 21.5 7.53138Z" fill="currentColor"/%3E%3C/svg%3E%0A');
+  }
+`,pe=F`
+  .PFModal:not([dark=true]),
+  .PFModal:not([dark=true]) .PFModalButtonClose {
+    background-color: var(--pf-white);
+  }
+
+  .PFModal:not([dark=true]) .PFModalHeaderTitle,
+  .PFModal:not([dark=true]) .PFModalHeaderText,
+  .PFModal:not([dark=true]) .PFModalButtonClose {
+    color: var(--pf-primary);
+  }
+
+  .PFModal:not([dark=true]) .PFModalFooter {
+    color: #1b1b1b;
+  }
+
+  .PFModal:not([dark=true]) .PFModalDualCardItemQrcode,
+  .PFModal:not([dark=true]) .PFModalSoloCardQrcode {
+    background-color: var(--pf-background);
+    color: var(--pf-secondary);
+  }
+`,he=F`
+  .PFModal[dark=true] {
+    background-color: var(--pf-grey-900);
+  }
+
+  .PFModal[dark=true] .PFModalButtonClose {
+    background-color: var(--pf-white) !important;
+    color: var(--pf-grey-900) !important;
+  }
+
+  .PFModal[dark=true] .PFModalHeaderTitle,
+  .PFModal[dark=true] .PFModalHeaderText {
+    color: var(--pf-white);
+  }
+
+  .PFModal[dark=true] .PFModalFooter {
+    color: var(--pf-white);
+  }
+
+  .PFModal[dark=true] .PFModalQrLabel {
+    color: var(--pf-white);
+  }
+
+  .PFModal[dark=true] .PFModalDualCardItemQrcode,
+  .PFModal[dark=true] .PFModalSoloCardQrcode {
+    background-color: var(--pf-grey-800);
+    color: var(--pf-grey-400);
+  }
+
+  .PFModal[dark=true] .PFModalDualCardItemQrcode {
+
+  }
+
+  @media (max-width: 959.98px) {
+    .PFModal[dark=true] .PFModalButtonClose {
+      background-color: var(--pf-white);
+      color: var(--pf-grey-900);
+
+    }
+  }
+`,fe=F`
+  .PFModal:not([data-with-branding=true]) .PFModalBody {
+    padding-bottom: calc(24px * var(--pf-modal-scale)) !important;
+  }
+
+  @media (min-width: 960px) {
+    .PFModal:not([data-with-branding=true]) .PFModalBody {
+      padding-bottom: calc(40px * var(--pf-modal-scale)) !important;
+    }
+  }
+`,ge="linear-gradient(225deg, #65cbc8 0%, #a3df89 100%)";class me extends Mt{timerIdForAnimation=null;actionBody={id:"default-uuid",redirect:"whatsapp/telegram/whatsapp-and-telegram",text:"string",backgroundPosition:"left",backgroundImage:{url:null},backgroundImageEnabled:!0,backgroundColor:"#ffffff",logoFile:{url:null},logoFileEnabled:!0,telegramButtonText:"string",telegramQrcodeText:"string",whatsappButtonText:"string",whatsappQrcodeText:"string",branding:!0,isDark:!0,background:"black",qrCodeEnabled:!0,isAppearance:!1};static properties={_isOpen:{type:Boolean},widget:{type:Object},wazzupId:{type:String},integrationsService:{type:Object},isModal:{type:Boolean},subscription:{type:Object}};constructor(){super()}afterTransition(t){t.target.classList.contains("PFHidden")&&(t.target.style.display="none")}open(t){this._isOpen=!0,this.actionBody=t;const e=this.shadowRoot.getElementById("PFModalOverlay"),i=this.shadowRoot.getElementById("PFModal");clearTimeout(this.timerIdForAnimation),e.addEventListener("transitionend",this.afterTransition,!0),e.addEventListener("webkitTransitionEnd",this.afterTransition,!0),i.classList.remove("PFModalAnimateOut"),i.classList.add("PFModalAnimateIn","PFAnimated"),e.classList.remove("PFHidden"),e.style.display="flex",this.timerIdForAnimation=setTimeout((()=>{e.style.opacity=1,i.classList.remove("PFAnimated")}),100)}close(){this._isOpen=!1,this.integrationsService.fireEvent("WP_modal_close"),this.dispatchEvent(new CustomEvent("close"));const t=this.shadowRoot.getElementById("PFModalOverlay"),e=this.shadowRoot.getElementById("PFModal");e.classList.remove("PFModalAnimateIn"),e.classList.add("PFModalAnimateOut","PFAnimated"),t.classList.add("PFHidden"),this.timerIdForAnimation=setTimeout((()=>{t.style.opacity=0,e.classList.remove("PFAnimated")}),100)}cScanQrOrJoin(){const t=Dt(this.actionBody,this.subscription),e=ee(this.actionBody),i=nt`
+      <div class="PFModalDualCardItemButton">
+        <footer class="PFModalDualCardItemButtonFooter">
+          <button
+            class="PFModalButton PFModalButtonWhatsapp"
+            @click="${this.handleWhatsappOpenClick}"
+          >
+            <div class="PFModalButtonIcon"></div>
+            <span>
+              ${this.actionBody.whatsappButtonText}
+            </span>
+          </button>
+        </footer>
+      </div>
+    `,n=nt`
+      <div class="PFModalDualCardItemButton">
+        <footer class="PFModalDualCardItemButtonFooter">
+          <button
+            class="PFModalButton PFModalButtonTelegram"
+            @click="${this.handleTelegramOpenClick}"
+          >
+            <div class="PFModalButtonIcon"></div>
+            <span>
+              ${this.actionBody.telegramButtonText}
+            </span>
+          </button>
+        </footer>
+      </div>
+    `,o=nt`
+      <button
+        class="PFModalButton ${`PFModalButton${a(ee(this.actionBody))}`}"
+        @click="${"whatsapp"===ee(this.actionBody)?this.handleWhatsappOpenClick:this.handleTelegramOpenClick}"
+      >
+        <div class="PFModalButtonIcon"></div>
+        <span>
+          ${Wt("whatsapp"===ee(this.actionBody),(()=>`${this.actionBody.whatsappButtonText}`),(()=>`${this.actionBody.telegramButtonText}`))}
+        </span>
+      </button>
+    `;let r=de((s=this.wazzupId,l=this.widget.id,`https://widget.yourgood.app/bridge?wid=${s}&sid=${l}&r=${e}`),e,e);var s,l,c,d;if(t){const i=function(t,e,i,n){return`https://widget.yourgood.app/bridge?wid=${t}&aid=${e}&r=${i}&poi=${n}`}(this.wazzupId,this.widget.id,e,(c=this.actionBody,d=t,c.personalOffers.indexOf(d)));r=de(i)}return nt`
+      <div 
+        class="PFQrActionsContainer ${ne(this.actionBody)?"dark":""} ${this.actionBody.qrCodeEnabled?"":"PFActionsContainerWithoutQr"}"
+        style="background: ${function(t){return"#ffffff"===te(t)?"#f8f9fb":"rgba(255, 255, 255, 0.2)"}(this.actionBody)}"
+      >
+        ${Wt(se(this.actionBody),(()=>nt`
+        <div class="PFQrActions">
+          <div class="${this.actionBody.qrCodeEnabled?"PFQrActionsButtonsContainer":"PFQrActionsButtonsContainerWithoutQr"}">
+            ${Wt("whatsapp-and-telegram"===ee(this.actionBody),(()=>[i,n]),(()=>o))}
+          </div>
+        </div>
+        `),(()=>rt))}
+          ${Wt(oe(this.actionBody),(()=>nt`
+              ${Wt(se(this.actionBody),(()=>nt`
+              <div class="PFQrSplit">
+                ${Wt(this.actionBody.backgroundColor!==ge,(()=>nt`
+                  <div class="PFQrSplitLine"></div>
+                  <div class="PFQrSplitLineText">${this.actionBody.separatorText?this.actionBody.separatorText:"или с телефона"}</div>
+                  <div class="PFQrSplitLine"></div>`),(()=>nt`
+                  <div class="PFQrSplitLineGreenBackground"></div>
+                  <div class="PFQrSplitLineTextGreenBackground">${this.actionBody.separatorText?this.actionBody.separatorText:"или с телефона"}</div>
+                  <div class="PFQrSplitLineGreenBackground"></div>`))}
+                    </div>
+              `),(()=>rt))}
+              
+              <div class="PFQrScan">
+                <img
+                  class="PFQrScanImage"
+                  width="152"
+                  height="152"
+                  alt=""
+                  src="${r}"
+                >
+              </div>
+            `),(()=>rt))}
+      </div>
+    `}cButtonClose(){return nt`
+      <button class="PFModalButtonClose" @click="${this.close}">
+        ${Qt("PFModalButtonCloseIcon")}
+      </button>
+    `}cBackgroundImage(){const{backgroundImage:t,backgroundImageEnabled:e}=this.actionBody;return e?nt`
+      <div class="PFModalBackground">
+        <img
+            class="PFModalBackgroundImage"
+            src="${t.url}"
+            alt=""
+        >
+      </div>
+    `:""}cLogoFile(){const{logoFile:t,logoFileEnabled:e}=this.actionBody;return e?nt`
+      <div class="PFModalHeaderLogo">
+        <img
+            class="PFModalHeaderLogoImage"
+            src="${t.url}"
+            alt=""
+        >
+      </div>
+    `:""}cFooter(){const{isTest:t}=this.actionBody;return nt`
+      <div class="${this.actionBody.backgroundColor===ge?"PFModalFooterGreen":"PFModalFooter"}">
+        <a href="${Ot()}" target="_blank">
+          ${Ut()}
+        </a>
+      </div>
+    `}render(){const{redirect:t,branding:e,backgroundImage:i,backgroundImageEnabled:n,backgroundPosition:o,backgroundColor:r,text:s,title:l,logoFile:c,logoFileEnabled:d,isAppearance:u,isTest:p}=this.actionBody,h=Dt(this.actionBody,this.subscription),f=new DOMParser,g=f.parseFromString(h?h.modal.title:l,"text/html"),m=f.parseFromString(h?h.modal.text:s,"text/html");return nt`
+      <div
+        id="PFModalOverlay"
+        class="PFModalOverlay"
+        aria-hidden="${!this._isOpen}"
+      >
+        <section
+          id="PFModal"
+          class=${It({PFModal:!0,PFModalWithoutBg:!1===n||null===i,[`PFModalBg${a(o)}`]:!u,PFModalIsAppearance:u,PFModalButtonsDisabled:!se(this.actionBody)})}
+          dark="${ne(this.actionBody)}"
+          data-with-branding="${e}"
+        >
+          ${this.cButtonClose()}
+
+          ${Wt(i&&n,(()=>this.cBackgroundImage()),(()=>rt))}
+
+          <div class="PFModalBody" style="background: ${te(this.actionBody)}">
+            <header class="PFModalHeader">
+              ${Wt(c&&d,(()=>this.cLogoFile()),(()=>rt))}
+              ${Wt(!c&&!i&&!u,(()=>nt`<div style="height: calc(56px * var(--pf-modal-scale));"></div>`),(()=>rt))}
+            <div>
+                ${Wt(l&&r!==ge,(()=>nt`<div class="PFModalHeaderTitle">${g.body}</div>`),(()=>l?nt`<div class="PFModalHeaderTitleGreen">${g.body}</div>`:rt))}
+
+                ${Wt(s&&r!==ge,(()=>nt`<div class="PFModalHeaderText"><span>${m.body}</span></div>`),(()=>nt`<div class="PFModalHeaderTextGreen"><span>${m.body}</span></div>`))}
+            </div>
+            </header>
+
+            <div>
+              ${this.cScanQrOrJoin()}
+            </div>
+
+            ${Wt(e,(()=>this.cFooter()),(()=>rt))}
+          </div>
+        </section>
+      </div>
+    `}handleWhatsappOpenClick(){le(this.widget,this.actionBody,this.wazzupId,this.hid,this.integrationsService)}handleTelegramOpenClick(){ce(this.widget,this.actionBody,this.wazzupId,this.hid,this.integrationsService)}static styles=F`
+    ${jt}
+    ${pe}
+    ${he}
+    ${ue}
+
+    .PFModalOverlay {
+      --pf-modal-scale: 1;
+      --ty: calc(-150px * var(--pf-modal-scale));
+
+      all: unset;
+      position: fixed;
+      box-sizing: border-box;
+      z-index: 9999;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.23);
+      opacity: 0;
+      transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1) opacity;
+      display: none;
+    }
+
+    .PFModal {
+      all: unset;
+      position: relative;
+      display: flex;
+      width: 100%;
+      box-shadow: 0 10px 20px 1px rgba(33, 33, 33, 0.04);
+      border-radius: calc(24px * var(--pf-modal-scale));
+      overflow: hidden;
+      flex-direction: column;
+      max-width: calc(518px * var(--pf-modal-scale));
+    }
+
+    @media (min-width: 960px) {
+      .PFModal.PFModalBgLeft,
+      .PFModal.PFModalBgRight {
+        max-height: calc(690px * var(--pf-modal-scale));
+        max-width: calc(900px * var(--pf-modal-scale));
+      }
+
+      .PFModal.PFModalBgRight {
+        flex-direction: row-reverse;
+      }
+
+      .PFModalBgLeft {
+        flex-direction: row;
+      }
+
+      .PFModal.PFModalBgLeft .PFModalBackground,
+      .PFModal.PFModalBgRight .PFModalBackground {
+        width: calc(380px * var(--pf-modal-scale));
+        height: 100%;
+      }
+    }
+
+    .PFModal.PFModalBgTop .PFModalBackground {
+      width: 100%;
+      height: calc(176px * var(--pf-modal-scale));
+    }
+
+    .PFModal.PFModalBgTop .PFModalBackground .PFModalHeader {
+      min-width: 302px;
+    }
+
+    .PFModal.PFModalBgTop {
+      flex-direction: column;
+      max-width: calc(620px * var(--pf-modal-scale));
+    }
+
+    .PFModal.PFModalBgTop:not(.PFModalWithoutBg) .PFModalHeaderLogo {
+      position: relative;
+      z-index: 1;
+      margin-top: calc(-60px * var(--pf-modal-scale));
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--pf-grey-200);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: var(--pf-white);
+      border-radius: calc(8px * var(--pf-modal-scale));
+    }
+
+    .PFModal.PFModalWithoutBg {
+      max-width: calc(518px * var(--pf-modal-scale)) !important;
+      height: auto !important;
+    }
+
+    .PFModal.PFModalWithoutBg .PFModalHeader{
+      padding-top: 24px;
+    }
+
+    .PFModal.PFModalWithoutBg .PFModalHeader:has(.PFModalHeaderLogo) {
+      padding-top: 0px;
+    }
+
+    .PFModalButtonClose {
+      --s: calc(32px * var(--pf-modal-scale));
+
+      all: unset;
+      position: absolute;
+      z-index: 2;
+      top: calc(24px * var(--pf-modal-scale));
+      right: calc(24px * var(--pf-modal-scale));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--s);
+      height: var(--s);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .PFModalButtonCloseIcon {
+      --s: calc(24px * var(--pf-modal-scale));
+
+      all: unset;
+      display: inline-block;
+      width: var(--s);
+      height: var(--s);
+    }
+
+    .PFModalBody {
+      all: unset;
+      position: relative;
+      box-sizing: border-box;
+      padding:
+          calc(24px * var(--pf-modal-scale))
+          calc(24px * var(--pf-modal-scale))
+          calc(70px * var(--pf-modal-scale))
+          calc(24px * var(--pf-modal-scale));
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: calc(24px * var(--pf-modal-scale));
+    }
+
+    .PFModalFooter {
+      all: unset;
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      bottom: calc(20px * var(--pf-modal-scale));
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .PFModalFooterGreen {
+      all: unset;
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      bottom: calc(20px * var(--pf-modal-scale));
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      color: (--pf-primary)
+    }
+
+    .PFModalFooter a {
+      color: inherit;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .PFModalFooterGreen a {
+      color: inherit;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .PFModalHeader {
+      all: unset;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: calc(16px * var(--pf-modal-scale));
+    }
+
+    .PFModalHeaderLogo {
+      all: unset;
+      box-sizing: border-box;
+      display: flex;
+      height: calc(56px * var(--pf-modal-scale));
+      max-width: calc(160px * var(--pf-modal-scale));
+      overflow: hidden;
+    }
+
+    .PFModalHeaderLogoImage {
+      all: unset;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .PFModalHeaderTitle {
+      all: unset;
+      display: block;
+      font-family: 'Roboto', sans-serif !important;
+      font-size: calc(20px * var(--pf-modal-scale));
+      line-height: calc(32px * var(--pf-modal-scale));
+      letter-spacing: calc(0.15px * var(--pf-modal-scale));
+      font-weight: 500;
+      text-align: center;
+      max-width: 100%;
+      margin-bottom: 4px;
+      word-wrap: anywhere !important;
+
+      p {
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+    }
+
+    .PFModalHeaderTitleGreen {
+      all: unset;
+      display: block;
+      font-family: 'Roboto', sans-serif !important;
+      font-size: calc(20px * var(--pf-modal-scale));
+      line-height: calc(32px * var(--pf-modal-scale));
+      letter-spacing: calc(0.15px * var(--pf-modal-scale));
+      font-weight: 500;
+      text-align: center;
+      max-width: 100%;
+      margin-bottom: 4px;
+      color: var(--pf-primary) !important;
+
+      p {
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+    }
+
+    .PFModalHeaderText {
+      all: unset;
+      display: inline-block;
+      font-family: 'Roboto', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(16px * var(--pf-modal-scale));
+      line-height: calc(24px * var(--pf-modal-scale));
+      letter-spacing: calc(0.15px * var(--pf-modal-scale));
+      word-wrap: anywhere;
+      white-space: pre-line;
+      max-width: 100%;
+
+      p {
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+    }
+
+    .PFModalHeaderTextGreen {
+      all: unset;
+      display: inline-block;
+      font-family: 'Roboto', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(16px * var(--pf-modal-scale));
+      line-height: calc(24px * var(--pf-modal-scale));
+      letter-spacing: calc(0.15px * var(--pf-modal-scale));
+      word-wrap: anywhere;
+      white-space: pre-line;
+      max-width: 100%;
+      color: var(--pf-primary) !important;
+
+      p {
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+    }
+
+    .PFModalBackground {
+      all: unset;
+      display: flex;
+      flex-shrink: 0;
+      overflow: hidden;
+      width: 100%;
+      height: calc(240px * var(--pf-modal-scale));
+    }
+
+    .PFModalBackgroundImage {
+      all: unset;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .PFModalQrLabel {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #212121;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .PFModalButton {
+      all: unset;
+      box-sizing: border-box;
+      padding: calc(6px * var(--pf-modal-scale)) calc(8px * var(--pf-modal-scale));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: calc(8px * var(--pf-modal-scale));
+      width: 100%;
+      cursor: pointer;
+      background-color: var(--pf-grey-200);
+      border-radius: calc(6px * var(--pf-modal-scale));
+      min-height: calc(48px * var(--pf-modal-scale));
+      color: var(--pf-white);
+      user-select: none;
+      font-family: 'Roboto', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(14px * var(--pf-modal-scale));
+      line-height: calc(20px * var(--pf-modal-scale));
+      letter-spacing: calc(0.17px * var(--pf-modal-scale));
+      box-shadow: 0 1px 5px rgba(89, 104, 143, 0.06);
+      word-wrap: anywhere !important;
+      text-align: center;
+    }
+
+    .PFModalButton.PFModalButtonWhatsapp {
+      background-color: var(--pf-modal-whatsapp-color);
+    }
+    .PFModalButton.PFModalButtonWhatsapp:hover {
+      background-color: #52b85c;
+    }
+    .PFModalButton.PFModalButtonWhatsapp:active {
+      background-color: #469c4e;
+    }
+
+    .PFModalButton.PFModalButtonTelegram {
+      background-color: var(--pf-modal-telegram-color);
+    }
+    .PFModalButton.PFModalButtonTelegram:hover {
+      background-color: #228cc6;
+    }
+    .PFModalButton.PFModalButtonTelegram:active {
+      background-color: #1b719f;
+    }
+
+    .PFModalButtonIcon {
+      --s: calc(28px * var(--pf-modal-scale));
+
+      all: unset;
+      box-sizing: border-box;
+      width: var(--s);
+      height: var(--s);
+      mask: var(--icon);
+      -webkit-mask: var(--icon);
+      mask-size: 100% 100%;
+      -webkit-mask-size: 100% 100%;
+      background-color: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* new qr */
+    .PFQrActionsContainer {
+      width: calc(100% - 40px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #f8f9fb;
+      border-radius: 24px;
+    }
+
+    .PFActionsContainerWithoutQr {
+      display: block !important;
+    }
+
+    .PFQrActions {
+      width: 100%;
+    }
+
+    .PFQrSplit {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      grid-gap: 12px;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .PFQrSplitLineText {
+      width: auto;
+      font-family: 'Roboto', sans-serif;
+      white-space: nowrap;
+      color: #757575;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .PFQrSplitLineTextGreenBackground {
+      font-family: 'Roboto', sans-serif;
+      width: auto;
+      white-space: nowrap;
+      color: var(--pf-primary);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .PFModal[dark=true] .PFQrSplitLineText{
+      color: #fff;
+    }
+
+    .PFQrSplitLine {
+      width: 100%;
+      height: 1px;
+      background: #e0e0e0;
+    }
+
+    .PFQrSplitLineGreenBackground {
+      width: 100%;
+      height: 1px;
+      background: #212121;
+    }
+
+    .PFQrScan {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .PFQrScanText {
+      height: 42px;
+      color: #212121;
+      text-align: center;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 143%;
+      letter-spacing: 0.17px;
+      margin: 0;
+      margin-bottom: 12px;
+    }
+
+    .PFQrActionsContainer.dark .PFQrScanText{
+      color: #fff;
+    }
+
+    .PFQrScanImage {
+      width: 152px;
+      height: 152px;
+      border-radius: 16px;
+    }
+
+    .PFQrActionsTitleContainer {
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .PFQrActionsTitleContainerWithoutQr {
+      all: unset;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .PFQrActionsTitle {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      color: #212121;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 143%;
+      letter-spacing: 0.17px;
+    }
+
+    .PFQrActionsContainer.dark .PFQrActionsTitle{
+      color: #fff;
+    }
+
+    .PFQrActionsButtonsContainer {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+    }
+
+    .PFQrActionsButtonsContainerWithoutQr {
+      all: unset;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .PFModalDualCardContainer {
+      all: unset;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .PFModalDualCardItem {
+      all: unset;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: calc(24px * var(--pf-modal-scale));
+      background-color: transparent;
+      border-width: 0;
+      box-sizing: border-box;
+      padding-top: calc(16px * var(--pf-modal-scale));
+      padding-left: calc(16px * var(--pf-modal-scale));
+      padding-right: calc(16px * var(--pf-modal-scale));
+    }
+
+    @media all and (max-width: 960px) {
+      .PFQrScan {
+        display: none;
+      }
+
+      .PFQrSplit {
+        display: none;
+      }
+
+      .PFQrActionsContainer.dark {
+        background: transparent;
+      }
+    }
+
+    .PFModalDualCardItemButtonFooter {
+      all: unset;
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+    }
+
+    .PFModalDualCardItemButton {
+      all: unset;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(16px * var(--pf-modal-scale));
+    }
+
+    .PFModalDualCardItemQrcode {
+      all: unset;
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: calc(8px * var(--pf-modal-scale));
+      padding: calc(20px * var(--pf-modal-scale)) 0;
+      border-radius: calc(4px * var(--pf-modal-scale));
+    }
+
+    .PFModalDualCardItemQrcodeFooter {
+      --s: calc(150px * var(--pf-modal-scale));
+
+      all: unset;
+      box-sizing: border-box;
+      display: inline-flex;
+      aspect-ratio: 1 / 1;
+      height: var(--s);
+      width: var(--s);
+      background-color: var(--pf-white);
+      border-radius: calc(4px * var(--pf-modal-scale));
+      overflow: hidden;
+    }
+
+    .PFModalDualCardItemQrcodeFooterImg {
+      all: unset;
+      display: inline-flex;
+      object-fit: fill;
+      width: 100%;
+      height: 100%;
+      background-color: var(--pf-white);
+      border-radius: calc(8px * var(--pf-modal-scale));
+    }
+
+    .PFModalDualCardItemQrcodeHeader {
+      all: unset;
+      display: inline-flex;
+      user-select: none;
+      font-family: 'Roboto', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(12px * var(--pf-modal-scale));
+      line-height: calc(19px * var(--pf-modal-scale));
+      padding: 0 calc(8px * var(--pf-modal-scale));
+      word-wrap: anywhere !important;
+      text-align: center;
+      max-width: calc(180px * var(--pf-modal-scale));
+    }
+
+    .PFModalSoloCardContainer {
+      all: unset;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: calc(460px * var(--pf-modal-scale));
+      padding: 0 calc(56px * var(--pf-modal-scale));
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: calc(24px * var(--pf-modal-scale));
+      margin: 0 auto;
+    }
+
+    .PFModalSoloCardButtonIcon {
+      --s: calc(20px * var(--pf-modal-scale));
+
+      all: unset;
+      display: flex;
+      width: var(--s);
+      height: var(--s);
+    }
+
+    .PFModalSoloCardQrcode {
+      all: unset;
+      position: relative;
+      box-sizing: border-box;
+      display: none;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+      padding: calc(20px * var(--pf-modal-scale)) 0;
+      gap: calc(8px * var(--pf-modal-scale));
+      border-radius: calc(4px * var(--pf-modal-scale));
+    }
+
+    @media (min-width: 960px) {
+      .PFModalDualCardItemQrcode,
+      .PFModalSoloCardQrcode {
+        display: flex;
+      }
+    }
+
+    .PFModalSoloCardQrcodeText {
+      all: unset;
+      display: inline-flex;
+      flex-direction: column;
+      user-select: none;
+      font-family: 'Roboto', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(12px * var(--pf-modal-scale));
+      line-height: calc(19px * var(--pf-modal-scale));
+      word-wrap: anywhere !important;
+      text-align: center;
+      max-width: calc(180px * var(--pf-modal-scale));
+    }
+
+    .PFModalSoloCardQrcodeImg {
+      --s: calc(160px * var(--pf-modal-scale));
+
+      all: unset;
+      flex-shrink: 0;
+      display: inline-flex;
+      width: var(--s);
+      height: var(--s);
+      background-color: var(--white);
+      border-radius: calc(4px * var(--pf-modal-scale));
+      overflow: hidden;
+    }
+
+    @media (max-width: 959.98px) {
+      .PFModalOverlay {
+        padding: 16px;
+      }
+
+      .PFModalBackground {
+        width: 100% !important;
+        height: calc(128px * var(--pf-modal-scale)) !important;
+      }
+
+      .PFModal:not(.PFModalWithoutBg) .PFModalHeaderLogo {
+        height: calc(40px * var(--pf-modal-scale));
+        max-width: calc(100px * var(--pf-modal-scale));
+        margin-top: calc(-45px * var(--pf-modal-scale)) !important;
+        position: relative;
+        z-index: 1;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--pf-grey-200);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background-color: var(--pf-white);
+        border-radius: calc(8px * var(--pf-modal-scale));
+      }
+
+      .PFModalHeaderTitle {
+        font-size: calc(18px * var(--pf-modal-scale));
+      }
+
+      .PFModalHeaderTitleGreen {
+        font-size: calc(18px * var(--pf-modal-scale));
+      }
+
+      .PFModalHeaderText {
+        font-size: calc(14px * var(--pf-modal-scale));
+        line-height: calc(20px * var(--pf-modal-scale));
+      }
+
+      .PFModalHeaderTextGreen {
+        font-size: calc(14px * var(--pf-modal-scale));
+        line-height: calc(20px * var(--pf-modal-scale));
+      }
+
+      .PFModalDualCardItemQrcode {
+        display: none;
+      }
+
+      .PFModalDualCardItem,
+      .PFModalSoloCardContainer {
+        padding: 0 !important;
+      }
+
+      .PFModalDualCardContainer {
+        grid-template-columns: 1fr;
+        gap: calc(16px * var(--pf-modal-scale));
+      }
+    }
+
+    #PFModal.PFModalIsAppearance .PFModalHeaderText {
+      font-weight: 700 !important;
+      font-size: calc(24px * var(--pf-modal-scale)) !important;
+      line-height: calc(32px * var(--pf-modal-scale)) !important;
+      letter-spacing: 0 !important;
+      margin: 0 32px;
+    }
+
+    #PFModal.PFModalIsAppearance .PFModalHeaderTextGreen {
+      font-weight: 700 !important;
+      font-size: calc(24px * var(--pf-modal-scale)) !important;
+      line-height: calc(32px * var(--pf-modal-scale)) !important;
+      letter-spacing: 0 !important;
+      margin: 0 32px;
+    }
+
+    #PFModal.PFModalIsAppearance .PFModalBody {
+      gap: calc(16px * var(--pf-modal-scale)) !important;
+    }
+
+    .PFModalAnimateIn {
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.3);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .PFModalAnimateIn.PFAnimated {
+      transform: translate3d(0, var(--ty), 0);
+    }
+
+    .PFModalAnimateOut {
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1);
+      transform: translate3d(0, var(--ty), 0);
+    }
+    
+    .PFModalButtonsDisabled {
+      width: 480px !important;
+    }
+
+    ${fe}
+  `}customElements.get("pf-modal")||customElements.define("pf-modal",me),customElements.get("pf-default")||customElements.define("pf-default",class extends me{});const ve=["https://widget.profeat.team/","https://widget.yourgood.app/"],we=["#open","#whatsapp","#telegram"];function ye(){return nt`
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" class="pfWidgetIcon" viewBox="0 0 40 40"><path fill="#25D366" d="m31 10-2-2-9 9-10-9-2 2 9 10-9 9 2 2 10-9 9 9 2-2-9-9 9-10Z"/></svg>
+    `}const be=new Map;be.set("default","pf-default"),be.set("message","pf-message"),be.set("chat","pf-chat"),be.set("modal","pf-modal");class Pe extends Mt{_isMenuOpen=!1;static properties={widget:{type:Object},wazzupId:{type:String},hid:{type:String},integrationsService:{type:Object},subscription:{type:Object},anyActionPassed$:{type:Object},modalStateChange$:{type:Object},tests:{type:Object}};constructor(){super()}getBodyForDefaultModal(){const{appearance:{desktop:t}}=this.widget,e=this.widget.whatsappGreetingMessage,i=t.separatorText?t.separatorText:"или с телефона";return{redirect:t.redirect,backgroundPosition:"top",text:t.modal_title,format:t.format,whatsappButtonText:t.whatsappBtn,whatsappQrcodeText:t.whatsappText,telegramButtonText:t.telegramBtn,telegramQrcodeText:t.telegramText,separatorText:i,isDark:t.isDarkMode,background:t.background,branding:t.branding,whatsappGreetingMessage:e,backgroundImage:void 0,logoFile:void 0,isAppearance:!0,qrCodeEnabled:t.qrCodeEnabled,personalOffers:[]}}getBodyForMyButtonModal(t){const{appearance:e}=this.widget,i=e?.myButton||{},n=this.widget.whatsappGreetingMessage;let o=i.redirect||"whatsapp-and-telegram";"whatsapp-and-telegram"!==o||this.widget.whatsappReady&&this.widget.telegramReady?"whatsapp"!==o||this.widget.whatsappReady?"telegram"!==o||this.widget.telegramReady||(o="whatsapp"):o="telegram":o=this.widget.whatsappReady?"whatsapp":"telegram","open"===t&&this.widget.telegramReady&&this.widget.whatsappReady&&(o="whatsapp-and-telegram"),"telegram"===t&&this.widget.telegramReady&&(o="telegram"),"whatsapp"===t&&this.widget.whatsappReady&&(o="whatsapp");const r=this.isSubscriptionExpired();let a=i.qrCodeEnabled;(void 0===a||r)&&(a=!0);let s=i.branding;return(void 0===s||r)&&(s=!0),{redirect:o,backgroundPosition:"top",text:i.modal_title||"Мы на связи в мессенджерах",format:"modal",whatsappButtonText:i.whatsappBtn||"Написать в WhatsApp",whatsappQrcodeText:"",telegramButtonText:i.telegramBtn||"Написать в Telegram",telegramQrcodeText:"",separatorText:i.separatorText||"или с телефона",isDark:i.isDarkMode||!1,background:i.background||"#ffffff",branding:s,whatsappGreetingMessage:n,backgroundImage:void 0,logoFile:void 0,isAppearance:!0,qrCodeEnabled:a,personalOffers:[]}}isSubscriptionExpired(){if(!this.subscription)return!0;if(!this.subscription.subscriptionPlan)return!0;return new Date(this.subscription.subscriptionPlan.dueDate).getTime()<Date.now()}open(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"pf-default",e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null,i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];const n=this.shadowRoot.querySelector(t),o=e||this.getBodyForDefaultModal();n&&(n.open(o),i&&this.integrationsService.fireEvent("WP_click_widget"))}closeModal(){this.shadowRoot.querySelector("pf-default").close()}mixedClick(){const t=this.getBodyForDefaultModal(),e=ie(t);e?"whatsapp"===e?le(this.widget,t,this.wazzupId,this.hid,this.integrationsService,e):"telegram"===e&&ce(this.widget,0,this.wazzupId,this.hid,this.integrationsService,e):n()||ae(t)?(l(this.widget.id,{name:"click",wazzupId:this.wazzupId,hid:this.hid}),this.openDropdown()):(l(this.widget.id,{name:"click",wazzupId:this.wazzupId,hid:this.hid}),this.open())}qrClick(){this.open()}menuClick(){const t=this.getBodyForDefaultModal(),e=ie(t);e?"whatsapp"===e?le(this.widget,t,this.wazzupId,this.hid,this.integrationsService,e):"telegram"===e&&ce(this.widget,0,this.wazzupId,this.hid,this.integrationsService,e):(l(this.widget.id,{name:"click",wazzupId:this.wazzupId,hid:this.hid}),re(t)?this.open():ae(t)&&this.openDropdown())}openDropdown(){this.integrationsService.fireEvent("WP_click_widget"),this._isMenuOpen=!this._isMenuOpen;this.shadowRoot.getElementById("PWPreviewWidgetButton").classList.toggle("PWPreviewWidgetButtonIsHidden",this._isMenuOpen);this.shadowRoot.getElementById("PWPreviewWidgetButtonMobileMenu").classList.toggle(`${this.getYNamePositionWidget()}PWPreviewWidgetButtonMobileMenuIsActive`,this._isMenuOpen)}telegramClick(){const t=this.getBodyForDefaultModal(),e=ie(t);ce(this.widget,0,this.wazzupId,this.hid,this.integrationsService,e)}whatsappClick(){const t=this.getBodyForDefaultModal(),e=ie(t);le(this.widget,t,this.wazzupId,this.hid,this.integrationsService,e)}convertDataProfeatToHref(t){t.forEach((t=>{t.hasAttribute("href")&&(t.setAttribute("data-profeat",t.getAttribute("href")),t.removeAttribute("href"))}))}initMagicUrlListener(){const t=[];function e(e){document.querySelectorAll(e).forEach((function(e){t.includes(e)||t.push(e)}))}ve.forEach((t=>{we.forEach((i=>{e(`[data-profeat="${t}${i}"]`),e(`[href="${t}${i}"]`)}))})),this.convertDataProfeatToHref(t);for(let e=0;e<t.length;e++)t[e].addEventListener("click",(t=>{this.onMagicUrlElementClick(t,this)}))}onMagicUrlElementClick(t,e){t.preventDefault(),t.stopPropagation();let i=null;if(ve.some((e=>we.some((n=>{const o=`[data-profeat="${e}${n}"]`;return i=t.target.closest(o),null!==i})))),!i)return;const o=i.getAttribute("href")||i.getAttribute("data-profeat")||i.closest("a").href,r=o?.split("#")[1],a=e.getBodyForMyButtonModal(r);switch(r){case"open":if(e.widget.whatsappReady&&e.widget.telegramReady||a.qrCodeEnabled&&!n())return e.open("pf-default",{...a});if(e.widget.whatsappReady)return e.whatsappClick();if(e.widget.telegramReady)return e.telegramClick();break;case"whatsapp":if(!e.widget.whatsappReady)break;if(!a.qrCodeEnabled||n())return e.whatsappClick();e.open("pf-default",{...e.getBodyForMyButtonModal("whatsapp")});break;case"telegram":if(!e.widget.telegramReady)break;if(!a.qrCodeEnabled||n())return e.telegramClick();e.open("pf-default",{...e.getBodyForMyButtonModal("telegram")})}}setWidgetVisibility(t){const e=this.shadowRoot.getElementById("PWPreviewWidgetButtonWrapper");e&&(t?e.classList.add("PWPreviewWidgetButtonWrapperVisible"):e.classList.remove("PWPreviewWidgetButtonWrapperVisible"))}connectedCallback(){super.connectedCallback(),this.initMagicUrlListener();const t=!this.isSubscriptionExpired()&&this.widget.hidden;t&&document.addEventListener("hideWidgetComponent",(()=>{this.setWidgetVisibility(!1)})),setTimeout((()=>{t||this.setWidgetVisibility(!0),this.anyActionPassed$.subscribe((e=>{if(e.showOncePerVisit){const t="pf_widget_show",i=window.sessionStorage.getItem(t)||"";if(i.includes(e.type))return;window.sessionStorage.setItem(t,i+e.type)}const i=be.get(e.type);"pf-chat"!==i&&"pf-message"!==i||!t||this.setWidgetVisibility(!0);const n="default"!==e.type?e[`actionType${a(e.type)}`]:this.getBodyForDefaultModal();n.actionId=e.id,this.open(i,n,!1)})),this.modalStateChange$.subscribe((t=>{t?this.open("pf-default"):(this._isOpen=!1,this.closeModal())}))}),0)}getSizeWidget(){const{appearance:t}=this.widget,e=t[n()?"mobile":"desktop"]?.size;return this.size||e||50}getPositionWidget(){const{appearance:t}=this.widget,e=t[n()?"mobile":"desktop"]?.position;return e||"bottom-right"}getCoordinate(t){const{appearance:e}=this.widget,i=e[n()?"mobile":"desktop"][`gap_${t}`];return this[t]||i||25}getYNamePositionWidget(){return this.getPositionWidget().includes("top")?"top":"bottom"}getTransformWidget(){let t=this.getCoordinate("x"),e=this.getCoordinate("y");const i=this.getSizeWidget(),n=this.getPositionWidget(),o=n.includes("top")?"top":"bottom";switch(n){case"top-left":case"bottom-left":t=`${t}px`,e=`${e}px`;break;default:t=`calc(100% - ${t}px - ${i}px)`,e=`${e}px`}return{left:t,[o]:e}}cDesktopMenu(){const t=16,e=this.getBodyForDefaultModal(),i=ee(e),n=oe(e),o=i.includes("whatsapp"),r=i.includes("telegram"),a=this.getPositionWidget(),s=a.includes("top")?1:0,l=this.getSizeWidget(),c=l+t,d={80:8,64:4,50:-4}[l],u=a.includes("left")?"left":"right",p=a.includes("top")?"top":"bottom",h=o&&r?"в WhatsApp и Telegram":r?"в Telegram":"в Whatsapp",f=o&&r?289:222,g=a.includes("top")?16:0;let m=n?{"--y":c*("bottom"===p?1:2)+s-g+"px"}:{"--y":c*("bottom"===p?0:1)+s-g+"px"},v=n?{"--y":c*("bottom"===p?2:3)+s-g+"px"}:{"--y":c*("bottom"===p?1:2)+s-g+"px"};const w={"--y":c*s-g+"px"};return nt`
+      <div
+        id="PWPreviewWidgetButtonMobileMenu"
+        class="PWPreviewWidgetButtonMobileMenu"
+        class="${It({PWPreviewWidgetButtonMobileMenu:!0,[`${this.getYNamePositionWidget()}PWPreviewWidgetButtonMobileMenu`]:!0})}"
+      >
+        <div class="PWPreviewWidgetButton">
+          ${ye()}
+        </div>
+
+        ${(()=>o&&r?nt`
+          <button
+            class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeTelegram"
+            style="${zt({...m})}"
+            @click="${this.telegramClick}"
+          >
+            ${this.cIconWidget(!1)}
+            ${this.cWaveWidget("telegram")}
+          </button>
+          <div class="PWPreviewTooltip" style="${p}: ${c*((n?1:0)+s)+t+d-g}px; ${u}: ${c}px;">Написать в Telegram</div>
+
+          <button
+            class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeWhatsapp"
+            style="${zt({...v})}"
+            @click="${this.whatsappClick}"
+          >
+            ${this.cIconWidget(!0)}
+            ${this.cWaveWidget("whatsapp")}
+          </button>
+          <div class="PWPreviewTooltip" style="${p}: ${c*((n?2:1)+s)+t+d-g}px; ${u}: ${c}px;">Написать в Whatsapp</div>
+      `:r?nt`
+          <button
+            class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeTelegram"
+            style="${zt({...m})}"
+            @click="${this.telegramClick}"
+          >
+            ${this.cIconWidget(!1)}
+            ${this.cWaveWidget("telegram")}
+          </button>
+          <div class="PWPreviewTooltip" style="${p}: ${c*(1+s)+t+d-g}px; ${u}: ${c}px;">Написать в Telegram</div>
+        `:nt`
+          <button
+            class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeWhatsapp"
+            style="${zt({...m})}"
+            @click="${this.whatsappClick}"
+          >
+            ${this.cIconWidget(!0)}
+            ${this.cWaveWidget("whatsapp")}
+          </button>
+          <div class="PWPreviewTooltip" style="${p}: ${c*(1+s)+t+d-g}px; ${u}: ${c}px;">Написать в Whatsapp</div>
+        `)()}
+            
+        ${(()=>n?nt`
+          <button
+              class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeQr"
+              style="${zt({...w})}"
+              @click="${this.qrClick}"
+          >
+            ${this.cIconWidget(!1,!0)}
+            ${this.cWaveWidget("qr")}
+          </button>
+        `:nt``)()}
+
+        <div class="PWPreviewTooltip" style="${p}: ${c*s+t+d-g}px; ${u}: ${c}px; width: ${f}px;">QR-код для перехода ${h}</div>
+      </div>
+    `}cModalSlot(){return nt`
+      <pf-default
+        .widget="${this.widget}"
+        .wazzupId="${this.wazzupId}"
+        .hid="${this.hid}"
+        .integrationsService="${this.integrationsService}",
+        .isModal="${!1}"
+        .subscription="${this.subscription}"
+      ></pf-default>
+      <pf-modal
+        .widget="${this.widget}"
+        .wazzupId="${this.wazzupId}"
+        .hid="${this.hid}"
+        .integrationsService="${this.integrationsService}",
+        .isModal="${!0}"
+        .subscription="${this.subscription}"
+      ></pf-modal>
+    `}cInWidgetSlot(){const t=this.getPositionWidget();return nt`
+      <pf-message
+          .widget="${this.widget}"
+          .position="${t}"
+          .subscription="${this.subscription}"
+      ></pf-message>
+
+      <pf-chat
+          .widget="${this.widget}"
+          .wazzupId="${this.wazzupId}"
+          .hid="${this.hid}"
+          .integrationsService="${this.integrationsService}"
+          .position="${t}"
+          .subscription="${this.subscription}"
+      ></pf-chat>
+    `}cImageGifWidget(){const t=ee(this.getBodyForDefaultModal());return nt`
+      <img
+          class="PWPreviewWidgetButtonGif"
+          src="${"whatsapp-and-telegram"===t?Ct:"whatsapp"===t?kt:At}"
+          alt="Mixed logo"
+      >
+    `}cIconWidget(){return arguments.length>1&&void 0!==arguments[1]&&arguments[1]?nt`
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fff" class="PWPreviewWidgetButtonIcon" viewBox="0 0 40 40"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9.3 10.7a1.3 1.3 0 0 1 1.4-1.4H16a1.3 1.3 0 0 1 1.3 1.4V16a1.3 1.3 0 0 1-1.3 1.3h-5.3A1.3 1.3 0 0 1 9.3 16v-5.3ZM13.3 26.7v0M22.7 10.7A1.3 1.3 0 0 1 24 9.3h5.3a1.3 1.3 0 0 1 1.4 1.4V16a1.3 1.3 0 0 1-1.4 1.3H24a1.3 1.3 0 0 1-1.3-1.3v-5.3ZM13.3 13.3v0M9.3 24a1.3 1.3 0 0 1 1.4-1.3H16a1.3 1.3 0 0 1 1.3 1.3v5.3a1.3 1.3 0 0 1-1.3 1.4h-5.3a1.3 1.3 0 0 1-1.4-1.4V24ZM26.7 13.3v0M22.7 22.7h4M30.7 22.7v0M22.7 22.7v4M22.7 30.7h4M26.7 26.7h4M30.7 26.7v4"/></svg>
+      `:nt`
+      ${Wt(arguments.length>0&&void 0!==arguments[0]&&arguments[0],(()=>nt`
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="PWPreviewWidgetButtonIcon" viewBox="0 0 110 110"><path fill="currentColor" d="M87 23a44 44 0 0 0-32-13 44 44 0 0 0-38 67l-7 23 24-7c6 4 14 6 21 6a44 44 0 0 0 32-76ZM55 91c-6 0-13-1-19-5l-1-1-14 4 4-13-1-2c-4-6-6-12-6-19a37 37 0 0 1 74 0c0 20-16 36-37 36Zm20-27-7-4-3 1-3 4h-3c-1 0-4-1-8-5-4-3-6-7-7-8l1-2 1-2 2-2v-2l-4-8-2-2h-3a4 4 0 0 0-3 2c-1 1-3 3-3 9 0 5 4 10 4 11 1 1 8 12 19 17l6 2 7 1c3-1 7-3 8-6l1-5-3-1Z"/></svg>
+    `),(()=>nt`
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="PWPreviewWidgetButtonIcon" viewBox="0 0 110 110"><path fill="currentColor" d="M8 55a3953 3953 0 0 1 78-32l4 1 1 2v4l-9 59c-1 7-4 9-6 9-5 0-8-3-13-6L45 79c-8-5-3-8 2-13l22-22v-2h-2a845 845 0 0 0-43 26c-3 0-9-1-13-3-5-1-9-2-9-5 0-2 2-3 6-5Z"/></svg>
+    `))}
+      </svg>
+    `}cWaveWidget(t){return nt`
+      <div
+          class="${It({PWPreviewWidgetButtonWaveColor:!0,PWPreviewWidgetButtonWaveColorWhatsapp:"whatsapp"===t,PWPreviewWidgetButtonWaveColorTelegram:"telegram"===t,PWPreviewWidgetButtonWaveColorMulti:"mixed"===t,PWPreviewWidgetButtonWaveColorQr:"qr"===t})}"
+      >
+        <div class="PWPreviewWidgetButtonWave"></div>
+      </div>
+    `}cMobileMenu(){const t=ee(this.getBodyForDefaultModal()),e=this.getSizeWidget(),i=e+16,n=this.getPositionWidget();let o={"--y":`${n.includes("bottom")?0:i}px`},r={"--y":`${n.includes("bottom")?i:2*i}px`};return"whatsapp"===t&&(o={"--y":i-e+"px"}),"telegram"===t&&(r={"--y":i-e+"px"}),nt`
+      <div
+          id="PWPreviewWidgetButtonMobileMenu"
+          class="PWPreviewWidgetButtonMobileMenu"
+          class="${It({PWPreviewWidgetButtonMobileMenu:!0,[`${this.getYNamePositionWidget()}PWPreviewWidgetButtonMobileMenu`]:!0})}"
+      >
+        <div class="PWPreviewWidgetButton">
+          ${ye()}
+        </div>
+
+        <button
+            class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeWhatsapp"
+            style="${zt({...o})}"
+            @click="${this.whatsappClick}"
+        >
+          ${this.cIconWidget(!0)}
+          ${this.cWaveWidget("whatsapp")}
+        </button>
+
+        <button
+            class="PWPreviewWidgetButton PWPreviewWidgetButtonAnime PWPreviewWidgetButtonTypeTelegram"
+            style="${zt({...r})}"
+            @click="${this.telegramClick}"
+        >
+          ${this.cIconWidget(!1)}
+          ${this.cWaveWidget("telegram")}
+        </button>
+      </div>
+    `}render(){const{whatsappReady:t,telegramReady:e,hidden:i,appearance:o}=this.widget,r=o?.desktop?.redirect;let a="whatsapp-and-telegram"===r?"mixed":"whatsapp"===r?"whatsapp":"telegram"===r?"telegram":null;a||(a=t&&e?"mixed":t&&!e?"whatsapp":e?"telegram":null),n()||!t&&!e||(a="menu");const s={mixed:this.mixedClick,whatsapp:this.whatsappClick,telegram:this.telegramClick,menu:this.menuClick},l=this.getSizeWidget(),c=this.getTransformWidget(),d=s[a];if(a)return nt`
+      ${this.cModalSlot()}
+
+      ${nt`
+          <section
+            id="PWPreviewWidgetButtonWrapper"
+            class="PWPreviewWidgetButtonWrapper"
+            style="${zt({width:`${l}px`,height:`${l}px`,...c})}"
+          >
+            <button
+              id="PWPreviewWidgetButton"
+              class="${It({PWPreviewWidgetButton:!0,PWPreviewWidgetButtonTypeWhatsapp:t&&!e,PWPreviewWidgetButtonTypeTelegram:e&&!t})}"
+              @click="${d}"
+            >
+              ${Wt(t&&e,(()=>this.cImageGifWidget()),(()=>this.cIconWidget(t)))}
+
+              ${this.cWaveWidget(a)}
+            </button>
+
+            ${n()?this.cMobileMenu():this.cDesktopMenu()}
+
+            ${this.cInWidgetSlot()}
+          </section>
+        `}
+      `}static styles=F`
+    .PWPreviewWidgetButtonWrapper {
+      all: unset;
+      position: fixed;
+      display: none;
+      aspect-ratio: 1 / 1;
+      z-index: 2147483646;
+    }
+
+    .PWPreviewWidgetButtonWrapperVisible {
+      display: flex;
+    }
+
+    .PWPreviewWidgetButton {
+      all: unset;
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.5), opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1);
+      transform: scale(1);
+      color: white;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .PWPreviewWidgetButton:focus,
+    .PWPreviewWidgetButton:active {
+      outline: none;
+    }
+
+    .PWPreviewWidgetButtonMobileMenu {
+      all: unset;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    .PWPreviewWidgetButtonMobileMenu .PWPreviewWidgetButton {
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.5), opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1), top 1s cubic-bezier(0.175, 0.885, 0.32, 1), bottom 1s cubic-bezier(0.175, 0.885, 0.32, 1);
+      pointer-events: none;
+    }
+
+    .topPWPreviewWidgetButtonMobileMenu .PWPreviewWidgetButtonAnime {
+      top: 0;
+    }
+
+    .bottomPWPreviewWidgetButtonMobileMenu .PWPreviewWidgetButtonAnime {
+      top: 0;
+      bottom: 0;
+    }
+
+    .bottomPWPreviewWidgetButtonMobileMenuIsActive .PWPreviewWidgetButton,
+    .topPWPreviewWidgetButtonMobileMenuIsActive .PWPreviewWidgetButton {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .topPWPreviewWidgetButtonMobileMenuIsActive .PWPreviewWidgetButtonAnime {
+      top: var(--y);
+    }
+
+    .bottomPWPreviewWidgetButtonMobileMenuIsActive .PWPreviewWidgetButtonAnime {
+      bottom: var(--y);
+      top: initial;
+    }
+
+    .PWPreviewWidgetButtonMobileMenu .PWPreviewWidgetButton {
+      z-index: 2;
+    }
+
+    .PWPreviewWidgetButtonIsHidden {
+      opacity: 0 !important;
+    }
+
+    .PWPreviewWidgetButton:hover {
+      transform: scale(1.15);
+    }
+
+    .PWPreviewTooltip {
+      display: none;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      min-width: 142px;
+      border-radius: 4px;
+      font-size: 12px;
+      box-shadow: 0 4px 8px 0 #59688F29;
+      font-family: Roboto, sans-serif;
+      background: #fff;
+      color: black;
+    }
+
+    .PWPreviewWidgetButton:hover + .PWPreviewTooltip {
+      display: flex;
+    }
+
+    .PWPreviewWidgetQrTooltipShow {
+      display: flex;
+    }
+
+    .PWPreviewWidgetButton:active {
+      transform: scale(1.2);
+    }
+
+    .PWPreviewWidgetButtonTypeWhatsapp,
+    .PWPreviewWidgetButtonTypeTelegram,
+    .PWPreviewWidgetButtonTypeQr {
+      border-radius: 50%;
+    }
+
+    .PWPreviewWidgetButtonTypeWhatsapp::before,
+    .PWPreviewWidgetButtonTypeTelegram::before,
+    .PWPreviewWidgetButtonTypeQr::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      max-width: calc(100% - 6px);
+      aspect-ratio: 1 / 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .PWPreviewWidgetButtonTypeWhatsapp {
+      background: linear-gradient(#86ffb3 0%, #26d367 100%);
+    }
+
+    .PWPreviewWidgetButtonTypeWhatsapp::before {
+      background-color: #26d367;
+    }
+
+    .PWPreviewWidgetButtonTypeTelegram {
+      background: linear-gradient(#5dc9ff 0%, #08c 100%);
+    }
+
+    .PWPreviewWidgetButtonTypeTelegram::before {
+      background-color: #08c;
+    }
+
+    .PWPreviewWidgetButtonTypeQr {
+      background: linear-gradient(#898989 0%, #161616 100%);
+      z-index: 10;
+    }
+
+    .PWPreviewWidgetButtonTypeQr::before {
+      background-color: #212121;
+    }
+
+    .PWPreviewWidgetButtonGif {
+      all: unset;
+      display: block;
+      max-width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .PWPreviewWidgetButtonIcon {
+      all: unset;
+      position: relative;
+      z-index: 1;
+      display: block;
+      max-width: 68%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .PWPreviewWidgetButtonWaveColor {
+      all: unset;
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      color: white;
+    }
+
+    .PWPreviewWidgetButtonWaveColorWhatsapp {
+      color: #26d367;
+    }
+
+    .PWPreviewWidgetButtonWaveColorTelegram {
+      color: #08c;
+    }
+
+    .PWPreviewWidgetButtonWaveColorQr {
+      color: #212121;
+    }
+
+    @keyframes PWPreviewWidgetButtonWaveColorMulti {
+      from {
+        color: #08c;
+      }
+
+      22% {
+        color: #08c;
+      }
+
+      28.8% {
+        color: #25d366;
+      }
+
+      82% {
+        color: #25d366;
+      }
+
+      88% {
+        color: #08c;
+      }
+
+      to {
+        color: #08c;
+      }
+    }
+
+    .PWPreviewWidgetButtonWaveColorMulti {
+      animation: PWPreviewWidgetButtonWaveColorMulti 10s linear infinite;
+    }
+
+    @keyframes PWPreviewWidgetButtonWaveSonic {
+      from {
+        transform: scale(1);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1);
+        opacity: 0;
+      }
+
+      70% {
+        opacity: 0.4;
+      }
+
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    .PWPreviewWidgetButtonWave {
+      all: unset;
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background: radial-gradient(rgb(255, 255, 255, 0), currentColor);
+      animation: PWPreviewWidgetButtonWaveSonic 4s ease infinite;
+    }
+  `}customElements.get("pf-widget")||customElements.define("pf-widget",Pe);class xe{integrations=[];constructor(t){this.integrations=t}insertIntegrations(){const t={ym:this.#t,ga:this.#e,callTouch:()=>{},coMagic:()=>{},uis:()=>{},callTracking:()=>{}};for(const e of this.integrations)t[e.type](e)}#e(t){if(!window.gtag){const e=document.createElement("script");function i(){dataLayer.push(arguments)}e.src=`https://www.googletagmanager.com/gtag/js?id=${t.ga.counter}`,e.async=!0,document.head.appendChild(e),window.dataLayer=window.dataLayer||[],i("js",new Date),window.gtag=i,window.gtag("config",t.ga.counter)}}#t(t){!function(t,e,i,n,o,r,a){t[o]=t[o]||function(){(t[o].a=t[o].a||[]).push(arguments)},t[o].l=1*new Date;for(var s=0;s<document.scripts.length;s++)if(document.scripts[s].src===n)return;r=e.createElement(i),a=e.getElementsByTagName(i)[0],r.async=1,r.src=n,a.parentNode.insertBefore(r,a)}(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),window.ym(t.ym.counter,"init",{webvisor:!0,clickmap:!0,accurateTrackBounce:!0})}fireEvent(t){this.integrations.forEach((e=>{switch(e.type){case"ym":e.ym.isApi&&t.includes("WP_dialog")||window.ym(e.ym.counter,"reachGoal",t);break;case"ga":e.ga.isApi&&t.includes("WP_dialog")||window.gtag("event",t,{send_to:e.ga.counter});break;case"uis":case"coMagic":window.Comagic&&window.Comagic.trackEvent("profeat",t)}}))}handleDialogEvents(t){for(const e of t)"telegram"===e.transport?this.fireEvent("WP_dialog_telegram"):this.fireEvent("WP_dialog_whatsapp")}}const Fe={every:t=>Object.values(t).every((t=>!0===t)),any:t=>Object.values(t).some((t=>!0===t))};function Me(t){return"function"==typeof t}function $e(t){return function(e){if(function(t){return Me(null==t?void 0:t.lift)}(e))return e.lift((function(e){try{return t(e,this)}catch(t){this.error(t)}}));throw new TypeError("Unable to lift unknown Observable type")}}var Ce=function(t,e){return Ce=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&(t[i]=e[i])},Ce(t,e)};function ke(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Class extends value "+String(e)+" is not a constructor or null");function i(){this.constructor=t}Ce(t,e),t.prototype=null===e?Object.create(e):(i.prototype=e.prototype,new i)}function Ae(t,e,i,n){return new(i||(i=Promise))((function(o,r){function a(t){try{l(n.next(t))}catch(t){r(t)}}function s(t){try{l(n.throw(t))}catch(t){r(t)}}function l(t){var e;t.done?o(t.value):(e=t.value,e instanceof i?e:new i((function(t){t(e)}))).then(a,s)}l((n=n.apply(t,e||[])).next())}))}function We(t,e){var i,n,o,r,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return r={next:s(0),throw:s(1),return:s(2)},"function"==typeof Symbol&&(r[Symbol.iterator]=function(){return this}),r;function s(s){return function(l){return function(s){if(i)throw new TypeError("Generator is already executing.");for(;r&&(r=0,s[0]&&(a=0)),a;)try{if(i=1,n&&(o=2&s[0]?n.return:s[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,s[1])).done)return o;switch(n=0,o&&(s=[2&s[0],o.value]),s[0]){case 0:case 1:o=s;break;case 4:return a.label++,{value:s[1],done:!1};case 5:a.label++,n=s[1],s=[0];continue;case 7:s=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==s[0]&&2!==s[0])){a=0;continue}if(3===s[0]&&(!o||s[1]>o[0]&&s[1]<o[3])){a.label=s[1];break}if(6===s[0]&&a.label<o[1]){a.label=o[1],o=s;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(s);break}o[2]&&a.ops.pop(),a.trys.pop();continue}s=e.call(t,a)}catch(t){s=[6,t],n=0}finally{i=o=0}if(5&s[0])throw s[1];return{value:s[0]?s[1]:void 0,done:!0}}([s,l])}}}Object.create;function Be(t){var e="function"==typeof Symbol&&Symbol.iterator,i=e&&t[e],n=0;if(i)return i.call(t);if(t&&"number"==typeof t.length)return{next:function(){return t&&n>=t.length&&(t=void 0),{value:t&&t[n++],done:!t}}};throw new TypeError(e?"Object is not iterable.":"Symbol.iterator is not defined.")}function _e(t,e){var i="function"==typeof Symbol&&t[Symbol.iterator];if(!i)return t;var n,o,r=i.call(t),a=[];try{for(;(void 0===e||e-- >0)&&!(n=r.next()).done;)a.push(n.value)}catch(t){o={error:t}}finally{try{n&&!n.done&&(i=r.return)&&i.call(r)}finally{if(o)throw o.error}}return a}function Se(t,e,i){if(i||2===arguments.length)for(var n,o=0,r=e.length;o<r;o++)!n&&o in e||(n||(n=Array.prototype.slice.call(e,0,o)),n[o]=e[o]);return t.concat(n||Array.prototype.slice.call(e))}function Ie(t){return this instanceof Ie?(this.v=t,this):new Ie(t)}function Te(t,e,i){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var n,o=i.apply(t,e||[]),r=[];return n={},a("next"),a("throw"),a("return"),n[Symbol.asyncIterator]=function(){return this},n;function a(t){o[t]&&(n[t]=function(e){return new Promise((function(i,n){r.push([t,e,i,n])>1||s(t,e)}))})}function s(t,e){try{!function(t){t.value instanceof Ie?Promise.resolve(t.value.v).then(l,c):d(r[0][2],t)}(o[t](e))}catch(t){d(r[0][3],t)}}function l(t){s("next",t)}function c(t){s("throw",t)}function d(t,e){t(e),r.shift(),r.length&&s(r[0][0],r[0][1])}}function Ee(t){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var e,i=t[Symbol.asyncIterator];return i?i.call(t):(t=Be(t),e={},n("next"),n("throw"),n("return"),e[Symbol.asyncIterator]=function(){return this},e);function n(i){e[i]=t[i]&&function(e){return new Promise((function(n,o){(function(t,e,i,n){Promise.resolve(n).then((function(e){t({value:e,done:i})}),e)})(n,o,(e=t[i](e)).done,e.value)}))}}}Object.create;"function"==typeof SuppressedError&&SuppressedError;function ze(t){var e=t((function(t){Error.call(t),t.stack=(new Error).stack}));return e.prototype=Object.create(Error.prototype),e.prototype.constructor=e,e}var Oe=ze((function(t){return function(e){t(this),this.message=e?e.length+" errors occurred during unsubscription:\n"+e.map((function(t,e){return e+1+") "+t.toString()})).join("\n  "):"",this.name="UnsubscriptionError",this.errors=e}}));function Le(t,e){if(t){var i=t.indexOf(e);0<=i&&t.splice(i,1)}}var He=function(){function t(t){this.initialTeardown=t,this.closed=!1,this._parentage=null,this._finalizers=null}return t.prototype.unsubscribe=function(){var t,e,i,n,o;if(!this.closed){this.closed=!0;var r=this._parentage;if(r)if(this._parentage=null,Array.isArray(r))try{for(var a=Be(r),s=a.next();!s.done;s=a.next()){s.value.remove(this)}}catch(e){t={error:e}}finally{try{s&&!s.done&&(e=a.return)&&e.call(a)}finally{if(t)throw t.error}}else r.remove(this);var l=this.initialTeardown;if(Me(l))try{l()}catch(t){o=t instanceof Oe?t.errors:[t]}var c=this._finalizers;if(c){this._finalizers=null;try{for(var d=Be(c),u=d.next();!u.done;u=d.next()){var p=u.value;try{De(p)}catch(t){o=null!=o?o:[],t instanceof Oe?o=Se(Se([],_e(o)),_e(t.errors)):o.push(t)}}}catch(t){i={error:t}}finally{try{u&&!u.done&&(n=d.return)&&n.call(d)}finally{if(i)throw i.error}}}if(o)throw new Oe(o)}},t.prototype.add=function(e){var i;if(e&&e!==this)if(this.closed)De(e);else{if(e instanceof t){if(e.closed||e._hasParent(this))return;e._addParent(this)}(this._finalizers=null!==(i=this._finalizers)&&void 0!==i?i:[]).push(e)}},t.prototype._hasParent=function(t){var e=this._parentage;return e===t||Array.isArray(e)&&e.includes(t)},t.prototype._addParent=function(t){var e=this._parentage;this._parentage=Array.isArray(e)?(e.push(t),e):e?[e,t]:t},t.prototype._removeParent=function(t){var e=this._parentage;e===t?this._parentage=null:Array.isArray(e)&&Le(e,t)},t.prototype.remove=function(e){var i=this._finalizers;i&&Le(i,e),e instanceof t&&e._removeParent(this)},t.EMPTY=function(){var e=new t;return e.closed=!0,e}(),t}(),Re=He.EMPTY;function je(t){return t instanceof He||t&&"closed"in t&&Me(t.remove)&&Me(t.add)&&Me(t.unsubscribe)}function De(t){Me(t)?t():t.unsubscribe()}var Ue={onUnhandledError:null,onStoppedNotification:null,Promise:void 0,useDeprecatedSynchronousErrorHandling:!1,useDeprecatedNextContext:!1},Qe={setTimeout:function(t,e){for(var i=[],n=2;n<arguments.length;n++)i[n-2]=arguments[n];var o=Qe.delegate;return(null==o?void 0:o.setTimeout)?o.setTimeout.apply(o,Se([t,e],_e(i))):setTimeout.apply(void 0,Se([t,e],_e(i)))},clearTimeout:function(t){var e=Qe.delegate;return((null==e?void 0:e.clearTimeout)||clearTimeout)(t)},delegate:void 0};function Ne(t){Qe.setTimeout((function(){var e=Ue.onUnhandledError;if(!e)throw t;e(t)}))}function qe(){}var Ve=Ze("C",void 0,void 0);function Ze(t,e,i){return{kind:t,value:e,error:i}}var Ge=null;function Ye(t){if(Ue.useDeprecatedSynchronousErrorHandling){var e=!Ge;if(e&&(Ge={errorThrown:!1,error:null}),t(),e){var i=Ge,n=i.errorThrown,o=i.error;if(Ge=null,n)throw o}}else t()}var Je=function(t){function e(e){var i=t.call(this)||this;return i.isStopped=!1,e?(i.destination=e,je(e)&&e.add(i)):i.destination=oi,i}return ke(e,t),e.create=function(t,e,i){return new ei(t,e,i)},e.prototype.next=function(t){this.isStopped?ni(function(t){return Ze("N",t,void 0)}(t),this):this._next(t)},e.prototype.error=function(t){this.isStopped?ni(Ze("E",void 0,t),this):(this.isStopped=!0,this._error(t))},e.prototype.complete=function(){this.isStopped?ni(Ve,this):(this.isStopped=!0,this._complete())},e.prototype.unsubscribe=function(){this.closed||(this.isStopped=!0,t.prototype.unsubscribe.call(this),this.destination=null)},e.prototype._next=function(t){this.destination.next(t)},e.prototype._error=function(t){try{this.destination.error(t)}finally{this.unsubscribe()}},e.prototype._complete=function(){try{this.destination.complete()}finally{this.unsubscribe()}},e}(He),Ke=Function.prototype.bind;function Xe(t,e){return Ke.call(t,e)}var ti=function(){function t(t){this.partialObserver=t}return t.prototype.next=function(t){var e=this.partialObserver;if(e.next)try{e.next(t)}catch(t){ii(t)}},t.prototype.error=function(t){var e=this.partialObserver;if(e.error)try{e.error(t)}catch(t){ii(t)}else ii(t)},t.prototype.complete=function(){var t=this.partialObserver;if(t.complete)try{t.complete()}catch(t){ii(t)}},t}(),ei=function(t){function e(e,i,n){var o,r,a=t.call(this)||this;Me(e)||!e?o={next:null!=e?e:void 0,error:null!=i?i:void 0,complete:null!=n?n:void 0}:a&&Ue.useDeprecatedNextContext?((r=Object.create(e)).unsubscribe=function(){return a.unsubscribe()},o={next:e.next&&Xe(e.next,r),error:e.error&&Xe(e.error,r),complete:e.complete&&Xe(e.complete,r)}):o=e;return a.destination=new ti(o),a}return ke(e,t),e}(Je);function ii(t){var e;Ue.useDeprecatedSynchronousErrorHandling?(e=t,Ue.useDeprecatedSynchronousErrorHandling&&Ge&&(Ge.errorThrown=!0,Ge.error=e)):Ne(t)}function ni(t,e){var i=Ue.onStoppedNotification;i&&Qe.setTimeout((function(){return i(t,e)}))}var oi={closed:!0,next:qe,error:function(t){throw t},complete:qe};function ri(t,e,i,n,o){return new ai(t,e,i,n,o)}var ai=function(t){function e(e,i,n,o,r,a){var s=t.call(this,e)||this;return s.onFinalize=r,s.shouldUnsubscribe=a,s._next=i?function(t){try{i(t)}catch(t){e.error(t)}}:t.prototype._next,s._error=o?function(t){try{o(t)}catch(t){e.error(t)}finally{this.unsubscribe()}}:t.prototype._error,s._complete=n?function(){try{n()}catch(t){e.error(t)}finally{this.unsubscribe()}}:t.prototype._complete,s}return ke(e,t),e.prototype.unsubscribe=function(){var e;if(!this.shouldUnsubscribe||this.shouldUnsubscribe()){var i=this.closed;t.prototype.unsubscribe.call(this),!i&&(null===(e=this.onFinalize)||void 0===e||e.call(this))}},e}(Je);function si(t,e){return $e((function(i,n){var o=0;i.subscribe(ri(n,(function(i){n.next(t.call(e,i,o++))})))}))}var li=function(t){return t&&"number"==typeof t.length&&"function"!=typeof t};function ci(t){return Me(null==t?void 0:t.then)}var di="function"==typeof Symbol&&Symbol.observable||"@@observable";function ui(t){return t}function pi(t){return 0===t.length?ui:1===t.length?t[0]:function(e){return t.reduce((function(t,e){return e(t)}),e)}}var hi=function(){function t(t){t&&(this._subscribe=t)}return t.prototype.lift=function(e){var i=new t;return i.source=this,i.operator=e,i},t.prototype.subscribe=function(t,e,i){var n,o=this,r=(n=t)&&n instanceof Je||function(t){return t&&Me(t.next)&&Me(t.error)&&Me(t.complete)}(n)&&je(n)?t:new ei(t,e,i);return Ye((function(){var t=o,e=t.operator,i=t.source;r.add(e?e.call(r,i):i?o._subscribe(r):o._trySubscribe(r))})),r},t.prototype._trySubscribe=function(t){try{return this._subscribe(t)}catch(e){t.error(e)}},t.prototype.forEach=function(t,e){var i=this;return new(e=fi(e))((function(e,n){var o=new ei({next:function(e){try{t(e)}catch(t){n(t),o.unsubscribe()}},error:n,complete:e});i.subscribe(o)}))},t.prototype._subscribe=function(t){var e;return null===(e=this.source)||void 0===e?void 0:e.subscribe(t)},t.prototype[di]=function(){return this},t.prototype.pipe=function(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];return pi(t)(this)},t.prototype.toPromise=function(t){var e=this;return new(t=fi(t))((function(t,i){var n;e.subscribe((function(t){return n=t}),(function(t){return i(t)}),(function(){return t(n)}))}))},t.create=function(e){return new t(e)},t}();function fi(t){var e;return null!==(e=null!=t?t:Ue.Promise)&&void 0!==e?e:Promise}function gi(t){return Me(t[di])}function mi(t){return Symbol.asyncIterator&&Me(null==t?void 0:t[Symbol.asyncIterator])}function vi(t){return new TypeError("You provided "+(null!==t&&"object"==typeof t?"an invalid object":"'"+t+"'")+" where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable.")}var wi="function"==typeof Symbol&&Symbol.iterator?Symbol.iterator:"@@iterator";function yi(t){return Me(null==t?void 0:t[wi])}function bi(t){return Te(this,arguments,(function(){var e,i,n;return We(this,(function(o){switch(o.label){case 0:e=t.getReader(),o.label=1;case 1:o.trys.push([1,,9,10]),o.label=2;case 2:return[4,Ie(e.read())];case 3:return i=o.sent(),n=i.value,i.done?[4,Ie(void 0)]:[3,5];case 4:return[2,o.sent()];case 5:return[4,Ie(n)];case 6:return[4,o.sent()];case 7:return o.sent(),[3,2];case 8:return[3,10];case 9:return e.releaseLock(),[7];case 10:return[2]}}))}))}function Pi(t){return Me(null==t?void 0:t.getReader)}function xi(t){if(t instanceof hi)return t;if(null!=t){if(gi(t))return o=t,new hi((function(t){var e=o[di]();if(Me(e.subscribe))return e.subscribe(t);throw new TypeError("Provided object does not correctly implement Symbol.observable")}));if(li(t))return n=t,new hi((function(t){for(var e=0;e<n.length&&!t.closed;e++)t.next(n[e]);t.complete()}));if(ci(t))return i=t,new hi((function(t){i.then((function(e){t.closed||(t.next(e),t.complete())}),(function(e){return t.error(e)})).then(null,Ne)}));if(mi(t))return Fi(t);if(yi(t))return e=t,new hi((function(t){var i,n;try{for(var o=Be(e),r=o.next();!r.done;r=o.next()){var a=r.value;if(t.next(a),t.closed)return}}catch(t){i={error:t}}finally{try{r&&!r.done&&(n=o.return)&&n.call(o)}finally{if(i)throw i.error}}t.complete()}));if(Pi(t))return Fi(bi(t))}var e,i,n,o;throw vi(t)}function Fi(t){return new hi((function(e){(function(t,e){var i,n,o,r;return Ae(this,void 0,void 0,(function(){var a,s;return We(this,(function(l){switch(l.label){case 0:l.trys.push([0,5,6,11]),i=Ee(t),l.label=1;case 1:return[4,i.next()];case 2:if((n=l.sent()).done)return[3,4];if(a=n.value,e.next(a),e.closed)return[2];l.label=3;case 3:return[3,1];case 4:return[3,11];case 5:return s=l.sent(),o={error:s},[3,11];case 6:return l.trys.push([6,,9,10]),n&&!n.done&&(r=i.return)?[4,r.call(i)]:[3,8];case 7:l.sent(),l.label=8;case 8:return[3,10];case 9:if(o)throw o.error;return[7];case 10:return[7];case 11:return e.complete(),[2]}}))}))})(t,e).catch((function(t){return e.error(t)}))}))}function Mi(t,e,i,n,o){void 0===n&&(n=0),void 0===o&&(o=!1);var r=e.schedule((function(){i(),o?t.add(this.schedule(null,n)):this.unsubscribe()}),n);if(t.add(r),!o)return r}function $i(t,e,i){return void 0===i&&(i=1/0),Me(e)?$i((function(i,n){return si((function(t,o){return e(i,t,n,o)}))(xi(t(i,n)))}),i):("number"==typeof e&&(i=e),$e((function(e,n){return function(t,e,i,n,o,r,a,s){var l=[],c=0,d=0,u=!1,p=function(){!u||l.length||c||e.complete()},h=function(t){return c<n?f(t):l.push(t)},f=function(t){r&&e.next(t),c++;var s=!1;xi(i(t,d++)).subscribe(ri(e,(function(t){null==o||o(t),r?h(t):e.next(t)}),(function(){s=!0}),void 0,(function(){if(s)try{c--;for(var t=function(){var t=l.shift();a?Mi(e,a,(function(){return f(t)})):f(t)};l.length&&c<n;)t();p()}catch(t){e.error(t)}})))};return t.subscribe(ri(e,h,(function(){u=!0,p()}))),function(){null==s||s()}}(e,n,t,i)})))}var Ci=new hi((function(t){return t.complete()}));function ki(t){return t&&Me(t.schedule)}function Ai(t){return t[t.length-1]}function Wi(t){return ki(Ai(t))?t.pop():void 0}function Bi(t,e){return void 0===e&&(e=0),$e((function(i,n){i.subscribe(ri(n,(function(i){return Mi(n,t,(function(){return n.next(i)}),e)}),(function(){return Mi(n,t,(function(){return n.complete()}),e)}),(function(i){return Mi(n,t,(function(){return n.error(i)}),e)})))}))}function _i(t,e){return void 0===e&&(e=0),$e((function(i,n){n.add(t.schedule((function(){return i.subscribe(n)}),e))}))}function Si(t,e){if(!t)throw new Error("Iterable cannot be null");return new hi((function(i){Mi(i,e,(function(){var n=t[Symbol.asyncIterator]();Mi(i,e,(function(){n.next().then((function(t){t.done?i.complete():i.next(t.value)}))}),0,!0)}))}))}function Ii(t,e){if(null!=t){if(gi(t))return function(t,e){return xi(t).pipe(_i(e),Bi(e))}(t,e);if(li(t))return function(t,e){return new hi((function(i){var n=0;return e.schedule((function(){n===t.length?i.complete():(i.next(t[n++]),i.closed||this.schedule())}))}))}(t,e);if(ci(t))return function(t,e){return xi(t).pipe(_i(e),Bi(e))}(t,e);if(mi(t))return Si(t,e);if(yi(t))return function(t,e){return new hi((function(i){var n;return Mi(i,e,(function(){n=t[wi](),Mi(i,e,(function(){var t,e,o;try{e=(t=n.next()).value,o=t.done}catch(t){return void i.error(t)}o?i.complete():i.next(e)}),0,!0)})),function(){return Me(null==n?void 0:n.return)&&n.return()}}))}(t,e);if(Pi(t))return function(t,e){return Si(bi(t),e)}(t,e)}throw vi(t)}function Ti(t,e){return e?Ii(t,e):xi(t)}function Ei(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];var i=Wi(t),n=function(t,e){return"number"==typeof Ai(t)?t.pop():e}(t,1/0),o=t;return o.length?1===o.length?xi(o[0]):function(t){return void 0===t&&(t=1/0),$i(ui,t)}(n)(Ti(o,i)):Ci}function zi(t,e){return $e(function(t,e,i,n,o){return function(r,a){var s=i,l=e,c=0;r.subscribe(ri(a,(function(e){var i=c++;l=s?t(l,e,i):(s=!0,e),n&&a.next(l)}),o&&function(){s&&a.next(l),a.complete()}))}}(t,e,arguments.length>=2,!0))}function Oi(t,e){return $e((function(i,n){var o=0;i.subscribe(ri(n,(function(i){return t.call(e,i,o++)&&n.next(i)})))}))}var Li=function(t){function e(e,i){return t.call(this)||this}return ke(e,t),e.prototype.schedule=function(t,e){return void 0===e&&(e=0),this},e}(He),Hi={setInterval:function(t,e){for(var i=[],n=2;n<arguments.length;n++)i[n-2]=arguments[n];var o=Hi.delegate;return(null==o?void 0:o.setInterval)?o.setInterval.apply(o,Se([t,e],_e(i))):setInterval.apply(void 0,Se([t,e],_e(i)))},clearInterval:function(t){var e=Hi.delegate;return((null==e?void 0:e.clearInterval)||clearInterval)(t)},delegate:void 0},Ri=function(t){function e(e,i){var n=t.call(this,e,i)||this;return n.scheduler=e,n.work=i,n.pending=!1,n}return ke(e,t),e.prototype.schedule=function(t,e){var i;if(void 0===e&&(e=0),this.closed)return this;this.state=t;var n=this.id,o=this.scheduler;return null!=n&&(this.id=this.recycleAsyncId(o,n,e)),this.pending=!0,this.delay=e,this.id=null!==(i=this.id)&&void 0!==i?i:this.requestAsyncId(o,this.id,e),this},e.prototype.requestAsyncId=function(t,e,i){return void 0===i&&(i=0),Hi.setInterval(t.flush.bind(t,this),i)},e.prototype.recycleAsyncId=function(t,e,i){if(void 0===i&&(i=0),null!=i&&this.delay===i&&!1===this.pending)return e;null!=e&&Hi.clearInterval(e)},e.prototype.execute=function(t,e){if(this.closed)return new Error("executing a cancelled action");this.pending=!1;var i=this._execute(t,e);if(i)return i;!1===this.pending&&null!=this.id&&(this.id=this.recycleAsyncId(this.scheduler,this.id,null))},e.prototype._execute=function(t,e){var i,n=!1;try{this.work(t)}catch(t){n=!0,i=t||new Error("Scheduled action threw falsy error")}if(n)return this.unsubscribe(),i},e.prototype.unsubscribe=function(){if(!this.closed){var e=this.id,i=this.scheduler,n=i.actions;this.work=this.state=this.scheduler=null,this.pending=!1,Le(n,this),null!=e&&(this.id=this.recycleAsyncId(i,e,null)),this.delay=null,t.prototype.unsubscribe.call(this)}},e}(Li),ji={now:function(){return(ji.delegate||Date).now()},delegate:void 0},Di=function(){function t(e,i){void 0===i&&(i=t.now),this.schedulerActionCtor=e,this.now=i}return t.prototype.schedule=function(t,e,i){return void 0===e&&(e=0),new this.schedulerActionCtor(this,t).schedule(i,e)},t.now=ji.now,t}(),Ui=new(function(t){function e(e,i){void 0===i&&(i=Di.now);var n=t.call(this,e,i)||this;return n.actions=[],n._active=!1,n}return ke(e,t),e.prototype.flush=function(t){var e=this.actions;if(this._active)e.push(t);else{var i;this._active=!0;do{if(i=t.execute(t.state,t.delay))break}while(t=e.shift());if(this._active=!1,i){for(;t=e.shift();)t.unsubscribe();throw i}}},e}(Di))(Ri),Qi=Ui;function Ni(t,e,i){void 0===t&&(t=0),void 0===i&&(i=Qi);var n=-1;return null!=e&&(ki(e)?i=e:n=e),new hi((function(e){var o,r=(o=t)instanceof Date&&!isNaN(o)?+t-i.now():t;r<0&&(r=0);var a=0;return i.schedule((function(){e.closed||(e.next(a++),0<=n?this.schedule(void 0,n):e.complete())}),r)}))}function qi(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];return Ti(t,Wi(t))}var Vi=Array.isArray;function Zi(t){return si((function(e){return function(t,e){return Vi(e)?t.apply(void 0,Se([],_e(e))):t(e)}(t,e)}))}var Gi=["addListener","removeListener"],Yi=["addEventListener","removeEventListener"],Ji=["on","off"];function Ki(t,e,i,n){if(Me(i)&&(n=i,i=void 0),n)return Ki(t,e,i).pipe(Zi(n));var o=_e(function(t){return Me(t.addEventListener)&&Me(t.removeEventListener)}(t)?Yi.map((function(n){return function(o){return t[n](e,o,i)}})):function(t){return Me(t.addListener)&&Me(t.removeListener)}(t)?Gi.map(Xi(t,e)):function(t){return Me(t.on)&&Me(t.off)}(t)?Ji.map(Xi(t,e)):[],2),r=o[0],a=o[1];if(!r&&li(t))return $i((function(t){return Ki(t,e,i)}))(xi(t));if(!r)throw new TypeError("Invalid event target");return new hi((function(t){var e=function(){for(var e=[],i=0;i<arguments.length;i++)e[i]=arguments[i];return t.next(1<e.length?e:e[0])};return r(e),function(){return a(e)}}))}function Xi(t,e){return function(i){return function(n){return t[i](e,n)}}}var tn=ze((function(t){return function(){t(this),this.name="EmptyError",this.message="no elements in sequence"}}));function en(){return new tn}function nn(t,e){var i=arguments.length>=2;return function(n){return n.pipe(t?Oi((function(e,i){return t(e,i,n)})):ui,(r=1)<=0?function(){return Ci}:$e((function(t,e){var i=0;t.subscribe(ri(e,(function(t){++i<=r&&(e.next(t),r<=i&&e.complete())})))})),i?function(t){return $e((function(e,i){var n=!1;e.subscribe(ri(i,(function(t){n=!0,i.next(t)}),(function(){n||i.next(t),i.complete()})))}))}(e):(void 0===(o=function(){return new tn})&&(o=en),$e((function(t,e){var i=!1;t.subscribe(ri(e,(function(t){i=!0,e.next(t)}),(function(){return i?e.complete():e.error(o())})))}))));var o,r}}const on={afterPageLoad:t=>{let{seconds:e}=t;return Ni(1e3*e).pipe(si((()=>!0)))},pageScrollBelow:t=>{let{amount:e,unit:i}=t;return new hi((t=>{t.next(n()),Ki(document,"scroll").pipe(si(n)).subscribe(t)})).pipe(Oi((t=>!0===t)),nn());function n(){const t=document.body,n=document.documentElement,o=Math.max(t.scrollHeight,t.offsetHeight,n.clientHeight,n.scrollHeight,n.offsetHeight),r=window.scrollY;if("px"===i)return r>=e;if("pct"===i){return r/(o-window.innerHeight)*100>=e}}},location:t=>{let{matcher:e,values:i}=t;const n={includes:(t,e)=>t.some((t=>e.includes(t))),not_includes:(t,e)=>t.every((t=>!e.includes(t))),equals:(t,e)=>t.some((t=>t===e)),not_equals:(t,e)=>t.every((t=>t!==e)),starts_with:(t,e)=>t.some((t=>e.startsWith(t)))};function o(){const t=window.location.href.replace(/\/+$/,"");return(0,n[e])(i,t)}return new hi((t=>{t.next(o()),Ki(window,"locationchange").pipe(si(o)).subscribe(t)}))},device:t=>{let{deviceType:e}=t;if(!e)return qi(!0);return qi(e===r())},beforeLeave:(t,e,i,n)=>{return new hi((t=>{t.next(o()),Ki(document,"mouseout").pipe(si(o)).subscribe(t)})).pipe(Oi((t=>!0===t)));function o(t){if(!t)return!1;const i=t.clientY<=0,o=`pf_widget_leave_${e}`,r=window.sessionStorage.getItem(o),a=(window.sessionStorage.getItem("pf_widget_show")||"").includes(e);return n?i&&!a:!r&&(i&&setTimeout((()=>{window.sessionStorage.setItem(o,!0)}),250),i)}}},rn={type:"afterPageLoad",afterPageLoad:{seconds:30}},an=t=>{(t=>{if(t.query.any||t.query.every){let e=!1,i=!1;if(t.query.any){for(let n=0;n<t.query.any.length;n++)"afterPageLoad"===t.query.any[n].type&&(i=!0),"pageScrollBelow"===t.query.any[n].type&&(e=!0);e||i||t.query.any.push(rn)}else if(t.query.every){for(let n=0;n<t.query.every.length;n++)"afterPageLoad"===t.query.every[n].type&&(i=!0),"pageScrollBelow"===t.query.every[n].type&&(e=!0);e||i||t.query.every.push(rn)}}else t.query={any:[rn]}})(t);const[[e,i]]=Object.entries(t.query),n=i.map((i=>(0,on[i.type])(i[i.type],t.type,e,t.showOncePerVisit).pipe(si((t=>({type:i.type,isPassed:t})))))),o=Object.fromEntries(i.map((t=>[t.type,!1])));return Ei(...n).pipe(zi(((t,e)=>(t[e.type]=e.isPassed,t)),o),Oi((t=>function(t,e){return Fe[t](e)}(e,t))),function(t,e){return $e((function(i,n){var o=null!=e?e:{},r=o.leading,a=void 0===r||r,s=o.trailing,l=void 0!==s&&s,c=!1,d=null,u=null,p=!1,h=function(){null==u||u.unsubscribe(),u=null,l&&(m(),p&&n.complete())},f=function(){u=null,p&&n.complete()},g=function(e){return u=xi(t(e)).subscribe(ri(n,h,f))},m=function(){if(c){c=!1;var t=d;d=null,n.next(t),!p&&g(t)}};i.subscribe(ri(n,(function(t){c=!0,d=t,(!u||u.closed)&&(a?m():g(t))}),(function(){p=!0,(!(l&&c&&u)||u.closed)&&n.complete()})))}))}((()=>{return void 0===(t=1e3)&&(t=0),void 0===e&&(e=Ui),t<0&&(t=0),Ni(t,t,e);var t,e})),si((()=>t)))},sn=t=>Ei(...t.map((t=>an(t))));var ln=ze((function(t){return function(){t(this),this.name="ObjectUnsubscribedError",this.message="object unsubscribed"}})),cn=function(t){function e(){var e=t.call(this)||this;return e.closed=!1,e.currentObservers=null,e.observers=[],e.isStopped=!1,e.hasError=!1,e.thrownError=null,e}return ke(e,t),e.prototype.lift=function(t){var e=new dn(this,this);return e.operator=t,e},e.prototype._throwIfClosed=function(){if(this.closed)throw new ln},e.prototype.next=function(t){var e=this;Ye((function(){var i,n;if(e._throwIfClosed(),!e.isStopped){e.currentObservers||(e.currentObservers=Array.from(e.observers));try{for(var o=Be(e.currentObservers),r=o.next();!r.done;r=o.next()){r.value.next(t)}}catch(t){i={error:t}}finally{try{r&&!r.done&&(n=o.return)&&n.call(o)}finally{if(i)throw i.error}}}}))},e.prototype.error=function(t){var e=this;Ye((function(){if(e._throwIfClosed(),!e.isStopped){e.hasError=e.isStopped=!0,e.thrownError=t;for(var i=e.observers;i.length;)i.shift().error(t)}}))},e.prototype.complete=function(){var t=this;Ye((function(){if(t._throwIfClosed(),!t.isStopped){t.isStopped=!0;for(var e=t.observers;e.length;)e.shift().complete()}}))},e.prototype.unsubscribe=function(){this.isStopped=this.closed=!0,this.observers=this.currentObservers=null},Object.defineProperty(e.prototype,"observed",{get:function(){var t;return(null===(t=this.observers)||void 0===t?void 0:t.length)>0},enumerable:!1,configurable:!0}),e.prototype._trySubscribe=function(e){return this._throwIfClosed(),t.prototype._trySubscribe.call(this,e)},e.prototype._subscribe=function(t){return this._throwIfClosed(),this._checkFinalizedStatuses(t),this._innerSubscribe(t)},e.prototype._innerSubscribe=function(t){var e=this,i=this,n=i.hasError,o=i.isStopped,r=i.observers;return n||o?Re:(this.currentObservers=null,r.push(t),new He((function(){e.currentObservers=null,Le(r,t)})))},e.prototype._checkFinalizedStatuses=function(t){var e=this,i=e.hasError,n=e.thrownError,o=e.isStopped;i?t.error(n):o&&t.complete()},e.prototype.asObservable=function(){var t=new hi;return t.source=this,t},e.create=function(t,e){return new dn(t,e)},e}(hi),dn=function(t){function e(e,i){var n=t.call(this)||this;return n.destination=e,n.source=i,n}return ke(e,t),e.prototype.next=function(t){var e,i;null===(i=null===(e=this.destination)||void 0===e?void 0:e.next)||void 0===i||i.call(e,t)},e.prototype.error=function(t){var e,i;null===(i=null===(e=this.destination)||void 0===e?void 0:e.error)||void 0===i||i.call(e,t)},e.prototype.complete=function(){var t,e;null===(e=null===(t=this.destination)||void 0===t?void 0:t.complete)||void 0===e||e.call(t)},e.prototype._subscribe=function(t){var e,i;return null!==(i=null===(e=this.source)||void 0===e?void 0:e.subscribe(t))&&void 0!==i?i:Re},e}(cn),un=function(t){function e(e){var i=t.call(this)||this;return i._value=e,i}return ke(e,t),Object.defineProperty(e.prototype,"value",{get:function(){return this.getValue()},enumerable:!1,configurable:!0}),e.prototype._subscribe=function(e){var i=t.prototype._subscribe.call(this,e);return!i.closed&&e.next(this._value),i},e.prototype.getValue=function(){var t=this,e=t.hasError,i=t.thrownError,n=t._value;if(e)throw i;return this._throwIfClosed(),n},e.prototype.next=function(e){t.prototype.next.call(this,this._value=e)},e}(cn);const pn="0123456789abcdef";class hn{constructor(t){this.bytes=t}static ofInner(t){if(16!==t.length)throw new TypeError("not 128-bit length");return new hn(t)}static fromFieldsV7(t,e,i,n){if(!Number.isInteger(t)||!Number.isInteger(e)||!Number.isInteger(i)||!Number.isInteger(n)||t<0||e<0||i<0||n<0||t>0xffffffffffff||e>4095||i>1073741823||n>4294967295)throw new RangeError("invalid field value");const o=new Uint8Array(16);return o[0]=t/2**40,o[1]=t/2**32,o[2]=t/2**24,o[3]=t/65536,o[4]=t/256,o[5]=t,o[6]=112|e>>>8,o[7]=e,o[8]=128|i>>>24,o[9]=i>>>16,o[10]=i>>>8,o[11]=i,o[12]=n>>>24,o[13]=n>>>16,o[14]=n>>>8,o[15]=n,new hn(o)}static parse(t){var e,i,n,o;let r;switch(t.length){case 32:r=null===(e=/^[0-9a-f]{32}$/i.exec(t))||void 0===e?void 0:e[0];break;case 36:r=null===(i=/^([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{12})$/i.exec(t))||void 0===i?void 0:i.slice(1,6).join("");break;case 38:r=null===(n=/^\{([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{12})\}$/i.exec(t))||void 0===n?void 0:n.slice(1,6).join("");break;case 45:r=null===(o=/^urn:uuid:([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{12})$/i.exec(t))||void 0===o?void 0:o.slice(1,6).join("")}if(r){const t=new Uint8Array(16);for(let e=0;e<16;e+=4){const i=parseInt(r.substring(2*e,2*e+8),16);t[e+0]=i>>>24,t[e+1]=i>>>16,t[e+2]=i>>>8,t[e+3]=i}return new hn(t)}throw new SyntaxError("could not parse UUID string")}toString(){let t="";for(let e=0;e<this.bytes.length;e++)t+=pn.charAt(this.bytes[e]>>>4),t+=pn.charAt(15&this.bytes[e]),3!==e&&5!==e&&7!==e&&9!==e||(t+="-");return t}toHex(){let t="";for(let e=0;e<this.bytes.length;e++)t+=pn.charAt(this.bytes[e]>>>4),t+=pn.charAt(15&this.bytes[e]);return t}toJSON(){return this.toString()}getVariant(){const t=this.bytes[8]>>>4;if(t<0)throw new Error("unreachable");if(t<=7)return this.bytes.every((t=>0===t))?"NIL":"VAR_0";if(t<=11)return"VAR_10";if(t<=13)return"VAR_110";if(t<=15)return this.bytes.every((t=>255===t))?"MAX":"VAR_RESERVED";throw new Error("unreachable")}getVersion(){return"VAR_10"===this.getVariant()?this.bytes[6]>>>4:void 0}clone(){return new hn(this.bytes.slice(0))}equals(t){return 0===this.compareTo(t)}compareTo(t){for(let e=0;e<16;e++){const i=this.bytes[e]-t.bytes[e];if(0!==i)return Math.sign(i)}return 0}}class fn{constructor(t){this.timestamp=0,this.counter=0,this.random=null!=t?t:gn()}generate(){return this.generateOrResetCore(Date.now(),1e4)}generateOrAbort(){return this.generateOrAbortCore(Date.now(),1e4)}generateOrResetCore(t,e){let i=this.generateOrAbortCore(t,e);return void 0===i&&(this.timestamp=0,i=this.generateOrAbortCore(t,e)),i}generateOrAbortCore(t,e){if(!Number.isInteger(t)||t<1||t>0xffffffffffff)throw new RangeError("`unixTsMs` must be a 48-bit positive integer");if(e<0||e>0xffffffffffff)throw new RangeError("`rollbackAllowance` out of reasonable range");if(t>this.timestamp)this.timestamp=t,this.resetCounter();else{if(!(t+e>=this.timestamp))return;this.counter++,this.counter>4398046511103&&(this.timestamp++,this.resetCounter())}return hn.fromFieldsV7(this.timestamp,Math.trunc(this.counter/2**30),this.counter&2**30-1,this.random.nextUint32())}resetCounter(){this.counter=1024*this.random.nextUint32()+(1023&this.random.nextUint32())}generateV4(){const t=new Uint8Array(Uint32Array.of(this.random.nextUint32(),this.random.nextUint32(),this.random.nextUint32(),this.random.nextUint32()).buffer);return t[6]=64|t[6]>>>4,t[8]=128|t[8]>>>2,hn.ofInner(t)}}const gn=()=>{if("undefined"!=typeof crypto&&void 0!==crypto.getRandomValues)return new mn;if("undefined"!=typeof UUIDV7_DENY_WEAK_RNG&&UUIDV7_DENY_WEAK_RNG)throw new Error("no cryptographically strong RNG available");return{nextUint32:()=>65536*Math.trunc(65536*Math.random())+Math.trunc(65536*Math.random())}};class mn{constructor(){this.buffer=new Uint32Array(8),this.cursor=65535}nextUint32(){return this.cursor>=this.buffer.length&&(crypto.getRandomValues(this.buffer),this.cursor=0),this.buffer[this.cursor++]}}let vn;const wn=()=>yn().toString(),yn=()=>(vn||(vn=new fn)).generate();function bn(t){Promise.all([s(t),c(t),d(t),u(t),p(t),h(t),$n()]).then((e=>{let[i,n,o,r,a,s,c]=e;if(!i)return void console.error("Can not find widget with id",t);!function(){const t=document.createElement("link");t.rel="stylesheet",t.href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap",document.head.appendChild(t)}();const u=function(){const t=new un(!1);return window.pfWidget={open:()=>t.next(!0),close:()=>t.next(!1)},{modalStateChange$:t.pipe((e=1,Oi((function(t,i){return e<=i}))))};var e}(),p=Mn(),h=new xe(n);h.insertIntegrations(),h.handleDialogEvents(o),setInterval((()=>{d(t).then((t=>h.handleDialogEvents(t)))}),9e4);const f=sn(r);!function(t){let{widget:e,wazzupId:i,hid:n,integrationsService:o,subscription:r,anyActionPassed$:a,modalStateChange$:s,tests:l}=t;const c=nt`
+    <pf-widget
+      .widget="${e}"
+      .wazzupId="${i}"
+      .hid="${n}"
+      .integrationsService="${o}"
+      .subscription="${r}"
+      .anyActionPassed$="${a}"
+      .modalStateChange$="${s}"
+      .tests="${l}"
+    ></pf-widget>
+  `;Pt(c,document.body)}({widget:i,wazzupId:p,hid:c,integrationsService:h,subscription:a,anyActionPassed$:f,modalStateChange$:u.modalStateChange$,tests:s}),l(t,{name:"enter",wazzupId:p,hid:c,integrations:n})}))}const Pn="__buttonly_id",xn="__hid",Fn=730;function Mn(){!function(){const t=v.get(Pn);t&&t.includes("-")&&v.set(Pn,t.replace("-",""),{expires:Fn})}();let t=g("123456789",8)();return v.get(Pn)||v.set(Pn,t,{expires:Fn}),v.get(Pn)}function $n(){const t=v.get(xn);if(!t){const t=wn();return v.set(xn,t,{expires:Fn}),t}return t}!function(){const t=function(){if(window.ygWidgetId)return null;const t=document.head.querySelectorAll("[data-pf-id]"),e=t.length>1?t[0].dataset.pfId:document.currentScript.dataset.pfId;return window.ygWidgetId=e,e}();t?(!function(){if(!0===window[o])return;window[o]=!0;let t=history.pushState;history.pushState=function(){let e=t.apply(this,arguments);return window.dispatchEvent(new Event("pushstate")),window.dispatchEvent(new Event("locationchange")),e};let e=history.replaceState;history.replaceState=function(){let t=e.apply(this,arguments);return window.dispatchEvent(new Event("replacestate")),window.dispatchEvent(new Event("locationchange")),t}}(),function(t){let{widgetId:e,referrer:i}=t;fetch("https://widget.yourgood.app/api/statistics-inner/create-setup-event",{method:"POST",headers:{"Content-Type":"application/json;charset=UTF-8"},body:JSON.stringify({settingsId:e,referrer:i})}).then((t=>t.json())).catch((()=>{}))}({widgetId:t,referrer:window.location.href}),new Promise(((t,e)=>{t()})).then((()=>s(t))).then((e=>{var i;e.appearance[r()].isDelayMode?(i=3e3,new Promise((t=>setTimeout(t,i)))).then((()=>bn(t))):bn(t)}))):console.error("You can only install 1 of <yourgoods> widget")}()})();
