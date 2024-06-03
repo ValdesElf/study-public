@@ -13,25 +13,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
         <script src="local/templates/bankfirm/dist/js/vendor/jquery.min.js"></script>
-        <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "https://bank-firm.ru",
-        "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "hhttps://bank-firm.ru/catalog/?query={search_term_string}"
-        },
-        "query-input": {
-            "@type": "PropertyValueSpecification",
-            "valueRequired": "http://schema.org/True",
-            "valueName": "search_term_string"
-        }
-        }
-    }
-    </script>    <script>
+    <script>
     var userFavorites = [];
         var arSiteOptions = {
         PHONE_MASK: "+7(999) 999-9999",
@@ -84,6 +66,7 @@
                     </a>
                     <a href="tel:88005508101" class="nice__phone" title="8 (800) 550-81-01">8 (800) 550-81-01</a>
                 </div>
+				<div class="menu-item"><a href="blog/index.htm" class="header__link" title="Купить">Блог</a></div>	
                         <button class="btn make-order__btn--mb" data-id="10" data-form="popup" title="Заказать фирму">Заказать фирму</button>
             <button type="button" aria-label="menu" id="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
             <div class="links">
@@ -91,61 +74,25 @@
                     
 <div class="header__group row __ul" data-menu="">
 			
-						<!-- <div class="menu-item"><a href="" class="header__link selected" title=""></a></div> -->
-			
-						<!-- Задача https://cp.niceneasy.ru/issues/20787 -->
-							<div class="menu-item"><a href="#" class="header__link" title="Купить">Купить</a></div>
-			
-		
-						<!-- <div class="menu-item"><a href="" class="header__link selected" title=""></a></div> -->
-			
-						<!-- Задача https://cp.niceneasy.ru/issues/20787 -->
-							<div class="menu-item menu_parent">
-					<a href="#" class="header__link selected" title="Продать">Продать</a>
 
-											<div class="menu_sell_wrap">
-															<a href="#" class="header__link ">Строительную фирму</a>
-															<a href="#" class="header__link ">Фирму с ЗАО</a>
-															<a href="#" class="header__link ">Фирму с ООО</a>
-															<a href="#" class="header__link ">Фирму с АО</a>
-															<a href="#" class="header__link ">Фонд</a>
-															<a href="#" class="header__link ">Фирму с долгами</a>
-															<a href="#" class="header__link ">Фирму без долгов</a>
-															<a href="#" class="header__link ">Фирму с расчетным счетом</a>
-															<a href="#" class="header__link ">Фирму с оборотами</a>
-															<a href="#" class="header__link ">Фирму с ОСН</a>
-															<a href="#" class="header__link ">Фирму с лицензией</a>
-															<a href="#" class="header__link ">Фирму с историей</a>
-															<a href="#" class="header__link ">Фирму с УСН по доходам</a>
-															<a href="#" class="header__link "> Фирму с УСН по доходам и расходам</a>
-													</div>
-					
-				</div>
-			
-		
-						<!-- <div class="menu-item"><a href="" class="header__link selected" title=""></a></div> -->
-			
-						<!-- Задача https://cp.niceneasy.ru/issues/20787 -->
-							<div class="menu-item"><a href="news/index.htm" class="header__link" title="Видео">Новости</a></div>
-			
-			</div>
 <!-- nav -->                    
-                    <button id="openFormButton" class="btn make-order__btn" title="Заказать фирму">Заказать фирму</button>
-                    <div class="header-personal __ul">
-                        <a href="https://lk.bank-firm.ru/favorite/" class="header__lk header__lk--favorites" title="У вас нет избранных фирм">
-	<span class="header__link header__link--favorites">0</span>
-</a>                        <a href="https://lk.bank-firm.ru/" class="header__lk" title="Личный кабинет">
-                            <p class="header__link header__link--lk"><span class="header__text"></span></p>
-                        </a>
-                        <div class="header__lk-menu" style="display:none">
-                            <a href="#" class="header__text-menu" title="Личный кабинет">Личный кабинет</a>
-                            <a href="index-1.htm?logout=yes&sessid=52518ea97aa2eb61010a2f9cd3ddab67" class="header__exit btn--exit" title="Выйти из профиля">Выйти из профиля</a>
-                        </div>
-                    </div>
+<div class="button-nav">
+	<button id="openFormButton" class="btn make-order__btn openFormButton" title="Заказать фирму">Заказать фирму</button>
+</div>
+
+
                 </div>
             </div>
         </div>
     </header>
+
+	<style>
+		.button-nav {
+			position: absolute;
+			right: 0;
+		}
+		
+	</style>
 
 	    	<!-- ФОРМА ================================================= -->
 
@@ -183,30 +130,6 @@
 				</div>
 			</div>
 		
-			<script>
-				document.getElementById('openFormButton').addEventListener('click', function() {
-			document.getElementById('formPopup').style.display = 'flex';
-		});
-		
-		document.getElementById('closeButton').addEventListener('click', function() {
-			document.getElementById('formPopup').style.display = 'none';
-		});
-		
-		document.getElementById('cancelButton').addEventListener('click', function() {
-			document.getElementById('formPopup').style.display = 'none';
-		});
-		
-		
-		
-		document.querySelector("#formPopup .form-popup").addEventListener('click', event => {
-			event._isClickWithInModal = true;
-		});
-		document.getElementById("formPopup").addEventListener('click', event => {
-			if (event._isClickWithInModal) return;
-			event.currentTarget.classList.remove('open');
-		});
-		
-			</script>
 		
 			<style>
 		/* Скрытый контейнер формы */
@@ -424,20 +347,7 @@
                         <p class="ready__card-descr descr">
                             Для оценки надежности и финансовой устойчивости таких фирм, мы используем 10-ти ступенчатый алгоритм. Все фирмы из нашей базы в высшей степени надежны.
                         </p>
-                        <div class="col">
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="С оборотом от 1 млн">С оборотом от 1 млн<span class="arrow"></span></a>
-                            </div>
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="Зарегистрированные до 2000 года">Зарегистрированные до 2000 года<span class="arrow"></span></a>
-                            </div>
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="С расчетным счетом">С расчетным счетом<span class="arrow"></span></a>
-                            </div>
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="Строительные фирмы">Строительные фирмы<span class="arrow"></span></a>
-                            </div>
-                        </div>
+                        
                     </article>
                     <article class="ready__card card">
                         <h3 class="card__title title">С лицензиями и допусками</h3>
@@ -446,24 +356,9 @@
                         <p class="ready__card-descr descr">
                             Законодательство РФ предусматривает лицензирование отдельных видов деятельности. Мы разбираемся в специфике всех видов лицензий, поэтому предлагаем к покупке только надежные фирмы.
                         </p>
-                        <div class="card__links">
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="С допуском СРО">С допуском СРО<span class="arrow"></span></a>
-                            </div>
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="С лицензией Минкульта">С лицензией Минкульта<span class="arrow"></span></a>
-                            </div>
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="С лицензией МЧС">С лицензией МЧС<span class="arrow"></span></a>
-                            </div>
-                            <div class="card__link-row">
-                                <a href="#" class="card__link link" title="С лицензией на металлы">С лицензией на металлы<span class="arrow"></span></a>
-                            </div>
-                        </div>
+
                     </article>
-                    <div class="ready__btn card__link-row card__btn wow" data-wow-duration="1s" data-wow-delay="0s">
-                        <a href="#" class="cards__link link link-btn" title="Смотреть весь каталог">Смотреть весь каталог<span class="arrow"></span></a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -478,7 +373,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ЦСБ">ЦСБ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти НеоФьюжн">НеоФьюжн</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -514,7 +409,7 @@
 						<p class="card-label card-label--ready">Готовый бизнес</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ЦСБ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -523,7 +418,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ЭКОПРОЕКТ-31">ЭКОПРОЕКТ-31</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ЭкоэнергоТех">ЭкоэнергоТех</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -559,7 +454,7 @@
 						<p class="card-label card-label--urgently">Срочная продажа</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ЭКОПРОЕКТ-31">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -568,7 +463,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к АСТРА">АСТРА</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к КвантоСервис">КвантоСервис</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -591,7 +486,7 @@
 						<p class="card-label card-label--urgently">Срочная продажа</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации АСТРА">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -600,7 +495,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ООО МЕДВЕДЬ">ООО МЕДВЕДЬ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ЭкоэнергоТех">ЭкоэнергоТех</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -637,7 +532,7 @@
 						<p class="card-label card-label--ready">Готовый бизнес</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ООО МЕДВЕДЬ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -646,7 +541,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к НЕПТУН">НЕПТУН</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к АстроПром">АстроПром</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -675,7 +570,7 @@
 						<p class="card-label card-label--exclusive">Эксклюзивное предложение</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации НЕПТУН">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -684,7 +579,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ООО Триасс">ООО Триасс</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к НаноГрупп">НаноГрупп</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -714,7 +609,7 @@
 						<p class="card-label card-label--ready">Готовый бизнес</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ООО Триасс">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -723,7 +618,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к Геотрест">Геотрест</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ГелиоПроек">ГелиоПроек</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -752,7 +647,7 @@
 						<p class="card-label card-label--urgently">Срочная продажа</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации Геотрест">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -761,7 +656,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к АвтоматикСервис">АвтоматикСервис</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к МегаТехника">МегаТехника</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -798,7 +693,7 @@
 						<p class="card-label card-label--urgently">Срочная продажа</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации АвтоматикСервис">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -807,7 +702,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к АйтиПрофКомплекс">АйтиПрофКомплекс</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к РобоСистемы">РобоСистемы</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -836,7 +731,7 @@
 						<p class="card-label card-label--exclusive">Эксклюзивное предложение</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации АйтиПрофКомплекс">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -852,7 +747,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к Культурная среда">Культурная среда</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ГородскойИнноватор">ГородскойИнноватор</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -885,7 +780,7 @@
 						<p class="card-firm__price title">
 				<span>680 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации Культурная среда">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -894,7 +789,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ИСТ-ВЭСТ">ИСТ-ВЭСТ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ФьюжнЛаб">ФьюжнЛаб</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -927,7 +822,7 @@
 						<p class="card-firm__price title">
 				<span>3 500 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ИСТ-ВЭСТ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -936,7 +831,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ЦСБ">ЦСБ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к КосмоПромышленность">КосмоПромышленность</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -972,7 +867,7 @@
 						<p class="card-label card-label--ready">Готовый бизнес</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ЦСБ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -981,7 +876,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к КУРСИВ">КУРСИВ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ЛеснойКвант">ЛеснойКвант</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1007,7 +902,7 @@
 						<p class="card-firm__price title">
 				<span>380 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации КУРСИВ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1016,7 +911,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ЭКОПРОЕКТ-31">ЭКОПРОЕКТ-31</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к НейроЭнергия">НейроЭнергия</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1052,7 +947,7 @@
 						<p class="card-label card-label--urgently">Срочная продажа</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ЭКОПРОЕКТ-31">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1061,7 +956,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к АЛФАВИТ ИНТЕХ">АЛФАВИТ ИНТЕХ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к АвтоКван">АвтоКван</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1094,7 +989,7 @@
 						<p class="card-firm__price title">
 				<span>2 000 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации АЛФАВИТ ИНТЕХ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1103,7 +998,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к МИНЕРАЛ">МИНЕРАЛ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ГрандЭнерго">ГрандЭнерго</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1129,7 +1024,7 @@
 						<p class="card-firm__price title">
 				<span>380 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации МИНЕРАЛ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1138,7 +1033,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ГОРОДОК">ГОРОДОК</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к БиоСтройГрупп">БиоСтройГрупп</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1164,7 +1059,7 @@
 						<p class="card-firm__price title">
 				<span>3 000 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ГОРОДОК">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1173,7 +1068,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ТУРАТ">ТУРАТ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ИнтерКвант">ИнтерКвант</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1199,7 +1094,7 @@
 						<p class="card-firm__price title">
 				<span>640 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ТУРАТ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1208,7 +1103,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ТВИСТ">ТВИСТ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к РобоЭксперт">РобоЭксперт</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1234,7 +1129,7 @@
 						<p class="card-firm__price title">
 				<span>240 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ТВИСТ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1250,7 +1145,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к Культурная среда">Культурная среда</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ЭкоПрогресс">ЭкоПрогресс</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1283,7 +1178,7 @@
 						<p class="card-firm__price title">
 				<span>680 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации Культурная среда">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1292,7 +1187,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ЦСБ">ЦСБ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ГеоКвант">ГеоКвант</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1328,7 +1223,7 @@
 						<p class="card-label card-label--ready">Готовый бизнес</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ЦСБ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1337,7 +1232,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к СК МОТОР">СК МОТОР</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к СпортИнновация">СпортИнновация</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1363,7 +1258,7 @@
 						<p class="card-firm__price title">
 				<span>1 000 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации СК МОТОР">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1372,7 +1267,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к АЛФАВИТ ИНТЕХ">АЛФАВИТ ИНТЕХ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ХимЭнерго">ХимЭнерго</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1405,7 +1300,7 @@
 						<p class="card-firm__price title">
 				<span>2 000 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации АЛФАВИТ ИНТЕХ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1414,7 +1309,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ГОРОДОК">ГОРОДОК</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ФутурТех">ФутурТех</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1440,7 +1335,7 @@
 						<p class="card-firm__price title">
 				<span>3 000 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ГОРОДОК">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1449,7 +1344,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к СоюзМеталлик">СоюзМеталлик</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ИндустриальныйКвант">ИндустриальныйКвант</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1475,7 +1370,7 @@
 						<p class="card-firm__price title">
 				<span>1 100 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации СоюзМеталлик">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1484,7 +1379,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к СМК СПЕКТРО">СМК СПЕКТРО</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к ВиртуальныйМир">ВиртуальныйМир</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1517,7 +1412,7 @@
 						<p class="card-firm__price title">
 				<span>800 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации СМК СПЕКТРО">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1526,7 +1421,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к НОВЫЙ ЭТАП">НОВЫЙ ЭТАП</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к АртЭнерго">АртЭнерго</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1552,7 +1447,7 @@
 						<p class="card-firm__price title">
 				<span>800 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации НОВЫЙ ЭТАП">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1561,7 +1456,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ПРОФ МНЕНИЕ">ПРОФ МНЕНИЕ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к КосмоТрансГрупп">КосмоТрансГрупп</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1587,7 +1482,7 @@
 						<p class="card-firm__price title">
 				<span>550 000</span> ₽			</p>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ПРОФ МНЕНИЕ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1596,7 +1491,7 @@
 		<div class="catalog__card-firm card-firm card-firm-slider_item">
 		<div class="card-firm__row">
 			<div class="card-firm__col card-firm__col--first col">
-				<h3 class="card-firm__title"><a href="#" title="Перейти к ООО МЕДВЕДЬ">ООО МЕДВЕДЬ</a></h3>
+				<h3 class="card-firm__title"><a href="#" title="Перейти к НеоФьюжн">НеоФьюжн</a></h3>
 				<div class="row">
 					<div class="card-firm__col col">
 						<span class="card-firm__subtitle">
@@ -1633,7 +1528,7 @@
 						<p class="card-label card-label--ready">Готовый бизнес</p>
 						</div>
 						<div class="card__link-row  card-firm__link">
-				<a href="#" class="link" title="Подробнее об организации ООО МЕДВЕДЬ">Подробнее об организации<span class="arrow"></span></a>
+							<button class="link openFormButton">Запросить<span class="arrow"></span></button>
 			</div>
 		</div>
 		</div>
@@ -1647,13 +1542,10 @@
             <div class="buying__row row">
                 <div class="step card">
                     <span class="step__label">Шаг 1</span>
-                    <h3 class="title step__title">Выбираете фирму</h3>
+                    <h3 class="title step__title">Выбор компании</h3>
                     <p class="buying__descr descr">
-                        В нашем каталоге представлен широкий выбор готовых компаний, отвечающих различных требованиям (членство в СРО, наличие лицензии, расчетный счет, открытый в определенном банке и т.п.). Вы можете выбрать подходящую фирму из каталога или обратиться за помощью к нашим специалистам.
+                        В нашем каталоге вы найдете разнообразные готовые компании, соответствующие различным критериям (членство в СРО, наличие лицензий, расчетные счета в определенных банках и т.д.). Вы можете самостоятельно выбрать нужную фирму или получить консультацию от наших специалистов.
                     </p>
-                    <div class="card__link-row card__btn buying__btn wow" data-wow-duration="1s" data-wow-delay="0s">
-                        <a href="#" class="cards__link link link-btn" title="Каталог фирм">Каталог фирм<span class="arrow"></span></a>
-                    </div>
                 </div>
                 <div class="buying__img-row">
                     <img src="local/templates/bankfirm/assets/step1.jpg" alt="шаг 1" class="buying__img">
@@ -1665,25 +1557,19 @@
                 </div>
                 <div class="step card">
                     <span class="step__label">Шаг 2</span>
-                    <h3 class="title step__title">Юрист готовит документы</h3>
+                    <h3 class="title step__title">Подготовка документов</h3>
                     <p class="buying__descr descr">
-                        Все процессуальные вопросы, связанные с оформлением сделки купли-продажи готовой компании, мы берем на себя. Необходимые документы наши юристы запросят у Вас в личном кабинете и подготовят их самостоятельно, освободив Вас от бюрократических тонкостей данной процедуры.
+                        Мы берем на себя все юридические аспекты оформления сделки купли-продажи. Наши юристы запросят необходимые документы через личный кабинет и подготовят их, избавив вас от бюрократических сложностей.
                     </p>
-                    <div class="card__link-row card__btn buying__btn wow" data-wow-duration="1s" data-wow-delay="0s">
-                        <a href="#" class="cards__link link link-btn" title="Личный кабинет">Личный кабинет<span class="arrow"></span></a>
-                    </div>
                 </div>
             </div>
             <div class="buying__row row">
                 <div class="step card">
                     <span class="step__label">Шаг 3</span>
-                    <h3 class="title step__title">Приезжаете на сделку</h3>
+                    <h3 class="title step__title">Участие в сделке</h3>
                     <p class="buying__descr descr">
-                        Сделка купли-продажи готовой компании проходит у нотариуса. Вы можете принять как личное участие, так прислать своего представителя. В последнем случае понадобится доверенность, которую мы подготовим.
+                        Сделка по продаже готовой компании оформляется у нотариуса. Вы можете присутствовать лично или отправить представителя с доверенностью, которую мы подготовим.
                     </p>
-                    <div class="card__link-row card__btn buying__btn wow" data-wow-duration="1s" data-wow-delay="0s">
-                        <a href="#" class="cards__link link link-btn" title="Консультация">Консультация<span class="arrow"></span></a>
-                    </div>
                 </div>
                 <div class="buying__img-row">
                     <img src="local/templates/bankfirm/assets/step3.jpg" alt="шаг 3" class="buying__img">
@@ -1720,39 +1606,39 @@
                 <p class="questions__descr descr">
                     Сделка проходит у нотариуса. Вы можете приехать лично, либо прислать представителя по доверенности, которую мы для Вас подготовим.
                 </p>
-                <button class="questions__btn btn" data-id="7" data-form="popup" title="Задать вопрос">Задать вопрос</button>
+                <button class="questions__btn btn openFormButton" title="Задать вопрос">Задать вопрос</button>
             </div>
             <div class="questions__col col questions__tabs">
                 <div>
-                    <input class="tab__input" type="radio" id="rd1" name="rd"> <label class="questions__tab tab" for="rd1">Чем отличается продажа готовой фирмы от продажи готового бизнеса?</label>
+                    <input class="tab__input" type="radio" id="rd1" name="rd"> <label class="questions__tab tab" for="rd1">В чем различие между продажей готовой фирмы и готового бизнеса?</label>
                     <div class="tab__content">
-                        Сделка по готовой фирме предполагает только продажу юридического лица (правоустанавливающих документов). Приобретение готового бизнеса предусматривает приобретение целого имущественного комплекса вместе с документами: оборудования, помещений, материалов, а также интеллектуальной собственности.<br>
+                        Продажа готовой фирмы означает передачу юридического лица с оформленными документами, но без активной деятельности. В случае с готовым бизнесом передаются не только документы компании, но и все её активы, обязательства, клиентская база и текущие контракты.<br>
                     </div>
                 </div>
                 <div>
-                    <input class="tab__input" type="radio" id="rd2" name="rd"> <label class="questions__tab tab" for="rd2">Я хочу принять участие в госзакупках. Заказчик установил требование о членстве в саморегулируемой организации строителей и наличие лицензии Минкультуры на реставрацию памятников культуры. Можно ли у Вас подобрать готовую компанию, отвечающую таким требованиям?</label>
+                    <input class="tab__input" type="radio" id="rd2" name="rd"> <label class="questions__tab tab" for="rd2">Я хочу принять участие в госзакупках. Заказчик требует членство в саморегулируемой организации строителей и наличие лицензии Минкультуры на реставрацию памятников. Можно ли у вас найти такую готовую компанию?</label>
                     <div class="tab__content">
-                        Да, в нашем реестре есть возможность подобрать компанию, являющуюся членом СРО строителей и имеющей лицензию на реставрацию памятников культуры. Организационно-правовая форма предлагаемых компаний – ООО, АО, НКО и т.д. Иногда в конкурсной документации требуется привязка расчетного счета к определенному банку. С нашей стороны – это всего лишь дополнительный критерий отбора. Дополнительным плюсом может оказаться история компании, выполнившей хоть один госзаказ.
+                        Да, у нас можно подобрать готовую компанию, которая удовлетворяет этим требованиям, включая членство в саморегулируемой организации строителей и наличие лицензии Минкультуры на реставрацию памятников.
                     </div>
                 </div>
                 <div>
-                    <input class="tab__input" type="radio" id="rd3" name="rd"> <label class="questions__tab tab" for="rd3">Я являюсь учредителем и генеральным директором фирмы, принимавшей участие в госзакупках в области строительства. В настоящее время я приял решение сменить вид деятельности и хочу продать свою компанию. Могу я сделать это у Вас?</label>
+                    <input class="tab__input" type="radio" id="rd3" name="rd"> <label class="questions__tab tab" for="rd3">Я являюсь учредителем и генеральным директором компании, участвовавшей в госзакупках в сфере строительства. Сейчас я решил сменить направление деятельности и хочу продать свою компанию. Могу ли я сделать это у вас?</label>
                     <div class="tab__content">
-                        Разумеется, можете. То, что фирма принимала участие в госзакупках в области строительства – дополнительный плюс к оценочной стоимости, так как Ваша фирма прошла определенные процедуры с документальным подтверждением. Покупатели, желающие заниматься строительством и принять участие в конкурсе по госзакупкам, также обращаются к нам.
+                        Да, вы можете продать свою компанию через нас. Мы окажем вам помощь в процессе продажи и подберем подходящего покупателя.
                     </div>
                 </div>
                 <div>
-                    <input class="tab__input" type="radio" id="rd4" name="rd"> <label class="questions__tab tab" for="rd4">Я хочу продать фирму без долгов, но не знаю, сколько она будет стоить. Как происходит оценка готового ООО?</label>
+                    <input class="tab__input" type="radio" id="rd4" name="rd"> <label class="questions__tab tab" for="rd4">Я хочу продать свою фирму без долгов, но не знаю её стоимости. Как проходит оценка готового ООО?</label>
                     <div class="tab__content">
-                        При оценке стоимости фирмы без долгов, независимо от организационно-правовой формы собственности, учитываются определенные факторы. На оценочную стоимость влияют возраст компании, история, участие в отраслевой СРО, наличие лицензий на специфические виды деятельности, наличие специалистов и др. Наши специалисты помогут рассчитать рыночную стоимость Вашей компании с учетом требований, которые выдвигают покупатели.
+                        Оценка готового ООО включает анализ финансовых показателей, рыночной стоимости активов, наличия долгов и обязательств, а также потенциала для роста. Мы предлагаем услугу оценки вашей компании, чтобы определить её стоимость.
                         <p>
                         </p>
                     </div>
                 </div>
                 <div>
-                    <input class="tab__input" type="radio" id="rd5" name="rd"> <label class="questions__tab tab" for="rd5">Я хочу продать свою фирму. С какими налогами я могу столкнуться?</label>
+                    <input class="tab__input" type="radio" id="rd5" name="rd"> <label class="questions__tab tab" for="rd5"> Я планирую продать свою фирму. Какие налоги мне нужно будет заплатить?</label>
                     <div class="tab__content">
-                        Если Вы – физическое лицо, придется уплатить НДФЛ в размере 13%, если юридическое – налог на прибыль 20%. Имеются законные основания немного снизить расчетную базу, но не процент. В то же время, если Вы владеете фирмой более 5 лет, налоги платить не придется. С другой стороны, продавая имущественный комплекс, придется заплатить НДС по ставке 16,67%.
+                        При продаже фирмы вы можете столкнуться с налогами на прибыль от продажи, НДС и другими налогами в зависимости от структуры сделки и законодательства. Мы поможем вам разобраться с налоговыми обязательствами и минимизировать налоговые риски.
                     </div>
                 </div>
             </div>
@@ -1767,19 +1653,19 @@
                 </div>
                 <div class="choice__col col">
                     <p class="choice__text descr">
-                        bank-firm.ru – это площадка по купле-продаже готовых фирм.<br>
+                        kupit-firm-u.ru – это площадка по купле-продаже готовых фирм.<br>
                         <br>
-                        Среди наших клиентов есть крупные игроки из различных секторов отечественной экономики. Нас знают, нам доверяют, с нами сотрудничают на постоянной основе. Ведь bank-firm.ru это не просто каталог готовых компаний, а целый штат квалифицированных сотрудников с, поистине, уникальным опытом в вопросах купли-продажи готовых фирм. Наши специалисты могут помочь найти готовое ООО, отвечающее даже самым искушенным требованиям. Также мы поможем продать Вашу фирму в максимально сжатые сроки.
+                        Нам доверяют крупные игроки разных секторов экономики. Наш сайт – это не просто каталог, а команда опытных специалистов, готовых помочь найти или продать фирму в кратчайшие сроки. Мы обеспечиваем прозрачные и надежные сделки.
                     </p>
                     <div class="row">
                         <div class="col">
                             <div class="choice__card choice__card--first">
                                 <div class="col choice__col-wrapper">
                                     <img alt="Прозрачность сделки" src="local/templates/bankfirm/assets/legal.svg" class="choice__icon">
-                                    <h3 class="title choice__card-title">Прозрачность</h3>
+                                    <h3 class="title choice__card-title">Прозрачность сделок</h3>
                                 </div>
                                 <p class="choice__card-text descr">
-                                    Сделка по продаже готовой компании – это прозрачная процедура без каких-либо «подводных камней». Все фирмы из нашего каталога прошли проверку. Мы защищаем интересы как покупателя готового ООО, так и продавца (первоначального владельца).
+                                    Все компании в нашем каталоге проходят тщательную проверку. Мы защищаем интересы и покупателя, и продавца, обеспечивая прозрачность и отсутствие скрытых проблем.
                                 </p>
                             </div>
                         </div>
@@ -1790,7 +1676,7 @@
                                     <h3 class="title choice__card-title">Надежность</h3>
                                 </div>
                                 <p class="choice__card-text descr">
-                                    Мы дорожим своей репутацией и прилагаем максимум усилий, чтобы оставлять только приятные впечатления у клиентов. В нашем штате работают только профессиональные юристы, обладающие огромным опытом в вопросах купли-продажи готовых фирм. С нами Вы можете быть совершенно спокойны и не бояться, что приобретете фирму с долгами или иными обременениями.
+                                    Мы гордимся своей репутацией и стремимся оставить у клиентов только положительные впечатления. Наши профессиональные юристы гарантируют, что вы не столкнетесь с долгами или обременениями при покупке фирмы.
                                 </p>
                             </div>
                         </div>
@@ -1801,10 +1687,10 @@
                 <div class="choice__card choice__card--first-btm">
                     <div class="col choice__col-wrapper">
                         <img alt="Объём сделки" src="local/templates/bankfirm/assets/networking.svg" class="choice__icon">
-                        <h3 class="title choice__card-title">Объём</h3>
+                        <h3 class="title choice__card-title">Обширный каталог</h3>
                     </div>
                     <p class="choice__card-text descr">
-                        В нашем каталоге собраны готовые компании со всей России. Каждый день мы обновляем и актуализируем его, чтобы можно было найти фирму под самый требовательный запрос.
+                        В нашем каталоге собраны компании со всей России. Мы ежедневно обновляем информацию, чтобы предложить вам фирмы, отвечающие самым строгим требованиям.
                     </p>
                     <p class="choice__card-text descr">
                         Многолетний опыт и обширные знания по вопросам отечественного законодательства позволяют нам точно определить рыночную стоимость каждой конкретной компании.
@@ -1816,24 +1702,24 @@
                         <h3 class="title choice__card-title">Профессионализм</h3>
                     </div>
                     <p class="choice__card-text descr">
-                        В нашем штате работают высококвалифицированные юристы, которые следят за всеми законодательными изменениями, касающимися регистрационных и иных процедур. Это позволяет всегда быстро и эффективно проходить процедуру регистрации нового владельца фирмы в Едином государственном реестре юридических лиц. Кроме того, мониторинг нормативных изменений помогает всегда точно определять востребованность тех или иных характеристик готового бизнеса, что непосредственно влияет на стоимость готовой фирмы.
+                        Наши юристы следят за всеми законодательными изменениями, что позволяет нам быстро и эффективно проводить регистрацию нового владельца в Едином государственном реестре юридических лиц и точно оценивать стоимость готовых фирм.
                     </p>
                 </div>
                 <div class="choice__card">
                     <div class="col choice__col-wrapper">
                         <img src="local/templates/bankfirm/assets/badge.svg" class="choice__icon" alt="Опыт">
-                        <h3 class="title choice__card-title">Опыт</h3>
+                        <h3 class="title choice__card-title">Многолетний опыт</h3>
                     </div>
                     <p class="choice__card-text descr">
-                        Многолетий опыт на российском рынке по продаже готовых компаний – это одно из основных преимуществ нашей компании. С нами сотрудничают тысячи отечественных предпринимателей, среди них крупнейшие игроки различных секторов экономики. Мы гордимся своими достижениями и стремимся к новым высотам.
+                        Мы работаем на российском рынке уже много лет, сотрудничая с тысячами предпринимателей, включая крупнейших представителей различных секторов экономики. Мы гордимся своими достижениями и стремимся к новым высотам.
                     </p>
                 </div>
                 <div class="choice__card">
                     <img src="local/templates/bankfirm/assets/networking.svg" class="choice__icon" alt="Оперативность">
-                    <h3 class="title choice__card-title">Оперативность</h3>
+                    <h3 class="title choice__card-title">Короткие сроки</h3>
                     <br>
                     <p class="choice__card-text descr">
-                        Благодаря остальным нашим преимуществам (крупнейший каталог фирм, огромный опыт работы, квалифицированный персонал, адекватная стоимость готовых компаний) мы добились того, что все наши сделки проходят в максимально кратчайшие сроки.
+                        Благодаря нашему большому каталогу, опыту и квалифицированному персоналу, мы проводим сделки в максимально короткие сроки.
                     </p>
                 </div>
             </div>
@@ -1878,8 +1764,8 @@
 
 	
 		<div class="news__card card">
-			<a href="news/novosti-kompanii/kak-nachat-biznes-instruktsiya-vnutri/index.htm">
-				<img class="news__card_img" src="upload/medialibrary/10e/3gkfvzfxn7y5x7hkkburbrx5od4f8ukz/146152.jpg" alt="Новость">
+			<a href="./blog/articles/1/index.htm">
+				<img class="news__card_img" src="./blog/articles/1/1.jpg" alt="Статья">
 
 				<span class="news__card_preTitle">
 					Новости компании				</span>
@@ -1892,8 +1778,8 @@
 						</a>
 									</h3>
 
-				<p class="card__descr news__descr" title="Как начать бизнес? Инструкция внутри">
-					Как начать бизнес? Инструкция внутри				</p>
+				<p class="card__descr news__descr" title="Индивидуальный предприниматель – это юридическое лицо или физическое">
+					Индивидуальный предприниматель – это юридическое лицо или физическое</p>
 			</a>
 		</div>
 	
@@ -1938,7 +1824,7 @@
 	
 		
 		        <div class="card__link-row card__btn buying__btn news__btn wow" data-wow-duration="1s" data-wow-delay="0s">
-            <a href="news/index.htm" class="link link-btn news__card-link" title="Посмотреть все новости">Посмотреть все новости<span class="arrow"></span></a>
+            <a href="blog/index.htm" class="link link-btn news__card-link" title="Посмотреть все статьи">Посмотреть все статьи<span class="arrow"></span></a>
         </div>
     </div></section>
 
@@ -2079,7 +1965,7 @@
             </div>
             <div class="row">
                 <p class="copyright">&#169;2021-
-                    2024 bank-firm.ru
+                    2024 kupit-firm-u.ru
                 </p>
             </div>
         </div>
@@ -2146,6 +2032,28 @@
 	</form>
 </div>
 </script>    
+<script>
+document.querySelectorAll('.openFormButton').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('formPopup').style.display = 'flex';
+    });
+});
+
+document.getElementById('closeButton').addEventListener('click', function() {
+document.getElementById('formPopup').style.display = 'none';
+});
+
+document.getElementById('cancelButton').addEventListener('click', function() {
+document.getElementById('formPopup').style.display = 'none';
+});
+
+document.getElementById('formPopup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        this.style.display = 'none';
+    }
+});
+</script>
+
 </body>
 
 </html>
