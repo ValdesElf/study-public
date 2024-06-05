@@ -66,7 +66,6 @@
                     </a>
                     <a href="tel:88005508101" class="nice__phone" title="8 (800) 550-81-01">8 (800) 550-81-01</a>
                 </div>
-				<div class="menu-item"><a href="blog/index.htm" class="header__link" title="Купить">Блог</a></div>	
                         <button class="btn make-order__btn--mb" data-id="10" data-form="popup" title="Заказать фирму">Заказать фирму</button>
             <button type="button" aria-label="menu" id="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
             <div class="links">
@@ -74,7 +73,8 @@
                     
 <div class="header__group row __ul" data-menu="">
 			
-
+	<div class="menu-item"><a href="./index.htm" class="header__link" title="Видео">Главная</a></div>
+	<div class="menu-item"><a href="./blog/index.htm" class="header__link" title="Видео">Блог</a></div>
 <!-- nav -->                    
 <div class="button-nav">
 	<button id="openFormButton" class="btn make-order__btn openFormButton" title="Заказать фирму">Заказать фирму</button>
@@ -132,16 +132,15 @@
 		
 		
 			<style>
-		/* Скрытый контейнер формы */
 		
 		.form-popup {
-			display: none; /* Скрытый по умолчанию */
+			display: none; 
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+			background-color: rgba(0, 0, 0, 0.5); 
 			justify-content: center;
 			align-items: center;
 			z-index: 99998;
@@ -1767,16 +1766,10 @@
 			<a href="./blog/articles/1/index.htm">
 				<img class="news__card_img" src="./blog/articles/1/1.jpg" alt="Статья">
 
-				<span class="news__card_preTitle">
-					Новости компании				</span>
 
 				<span class="card__time news__time ">
-					24.05.2024				</span>
+					3 июня 2024				</span>
 
-				<h3 class="news__card-title">
-											<a title="Перейти к разделу Новости компании" href="news/novosti-kompanii/index.htm">
-						</a>
-									</h3>
 
 				<p class="card__descr news__descr" title="Индивидуальный предприниматель – это юридическое лицо или физическое">
 					Индивидуальный предприниматель – это юридическое лицо или физическое</p>
@@ -1784,41 +1777,29 @@
 		</div>
 	
 		<div class="news__card card">
-			<a href="news/kak-biznesu-nayti-novykh-zakazchikov-i-podryadchikov/index.htm">
-				<img class="news__card_img" src="upload/medialibrary/3c2/xun8b4ubbw0jhoac43990wsribz96vvq/2148985463.jpg" alt="Новость">
+			<a href="./blog/articles/2/index.htm">
+				<img class="news__card_img" src="./blog/articles/2/1.jpg" alt="Новость">
 
-				<span class="news__card_preTitle">
-									</span>
 
 				<span class="card__time news__time ">
-					17.05.2024				</span>
+					4 июня 2024				</span>
 
-				<h3 class="news__card-title">
-											-
-									</h3>
 
-				<p class="card__descr news__descr" title="Как бизнесу найти новых заказчиков и подрядчиков?">
-					Как бизнесу найти новых заказчиков и подрядчиков?				</p>
+
+				<p class="card__descr news__descr" title="ОКТМО – что это такое, где его взять и как узнать код ОКТМО">
+					ОКТМО – что это такое, где его взять и как узнать код ОКТМО</p>
 			</a>
 		</div>
 	
 		<div class="news__card card">
-			<a href="news/novosti-kompanii/chto-vybrat-ooo-ili-ao/index.htm">
-				<img class="news__card_img" src="upload/iblock/5ea/xgxam6wkh81548gvzskqa9424mfkmbv3/14814.jpg" alt="Новость">
-
-				<span class="news__card_preTitle">
-					Новости компании				</span>
+			<a href="./blog/articles/3/index.htm">
+				<img class="news__card_img" src="./blog/articles/3/1.jpg" alt="Новость">
 
 				<span class="card__time news__time ">
-					13.05.2024				</span>
+					5 июня 2024				</span>
 
-				<h3 class="news__card-title">
-											<a title="Перейти к разделу Новости компании" href="news/novosti-kompanii/index.htm">
-						</a>
-									</h3>
-
-				<p class="card__descr news__descr" title="Что выбрать — ООО или АО?">
-					Что выбрать — ООО или АО?				</p>
+				<p class="card__descr news__descr" title="СРО – что это, виды, структура, финансирование">
+					СРО – что это, виды, структура, финансирование</p>
 			</a>
 		</div>
 	
@@ -1827,6 +1808,12 @@
             <a href="blog/index.htm" class="link link-btn news__card-link" title="Посмотреть все статьи">Посмотреть все статьи<span class="arrow"></span></a>
         </div>
     </div></section>
+
+	<style>
+		.news__card {
+			width: 300px;
+		}
+	</style>
 
     <script>if (window.location.hash != '' && window.location.hash != '#') top.BX.ajax.history.checkRedirectStart('bxajaxid', '1e22049d5a297d7894512ed9e1b2b0a0')</script><div id="comp_1e22049d5a297d7894512ed9e1b2b0a0"><section class="offers section wow" data-wow-duration="1s" data-wow-delay="0s" id="subscribe-form">
 	<!--'start_frame_cache_subscribe-form'-->	<form action="/personal/subscribe/" class="offers__card card" id="subscribeForm">
@@ -1847,122 +1834,33 @@
 <br>
 <footer class="footer col">
     <div class="footer__top row">
-        <div class="col">
-            <h2 class="footer__title title">Фирмы</h2>
-            <div class="row">
-                <div class="col footer__links">
-                    <a class="link footer__link" href="#" title="Фирмы с ОСНО">Фирмы
-                        с ОСНО</a>
-                    <a class="link footer__link" href="#" title="Фирмы на УСН">Фирмы
-                        на УСН</a>
-                    <a class="link footer__link" href="#" title="С расчётным счётом">С расчётным счётом</a>
-                    <a class="link footer__link" href="#" title="Фирмы с лицензиями">Фирмы с
-                        лицензиями</a>
-                    <a class="link footer__link" href="#" title="Строительные компании (с СРО)">Строительные компании (с СРО)</a>
-                </div>
-                <div class="col footer__links">
-                    <a class="link footer__link" href="#" title="С историей">С историей</a>
-                    <a class="link footer__link" href="#" title="С оборотами">С оборотами</a>
-                    <a class="link footer__link" href="#" title="Фирмы по городам">Фирмы по городам</a>
-                    <a class="link footer__link" href="#" title="Фирмы по видам деятельности">Фирмы по видам
-                        деятельности</a>
-                </div>
-            </div>
-        </div>
+        
 
-        <div class="col">
-            <h2 class="footer__title title">Покупателю</h2>
-            
-<div class="col footer__links">
+        
 
-			<a href="#" class="link footer__link" title="Каталог">Каталог</a>
-		
-
-			<a href="#" class="link footer__link" title="Индивидуальный подбор фирмы">Индивидуальный подбор фирмы</a>
-		
-
-			<a href="#" class="link footer__link" title="Консультация">Консультация</a>
-		
-</div>
-        </div>
-
-        <div class="col">
-            <h2 class="footer__title title">Продавцу</h2>
-            
-<div class="col footer__links">
-
-			<a href="#" class="link footer__link" title="Добавить компанию">Добавить компанию</a>
-		
-
-			<a href="#" class="link footer__link" title="Срочная продажа">Срочная продажа</a>
-		
-
-			<a href="#" class="link footer__link" title="Калькулятор стоимости фирмы">Калькулятор стоимости фирмы</a>
-		
-</div>
-        </div>
-        <div class="col col--last">
-            <img alt="bankfirm logo" class="logo" src="local/templates/bankfirm/assets/logotype-bankfirm-new.svg">
-            <div class="col footer__links">
-                <a class="link footer__link" href="#" title="О компании">О компании</a>
-                <a class="link footer__link" href="#" title="Контакты">Контакты</a>
-                <a class="link footer__link" href="#" title="Контакты">Видео</a>
-                <!-- <a class="link footer__link" href="/images/ip-fenko.doc" title="Скачать реквизиты компании Банк фирм в формате Word">Реквизиты</a> -->
-                <h2 class="title footer__social-title"> Наши социальные сети</h2>
-                <div class="row social-links">
-                    <a class="social-links__link" href="#" target="_blank" title="YouTube">
-                        <img style="width: 48px;" alt="YouTube" src="local/templates/bankfirm/assets/youtube_social_circle_red.svg">
-                    </a>
-                    <a class="social-links__link" href="#" target="_blank" title="VK">
-                        <img alt="vk" src="local/templates/bankfirm/assets/vk.svg">
-                    </a>
-                    <!-- <a class="social-links__link" href="#">
-                            <img alt="telegram" src="/local/templates/bankfirm/assets/telegram.svg" />
-                        </a>
-                        <a class="social-links__link" href="#">
-                            <img alt="facebook" src="/local/templates/bankfirm/assets/facebook.svg" />
-                        </a>-->
-                </div>
-            </div>
-        </div>
+        
     </div>
     <div class="footer__bottom row">
         <div class="footer__bottom-content row">
             
 <div class="row">
 
-			<a href="#" class="link footer-bottom__link" title="Услуги">Услуги</a>
+			<a href="../../../index.htm" class="link footer-bottom__link" title="Услуги">Услуги</a>
 		
 
-			<a href="#" class="link footer-bottom__link" title="Новости">Новости</a>
+			<a href="../../index.htm" class="link footer-bottom__link active" title="Новости">Блог</a>
 		
 
-			<a href="#" class="link footer-bottom__link" title="Помощь">Помощь</a>
+			<button class="link footer-bottom__link openFormButton">Помощь</button>
 		
 
-			<a href="#" class="link footer-bottom__link" title="Поиск">Поиск</a>
+			<button class="link footer-bottom__link openFormButton">Техническая поддержка</button>
 		
 
-			<a href="#" class="link footer-bottom__link" title="Оферта">Оферта</a>
-		
-
-			<a href="#" class="link footer-bottom__link" title="Техническая поддержка">Техническая поддержка</a>
-		
-
-			<a href="#" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
+			<a href="../../../index.htm" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
 		
 </div>
-            <div class="row social-links">
-                <a class="social-links__link" href="#" target="_blank" title="VK">
-                    <img alt="vk" width="32" height="18" src="local/templates/bankfirm/assets/vk.svg">
-                </a>
-                <!--<a class="social-links__link" href="#">
-                        <img alt="telegram" width="32" height="30" src="/local/templates/bankfirm/assets/telegram.svg" />
-                    </a>
-                    <a class="social-links__link" href="#">
-                        <img alt="facebook" width="18" height="32" src="/local/templates/bankfirm/assets/facebook.svg" />
-                    </a>-->
-            </div>
+           
             <div class="row">
                 <p class="copyright">&#169;2021-
                     2024 kupit-firm-u.ru

@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ОКТМО – что это такое, где его взять и как узнать код ОКТМО</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/fav/favicon-16x16.png">
+<meta name="yandex-verification" content="ba1fc38d9e081559">
+    <link rel="manifest" href="../../../assets/fav/site.webmanifest">
+    <link rel="mask-icon" href="../../../assets/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+        <script src="../../../local/templates/bankfirm/dist/js/vendor/jquery.min.js"></script>
+            <script>
+    var userFavorites = [];
+        var arSiteOptions = {
+        PHONE_MASK: "+7(999) 999-9999",
+        dadataToken: "57a95c59a42fce1a4698dd21769eeafc2748b705",
+        'DEFAULT_MAP_MARKET' : 'N',
+    }
+    </script>
+    <meta name="description" content="Код ОКТМО – что это такое, для чего он нужен и где его найти. ОКТМО используется для заполнения налоговой декларации, статистической отчётности или платёжного поручения для уплаты налогов. Узнать ОКТМО онлайн.">
+<link href="../../../bitrix/cache/css/s1/bankfirm/template_f944bcde5c2076852e948444aceadfd0/template_f944bcde5c2076852e948444aceadfd0_v1.css?1715933479435835" type="text/css" data-template-style="true" rel="stylesheet">
+<script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script>(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+
+
+
+<script>(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'Y','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1716405196','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'52518ea97aa2eb61010a2f9cd3ddab67'});</script>
+
+<link rel="canonical" href="index.htm">
+
+
+</head>
+
+<body>
+    <div id="panel">
+            </div>
+    <header class="header">
+        <div class="header__row row">
+                            <div class="logo-and-phone">
+                    <a class="header__logo" href="../../../index.htm" title="Банк фирм">
+                        <img alt="bankfirm logo" class="logo" src="../../../local/templates/bankfirm/assets/logotype-bankfirm-new.svg">
+                    </a>
+                    <a href="tel:88005508101" class="nice__phone" title="8 (800) 550-81-01">8 (800) 550-81-01</a>
+                </div>
+                        <button class="btn make-order__btn--mb openFormButton" title="Заказать фирму">Заказать фирму</button>
+            <button type="button" aria-label="menu" id="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <div class="links">
+                <div class="row row-header">
+                    
+<div class="header__group row __ul" data-menu="">
+			
+
+			
+		
+						<!-- <div class="menu-item"><a href="" class="header__link selected" title=""></a></div> -->
+			
+						<!-- Задача https://cp.niceneasy.ru/issues/20787 -->
+							<div class="menu-item"><a href="../../index.htm" class="header__link" title="Видео">Блог</a></div>
+
+<!-- nav -->                    
+                    <button class="btn make-order__btn openFormButton button-nav openFormButton" title="Заказать фирму">Заказать фирму</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+		    	<!-- ФОРМА ================================================= -->
+
+			<div class="form-popup" id="formPopup">
+				<div class="form-container" id="formContainer">
+					<div class="form-header">
+						<h2>ИНДИВИДУАЛЬНЫЙ ПОДБОР ФИРМЫ</h2>
+						<button class="close-button" id="closeButton">×</button>
+		
+					</div>
+					<form>
+						<label for="name">Ваше имя</label>
+						<input type="text" id="name" name="name" required>
+		
+						<label for="phone">Телефон</label>
+						<input type="tel" id="phone" name="phone" required>
+		
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+		
+						<label for="parameters">Параметры фирмы</label>
+						<textarea id="parameters" name="parameters" required></textarea>
+		
+						<div class="adv__checkbox text_confirmation">
+							<input tabindex="5" type="checkbox" required="" class="checkbox" id="offerAgreementformA03e" name="agreement" value="Y">
+							<label for="offerAgreementformA03e"><span></span><p class="sell__inline">Я ознакомился и согласен с <a class="link" href="/offer/" target="_blank" title="Оферта">договором оферты</a> и <a class="link" href="/contract-offer/" target="_blank" title="Политика конфиденциальности">пользовательским соглашением</a></p></label>
+						</div>
+		
+						
+						<div class="form-actions">
+						<button class="popup-submit-btn" type="submit">Отправить</button>
+						<button class="popup-cancel-btn" type="button" class="cancel-button" id="cancelButton">Отмена</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		
+		
+			<style>
+		
+		.form-popup {
+			display: none; 
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); 
+			justify-content: center;
+			align-items: center;
+			z-index: 99998;
+		}
+		
+		.form-actions {
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.adv__checkbox {
+			display: block !important;
+		}
+		
+		.adv__checkbox p {
+			color: black !important;
+		}
+		
+		.form-popup.open {
+			display: block;
+		}
+		
+		.form-container {
+			max-width: 500px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+			position: relative;
+		}
+		
+		
+		.form-header {
+			display: flex;
+			flex-wrap: wrap;
+			/* justify-content: space-between; */
+			align-items: center;
+		}
+		
+		.form-header h2 {
+			text-transform: uppercase;
+		  color: #1A345C;
+		  font-weight: bold;
+		  font-size: 24px;
+		  line-height: 31px;
+		  text-align: center;
+		  margin-top: 16px;
+		}
+		
+		.close-btn {
+			z-index: 401;
+		
+		}
+		
+		.close-button {
+			right: 20px;
+			display: inline-block;
+			visibility: inherit;
+			box-sizing: border-box;
+			position: absolute;
+			background: none;
+			border: none;
+			font-size: 24px;
+			cursor: pointer;
+			height: 36px !important;
+			width: 36px !important;
+		}
+		
+		.form-container label {
+			display: block;
+			margin-top: 10px;
+		}
+		
+		.form-container input:not(:last-child), textarea {
+			width: calc(100% - 20px);
+			padding: 10px;
+			margin-top: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		.form-container a:hover {
+			color: #FFA200 !important;
+		}
+		
+		.form-container input:last-child {
+			position: absolute;
+		}
+		
+		.form-container textarea {
+			height: 100px;
+			resize: vertical;
+		}
+		
+		.form-container button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 200px;
+			height: 50px;
+			padding: 10px;
+			margin-top: 20px;
+			border: none;
+			border-radius: 4px;
+			background-color: #ff9800;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		
+		
+		.form-container button:hover {
+		  background-color: #fff !important;
+		  border: 1px solid #FFA200;
+		  color: #FFA200 !important;
+		  transition: all 0.6s ease;
+		}
+		
+		.popup-submit-btn {
+		
+		}
+		
+		.popup-cancel-btn {
+		
+		}
+		
+		.form-container button:hover {
+			background-color: #e68900;
+		}
+		
+		.cancel-button {
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+		
+		.cancel-button:hover {
+			background-color: #bbb;
+		}
+		
+			</style>
+		
+			<!-- ФОРМА ================================================= -->
+
+	<style>
+		.button-nav {
+			position: absolute;
+			right: 0;
+		}
+	</style>
+
+    <script>
+        window.onscroll = (e) => {
+            if (this.scrollY > 20) {
+                if (this.oldScroll > this.scrollY) {
+                    document.querySelector(".header").classList.remove('header--mb')
+                } else {
+                    document.querySelector(".header").classList.add('header--mb')
+                }
+                this.oldScroll = this.scrollY;
+            }
+        }
+    </script>
+
+    <main id="main" class="main section news-page">
+        <div class="n-container"><nav class="breadcrumbs"><a class="breadcrumbs__link link" href="../../../index.htm" title="Главная">
+					<span>Главная</span>
+				</a><a class="breadcrumbs__link link" href="../../index.htm" title="Новости">
+					<span>Блог</span>
+				</a>
+			<div class="breadcrumbs__link link breadcrumbs__link--current">
+				
+				<span>Что такое ОКТМО</span>
+			</div></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"/","name":"Главная"}},{"@type":"ListItem","position":"2","item":{"@id":"/news/","name":"Новости"}}]}</script></div>        
+                <article class="main__content news__content">
+        <div class="catalog__wrapper wrapper">
+
+			
+	<aside class="filter anchor__aside">
+		<p class="filter__main-title title--white">Меню</p>
+		<ul class="menu__anchor">
+			<li><a href="#part1">Что такое ОКТМО</a></li>
+			<li><a href="#part2">Для чего нужен ОКТМО</a></li>
+			<li><a href="#part3">Как расшифровывается код ОКТМО</a></li>
+			<li><a href="#part4">Как узнать код ОКТМО</a></li>
+		</ul>
+
+</aside>
+
+<style>
+
+	body {
+		background-image: none !important;
+	}
+	
+	.filter {
+		background: none !important;
+	}
+	.anchor__aside {
+		width: 350px;
+		background-image: none !important;
+	}
+	.menu__anchor li {
+		margin: 10px 15px;
+	}
+	.menu__anchor li a {
+		color: #FFA200;
+	}
+	.menu__anchor a:hover {
+		color: #c9953a !important;
+	}
+	@media screen and (max-width: 1244px) {
+		.anchor__aside {
+			width: 100%;
+		}
+	}
+
+</style>
+
+
+	<div class="news--single">
+		<h1 class="firm__title title">Что такое ОКТМО</h1>
+		<div class="firm__row row row--between">
+
+	<div class="card-firm__labels">
+		<p class="card-firm__subtitle myCompanies__subtitle">
+			дата публикации:
+			<span> июня 2024</span>
+		</p>
+	</div>
+</div>
+<div class="firm__row col news__text news__text--single">
+	<img width="100%" alt="97637.jpg" src="./1.jpg" ><br>
+
+<p>Код ОКТМО (Общероссийский классификатор территорий муниципальных образований) играет важную роль в налоговой и статистической отчётности, а также при заполнении платёжных поручений для уплаты налогов. Этот код необходим для корректного указания места нахождения или ведения деятельности организации или индивидуального предпринимателя. К счастью, узнать ОКТМО можно всего за пару кликов. В данной статье мы расскажем, что представляет собой этот код, для чего он используется и как его найти.
+</p>
+<p style="margin-top: 20px" id="part1"><b>Что такое ОКТМО</b></p>
+<p>ОКТМО (Общероссийский классификатор территорий муниципальных образований) — это важный инструмент, который ведёт Федеральная служба государственной статистики (Росстат). Этот классификатор используется для точного определения территориального расположения налогоплательщиков и обеспечивает правильное распределение налоговых поступлений и корректное ведение статистической отчётности.</p>
+<p>Код ОКТМО играет значительную роль в налоговой системе и других областях государственного управления. Он позволяет установить местоположение налогоплательщика с высокой точностью. Для индивидуальных предпринимателей (ИП) и физических лиц ОКТМО указывает на место их жительства, а для юридических лиц — на место регистрации и фактического нахождения. Этот код используется при заполнении различных видов налоговой и статистической отчётности, а также платёжных поручений для уплаты налогов.</p>
+<p>Использование кода ОКТМО важно для корректного функционирования налоговой системы, так как он помогает органам власти определять, какие муниципальные образования получают налоговые поступления от конкретных налогоплательщиков. Это способствует справедливому распределению финансовых ресурсов между регионами и муниципальными образованиями.</p>
+<p>ОКТМО — это не уникальный код: один и тот же код может быть присвоен нескольким компаниям и индивидуальным предпринимателям, если они расположены в пределах одного муниципального образования. Таким образом, код ОКТМО связывает налогоплательщиков с определённой территорией, обеспечивая точность в распределении налоговых обязательств и финансовых потоков.</p>
+<p>Для налогоплательщиков важно знать свой код ОКТМО, так как он используется при заполнении налоговых деклараций, отчётности и платёжных документов. Найти код ОКТМО можно с помощью различных онлайн-сервисов, предоставляемых Федеральной налоговой службой (ФНС) и другими государственными органами, что делает процесс определения этого кода быстрым и удобным.</p>
+<p id="part2"><b>Для чего нужен ОКТМО</b></p>
+<ul>
+	<li>Определение территориальной принадлежности:
+		<ul>
+			<li>Коды ОКТМО позволяют налоговым органам установить территориальную принадлежность налогоплательщика.</li>
+			<li>Указание местного бюджета, в который казначейство должно перечислить платёж.</li>
+		</ul>
+	</li>
+	<li>Систематизация данных для Росстата:
+		<ul>
+			<li>Ускорение процесса сбора и систематизации информации от компаний.</li>
+			<li>Создание единой базы данных.</li>
+			<li>Формирование прогнозов и составление программ развития для регионов.</li>
+		</ul>
+	</li>
+	<li>Использование при различных видах отчётности и документации:
+		<ul>
+			<li>Заполнение платёжных поручений.</li>
+			<li>Заполнение налоговых деклараций.</li>
+			<li>Ведение бухгалтерской и статистической отчётности.</li>
+			<li>Оформление различных контрактов.</li>
+		</ul>
+	</li>
+	<li>Частое использование в налоговых платёжных документах:
+		<ul>
+			<li>Указание кода ОКТМО при заполнении налогового платёжного поручения.</li>
+			<li>Указание кода ОКТМО в налоговой декларации по упрощённой системе налогообложения (УСН).</li>
+		</ul>
+	</li>
+</ul>
+<p>Таким образом, код ОКТМО является важным элементом, обеспечивающим точное распределение налоговых платежей и эффективное управление статистической информацией.</p>
+<img width="100%" src="./2.jpg">
+<p>Рис. 1. Код ОКТМО  </p>
+<p id="part3"><b>Как расшифровывается код ОКТМО</b></p>
+<p>Код ОКТМО (Общероссийский классификатор территорий муниципальных образований) используется для классификации территорий в иерархическом порядке — от самого крупного до самого мелкого. Он состоит из 8 или 11 знаков, где каждый знак имеет своё значение:</p>
+<ol>
+	<li>1 и 2 знаки: субъект Российской Федерации (РФ).</li>
+	<li>3-5 знаки: муниципальный район, городской округ или внутригородские территории.</li>
+	<li>6-8 знаки: городское поселение, внутригородские районы, сельское поселение или другие территории.</li>
+	<li>9-11 знаки: населённые пункты, включённые в состав муниципальных территориальных образований.</li>
+</ol>
+<br>
+<p>Чем меньше территориальное образование, тем более детализированным будет код ОКТМО.</p>
+<p>Примеры структуры кода ОКТМО:</p>
+<ul>
+	<li>Севастополь:
+		<ul>
+			<li>Код: 67 000 000</li>
+			<li>Обозначение: субъект РФ, город федерального значения Севастополь.</li>
+		</ul>
+	</li>
+	<li>Ростов-на-Дону:
+		<ul>
+			<li>Код: 60 701 000</li>
+			<li>Обозначение: субъект РФ — Ростовская область, город Ростов-на-Дону.</li>
+		</ul>
+	</li>
+	<li>Посёлок Янтарный в Ростовской области:
+		<ul>
+			<li>Код: 60 602 405 131</li>
+			<li>Обозначение:
+				<ul>
+					<li>60 — субъект РФ, Ростовская область;</li>
+					<li>60 602 — Аксайский муниципальный район;</li>
+					<li>60 602 405 — Большелогское сельское поселение;</li>
+					<li>60 602 405 131 — посёлок Янтарный.</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<br>
+<p id="part3"><b>Как расшифровывается код ОКТМО</b></p>
+<p>Код ОКТМО (Общероссийский классификатор территорий муниципальных образований) используется для классификации территорий в иерархическом порядке — от самого крупного до самого мелкого. Он состоит из 8 или 11 знаков, где каждый знак имеет своё значение:</p>
+<ol>
+	<li><b>1 и 2 знаки:</b> субъект Российской Федерации (РФ).</li>
+	<li><b>3-5 знаки:</b> муниципальный район, городской округ или внутригородские территории.</li>
+	<li><b>6-8 знаки:</b> городское поселение, внутригородские районы, сельское поселение или другие территории.</li>
+	<li><b>9-11 знаки:</b> населённые пункты, включённые в состав муниципальных территориальных образований.</li>
+</ol>
+<br>
+<p>Чем меньше территориальное образование, тем более детализированным будет код ОКТМО.</p>
+<img width="100%" src="./3.jpg">
+<p>Рис. 2. Узнать код ОКТМО </p>
+<br>
+<p><b>Примеры структуры кода ОКТМО:</b></p>
+<ul>
+	<li><b>Севастополь:</b>
+		<ul>
+			<li>Код: 67 000 000</li>
+			<li>Обозначение: субъект РФ, город федерального значения Севастополь.</li>
+		</ul>
+	</li>
+	<li><b>Ростов-на-Дону:</b>
+		<ul>
+			<li>Код: 60 701 000</li>
+			<li>Обозначение: субъект РФ — Ростовская область, город Ростов-на-Дону.</li>
+		</ul>
+	</li>
+	<li><b>Посёлок Янтарный в Ростовской области:</b>
+		<ul>
+			<li>Код: 60 602 405 131</li>
+			<li>Обозначение:
+				<ul>
+					<li>60 — субъект РФ, Ростовская область;</li>
+					<li>60 602 — Аксайский муниципальный район;</li>
+					<li>60 602 405 — Большелогское сельское поселение;</li>
+					<li>60 602 405 131 — посёлок Янтарный.</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<br>
+<p><b>Указание кода ОКТМО в документах:</b></p>
+<p>В налоговых декларациях и платёжных поручениях предусмотрено 11 ячеек для кода ОКТМО. Если ваш код состоит из 8 знаков, заполните ячейки слева направо, а оставшиеся ячейки заполните прочерками. Если вместо прочерков поставить нули, платёж может попасть в невыясненные, что потребует подачи заявления об уточнении платежа или уточнённой налоговой декларации.</p>
+<p id="part4"><b>Как узнать код ОКТМО</b></p>
+<p>Чтобы узнать код ОКТМО, можно воспользоваться несколькими простыми способами.</p>
+<ol>
+	<li><b>Получение при регистрации:</b> Сразу после регистрации в налоговой службе предприниматель или руководитель организации получает письмо от Росстата с кодами статистики, включая ОКТМО.</li>
+	<li><b>Онлайн-сервисы Росстата и ФНС:</b> Если вы не получили письмо или вам нужно узнать код другой компании, вы можете воспользоваться бесплатными онлайн-сервисами, предоставляемыми Росстатом и Федеральной налоговой службой (ФНС). Вам понадобится только знать ИНН или адрес регистрации компании, чтобы получить нужный код.</li>
+</ol>
+<p>Росстат:</p>
+<ul>
+	<li>Откройте сайт сервиса Росстата.</li>
+	<li>Введите один из реквизитов: ИНН, ОГРН, ОКПО.</li>
+	<li>Нажмите кнопку "Получить".</li>
+	<li>В появившейся форме найдите все коды статистики, включая ОКТМО.</li>
+</ul>
+<p>ФНС:</p>
+<ul>
+	<li>Перейдите на сайт ФИАС ФНС.</li>
+	<li>Введите адрес регистрации компании или ИП.</li>
+	<li>Нажмите кнопку "Найти".</li>
+	<li>В появившейся форме найдите код ОКТМО и код отделения налоговой инспекции для выбранной территории.</li>
+</ul>
+<p>По ОКАТО:</p>
+<ul>
+	<li>Используйте ФИАС для старых ОКАТО кодов.</li>
+	<li>На сайте ФИАС введите известный вам код ОКАТО и адрес компании.</li>
+	<li>Нажмите "Расширенный поиск".</li>
+	<li>В появившейся форме заполните данные и нажмите "Найти".</li>
+	<li>Получите новый код ОКТМО.</li>
+</ul>
+<p>ОКТМО позволяет определить территориальную принадлежность налогоплательщика и упрощает процесс заполнения налоговых деклараций и платежей. </p>
+
+    </article>
+
+<style>
+	
+	table {
+  width: 100%;
+
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+}
+
+td {
+  text-align: left;
+	padding: 10px;
+	border: 3px solid rgb(0, 0, 0);
+}
+ th {
+  text-align: center;
+  padding: 10px;
+	border: 3px solid rgb(0, 0, 0);
+ }
+ @media only screen and (max-width: 880px) {
+	table {
+   width: 100%;
+}
+ }
+</style>
+
+</main>
+
+<footer class="footer col">
+    <div class="footer__top row">
+        
+
+        
+
+        
+    </div>
+    <div class="footer__bottom row">
+        <div class="footer__bottom-content row">
+            
+<div class="row">
+
+			<a href="../../../index.htm" class="link footer-bottom__link" title="Услуги">Услуги</a>
+		
+
+			<a href="../../index.htm" class="link footer-bottom__link active" title="Новости">Блог</a>
+		
+
+			<button class="link footer-bottom__link openFormButton">Помощь</button>
+		
+
+			<button class="link footer-bottom__link openFormButton">Техническая поддержка</button>
+		
+
+			<a href="../../../index.htm" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
+		
+</div>
+           
+            <div class="row">
+                <p class="copyright">&#169;2021-
+                    2024 kupit-firm-u.ru
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+	document.querySelectorAll('.openFormButton').forEach(function(button) {
+		button.addEventListener('click', function() {
+			document.getElementById('formPopup').style.display = 'flex';
+		});
+	});
+	
+	document.getElementById('closeButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('cancelButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('formPopup').addEventListener('click', function(event) {
+		if (event.target === this) {
+			this.style.display = 'none';
+		}
+	});
+	</script>
+
+</body>
+
+</html>

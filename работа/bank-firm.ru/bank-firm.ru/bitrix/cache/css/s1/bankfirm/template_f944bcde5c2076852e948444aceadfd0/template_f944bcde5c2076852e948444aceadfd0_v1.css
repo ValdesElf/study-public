@@ -3063,8 +3063,8 @@ a .image {
   width: -moz-fit-content;
   width: fit-content;
   max-width: 888px;
-  margin-right: 0 !important;
-  margin-left: 32px !important;
+  margin-right: 10px !important;
+  margin-left: 15px !important;
   background: url(../../../../../../local/templates/bankfirm/assets/dots.svg) 100% var(--firm-top) no-repeat;
   margin-right: 64px;
   margin-left: 20px;
@@ -3271,7 +3271,7 @@ a .image {
   max-width: 1240px;
   padding-top: 64px;
   padding-bottom: 66px;
-  background: url(../../../../../../local/templates/bankfirm/assets/dots.svg) 23px 75px no-repeat;
+  /* background: url(../../../../../../local/templates/bankfirm/assets/dots.svg) 23px 75px no-repeat; */
   z-index: 400;
 }
 
@@ -3925,6 +3925,7 @@ a .image {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  background: none !important;
 }
 
 .filter__content {
@@ -13241,6 +13242,28 @@ Deal Files
 }
 
 @media only screen and (max-width: 880px) {
+  .news--single table {
+    width: 300px !important;
+  }
+
+    .news--single {
+      margin-right: 15px !important;
+      width: 100%;
+    }
+    footer .row {
+      width: 100%;
+    }
+    .news__text * {
+      font-size: 15px !important;
+      margin-right: 15px !important;
+    }
+    
+    .filter {
+      width: 100% !important;
+    }
+    .filter a {
+      font-size: 20px;
+    }
     .filter-line{
         width: auto;
         max-width: auto;

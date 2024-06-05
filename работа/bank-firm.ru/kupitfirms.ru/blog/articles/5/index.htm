@@ -1,0 +1,614 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Последствия банкротства юридического лица</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/fav/favicon-16x16.png">
+<meta name="yandex-verification" content="ba1fc38d9e081559">
+    <link rel="manifest" href="../../../assets/fav/site.webmanifest">
+    <link rel="mask-icon" href="../../../assets/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+        <script src="../../../local/templates/bankfirm/dist/js/vendor/jquery.min.js"></script>
+            <script>
+    var userFavorites = [];
+        var arSiteOptions = {
+        PHONE_MASK: "+7(999) 999-9999",
+        dadataToken: "57a95c59a42fce1a4698dd21769eeafc2748b705",
+        'DEFAULT_MAP_MARKET' : 'N',
+    }
+    </script>
+    <meta name="description" content="Особенности банкротства юридического лица, виды и процесс. Кто может стать банкротом и как правильно организовать банкротство инициированное компанией ">
+<link href="../../../bitrix/cache/css/s1/bankfirm/template_f944bcde5c2076852e948444aceadfd0/template_f944bcde5c2076852e948444aceadfd0_v1.css?1715933479435835" type="text/css" data-template-style="true" rel="stylesheet">
+<script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script>(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+
+
+
+<script>(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'Y','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1716405196','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'52518ea97aa2eb61010a2f9cd3ddab67'});</script>
+
+<link rel="canonical" href="index.htm">
+
+
+</head>
+
+<body>
+    <div id="panel">
+            </div>
+    <header class="header">
+        <div class="header__row row">
+                            <div class="logo-and-phone">
+                    <a class="header__logo" href="../../../index.htm" title="Банк фирм">
+                        <img alt="bankfirm logo" class="logo" src="../../../local/templates/bankfirm/assets/logotype-bankfirm-new.svg">
+                    </a>
+                    <a href="tel:88005508101" class="nice__phone" title="8 (800) 550-81-01">8 (800) 550-81-01</a>
+                </div>
+                        <button class="btn make-order__btn--mb openFormButton" title="Заказать фирму">Заказать фирму</button>
+            <button type="button" aria-label="menu" id="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <div class="links">
+                <div class="row row-header">
+                    
+<div class="header__group row __ul" data-menu="">
+			
+
+			
+		
+						<!-- <div class="menu-item"><a href="" class="header__link selected" title=""></a></div> -->
+			
+						<!-- Задача https://cp.niceneasy.ru/issues/20787 -->
+
+						<div class="menu-item"><a href="../../../catalog/index.htm" class="header__link" title="Купить">Купить</a></div>
+			
+		
+
+						<div class="menu-item">
+				<a href="../../../index.htm" class="header__link selected" title="Продать">Продать</a>
+
+							<div class="menu-item"><a href="../../index.htm" class="header__link" title="Видео">Блог</a></div>
+
+<!-- nav -->                    
+                    <button class="btn make-order__btn openFormButton button-nav openFormButton" title="Заказать фирму">Заказать фирму</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+		    	<!-- ФОРМА ================================================= -->
+
+			<div class="form-popup" id="formPopup">
+				<div class="form-container" id="formContainer">
+					<div class="form-header">
+						<h2>ИНДИВИДУАЛЬНЫЙ ПОДБОР ФИРМЫ</h2>
+						<button class="close-button" id="closeButton">×</button>
+		
+					</div>
+					<form>
+						<label for="name">Ваше имя</label>
+						<input type="text" id="name" name="name" required>
+		
+						<label for="phone">Телефон</label>
+						<input type="tel" id="phone" name="phone" required>
+		
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+		
+						<label for="parameters">Параметры фирмы</label>
+						<textarea id="parameters" name="parameters" required></textarea>
+		
+						<div class="adv__checkbox text_confirmation">
+							<input tabindex="5" type="checkbox" required="" class="checkbox" id="offerAgreementformA03e" name="agreement" value="Y">
+							<label for="offerAgreementformA03e"><span></span><p class="sell__inline">Я ознакомился и согласен с <a class="link" href="/offer/" target="_blank" title="Оферта">договором оферты</a> и <a class="link" href="/contract-offer/" target="_blank" title="Политика конфиденциальности">пользовательским соглашением</a></p></label>
+						</div>
+		
+						
+						<div class="form-actions">
+						<button class="popup-submit-btn" type="submit">Отправить</button>
+						<button class="popup-cancel-btn" type="button" class="cancel-button" id="cancelButton">Отмена</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		
+		
+			<style>
+		
+		.form-popup {
+			display: none; 
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); 
+			justify-content: center;
+			align-items: center;
+			z-index: 99998;
+		}
+		
+		.form-actions {
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.adv__checkbox {
+			display: block !important;
+		}
+		
+		.adv__checkbox p {
+			color: black !important;
+		}
+		
+		.form-popup.open {
+			display: block;
+		}
+		
+		.form-container {
+			max-width: 500px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+			position: relative;
+		}
+		
+		
+		.form-header {
+			display: flex;
+			flex-wrap: wrap;
+			/* justify-content: space-between; */
+			align-items: center;
+		}
+		
+		.form-header h2 {
+			text-transform: uppercase;
+		  color: #1A345C;
+		  font-weight: bold;
+		  font-size: 24px;
+		  line-height: 31px;
+		  text-align: center;
+		  margin-top: 16px;
+		}
+		
+		.close-btn {
+			z-index: 401;
+		
+		}
+		
+		.close-button {
+			right: 20px;
+			display: inline-block;
+			visibility: inherit;
+			box-sizing: border-box;
+			position: absolute;
+			background: none;
+			border: none;
+			font-size: 24px;
+			cursor: pointer;
+			height: 36px !important;
+			width: 36px !important;
+		}
+		
+		.form-container label {
+			display: block;
+			margin-top: 10px;
+		}
+		
+		.form-container input:not(:last-child), textarea {
+			width: calc(100% - 20px);
+			padding: 10px;
+			margin-top: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		.form-container a:hover {
+			color: #FFA200 !important;
+		}
+		
+		.form-container input:last-child {
+			position: absolute;
+		}
+		
+		.form-container textarea {
+			height: 100px;
+			resize: vertical;
+		}
+		
+		.form-container button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 200px;
+			height: 50px;
+			padding: 10px;
+			margin-top: 20px;
+			border: none;
+			border-radius: 4px;
+			background-color: #ff9800;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		
+		
+		.form-container button:hover {
+		  background-color: #fff !important;
+		  border: 1px solid #FFA200;
+		  color: #FFA200 !important;
+		  transition: all 0.6s ease;
+		}
+		
+		.popup-submit-btn {
+		
+		}
+		
+		.popup-cancel-btn {
+		
+		}
+		
+		.form-container button:hover {
+			background-color: #e68900;
+		}
+		
+		.cancel-button {
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+		
+		.cancel-button:hover {
+			background-color: #bbb;
+		}
+		
+			</style>
+		
+			<!-- ФОРМА ================================================= -->
+
+	<style>
+		.button-nav {
+			position: absolute;
+			right: 0;
+		}
+	</style>
+
+    <script>
+        window.onscroll = (e) => {
+            if (this.scrollY > 20) {
+                if (this.oldScroll > this.scrollY) {
+                    document.querySelector(".header").classList.remove('header--mb')
+                } else {
+                    document.querySelector(".header").classList.add('header--mb')
+                }
+                this.oldScroll = this.scrollY;
+            }
+        }
+    </script>
+
+    <main id="main" class="main section news-page">
+        <div class="n-container"><nav class="breadcrumbs"><a class="breadcrumbs__link link" href="../../../index.htm" title="Главная">
+					<span>Главная</span>
+				</a><a class="breadcrumbs__link link" href="../../index.htm" title="Новости">
+					<span>Блог</span>
+				</a>
+			<div class="breadcrumbs__link link breadcrumbs__link--current">
+				
+				<span>Банкротство юридического лица</span>
+			</div></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"/","name":"Главная"}},{"@type":"ListItem","position":"2","item":{"@id":"/news/","name":"Новости"}}]}</script></div>        
+                <article class="main__content news__content">
+        <div class="catalog__wrapper wrapper">
+
+			
+	<aside class="filter anchor__aside">
+		<p class="filter__main-title title--white">Меню</p>
+		<ul class="menu__anchor">
+			<li><a href="#part1">Что такое банкротство?</a></li>
+			<li><a href="#part2">Виды банкротства</a></li>
+			<li><a href="#part3">Упрощённая процедура банкротства</a></li>
+			<li><a href="#part4">Юридические последствия банкротства</a></li>
+			<li><a href="#part5">Инициирование процедуры банкротства компанией</a></li>
+		</ul>
+
+</aside>
+
+<style>
+
+	body {
+		background-image: none !important;
+	}
+	
+	.filter {
+		background: none !important;
+	}
+	.anchor__aside {
+		width: 350px;
+		background-image: none !important;
+	}
+	.menu__anchor li {
+		margin: 10px 15px;
+	}
+	.menu__anchor li a {
+		color: #FFA200;
+	}
+	.menu__anchor a:hover {
+		color: #c9953a !important;
+	}
+	@media screen and (max-width: 1244px) {
+		.anchor__aside {
+			width: 100%;
+		}
+	}
+
+</style>
+
+
+	<div class="news--single">
+		<h1 class="firm__title title">Банкротство юридического лица</h1>
+		<div class="firm__row row row--between">
+
+	<div class="card-firm__labels">
+		<p class="card-firm__subtitle myCompanies__subtitle">
+			дата публикации:
+			<span>3 июня 2024</span>
+		</p>
+	</div>
+</div>
+<div class="firm__row col news__text news__text--single">
+	<img width="100%" alt="97637.jpg" src="./1.jpg" ><br>
+<p style="margin-top: 20px; font-size: 20px;" id="part1"><b>Что такое банкротство?</b></p>
+<p>Банкротство – это юридический процесс, при котором юридическое лицо объявляется неспособным удовлетворить требования кредиторов из-за недостатка финансовых средств. Этот процесс начинается с подачи заявления в суд либо самим должником, либо кредиторами, которые стремятся взыскать долги.</p>
+<p><b>Кто может стать банкротом?</b></p>
+<p>Банкротство не ограничивается только компаниями; оно может касаться различных субъектов экономики. Вот кто может быть признан банкротом:</p>
+<table>
+	<tr>
+		<td><b>Тип субъекта</b></td>
+		<td><b>Описание</b></td>
+	</tr>
+	<tr>
+		<td>Юридические лица</td>
+		<td>Компании и корпорации, которые не могут выплатить свои долги.</td>
+	</tr>
+	<tr>
+		<td>Индивидуальные предприниматели</td>
+		<td>Индивидуальные предприниматели, чьи активы не покрывают долговые обязательства.</td>
+	</tr>
+	<tr>
+		<td>Физические лица</td>
+		<td>Граждане или потребители, неспособные удовлетворить требования кредиторов.</td>
+	</tr>
+	<tr>
+		<td>Государственные организации</td>
+		<td>Государственные организации, которые могут проходить процедуру банкротства в некоторых юрисдикциях.</td>
+	</tr>
+	<tr>
+		<td>Муниципальные образования</td>
+		<td>Города или другие муниципальные образования, объявляющие о банкротстве при финансовых трудностях.</td>
+	</tr>
+	<tr>
+		<td>Некоммерческие организации</td>
+		<td>Благотворительные фонды и общественные организации, которые могут столкнуться с банкротством.</td>
+	</tr>
+</table>
+<img width="100%" src="./2.jpg">
+<p>Рис. Кто может стать банкротом</p>
+<p id="part2" style="font-size: 20px;"><b>Виды банкротства</b></p>
+<p>Существуют различные типы банкротства, которые регулируются национальным законодательством и могут включать:</p>
+<ul>
+	<li><b>Несостоятельность</b><br>
+	Это основной тип банкротства, при котором компания не в состоянии удовлетворить требования кредиторов по платежам</li>
+	<li><b>Реструктуризация</b><br>
+	Процесс, который позволяет компании переговорить условия долга и продолжить деятельность, изменяя структуру своих обязательств.</li>
+	<li><b>Ликвидация</b><br>
+	Процедура, при которой все активы компании продаются для погашения долгов, после чего компания прекращает своё существование.</li>
+	<li><b>Принудительное банкротство</b><br>
+	Инициируется кредиторами в случае, если компания не выполняет свои финансовые обязательства.</li>
+	<li><b>Добровольное банкротство</b><br>
+	Когда руководство компании самостоятельно принимает решение о банкротстве и начинает соответствующую процедуру.</li>
+	<li><b>Административное банкротство</b><br>
+	Вид банкротства, при котором управление компанией переходит к назначенному администратору, который занимается реструктуризацией или ликвидацией.</li>
+</ul><br>
+<p style="font-size: 20px;"><b>Процесс банкротства</b></p>
+<p>Процесс банкротства включает в себя несколько этапов:</p>
+<ul>
+	<li>Подача заявления: Инициирование процесса банкротства начинается с подачи заявления в суд.</li>
+	<li>Признание банкротства: Суд рассматривает дело и может признать компанию банкротом.</li>
+	<li>Управление активами: Назначается арбитражный управляющий, который берет под контроль активы и обязательства компании.</li>
+	<li>Распределение активов: Активы распределяются между кредиторами согласно установленной иерархии.</li>
+</ul>
+<img width="100%" src="./3.jpg">
+<p>Рис. 2. Процесс банкротства юридического лица</p>
+<p id="part3" style="font-size: 20px;"><b>Упрощенная процедура банкротства </b></p>
+<p>Эта процедура предназначена для определенных категорий должников, которые могут не соответствовать требованиям стандартной процедуры банкротства. Этот процесс обычно быстрее и менее затратен. Вот ключевые аспекты:</p>
+<p><b>1. Критерии применения</b><br>
+	Упрощённая процедура может быть доступна для малых предприятий, индивидуальных предпринимателей и физических лиц, у которых нет значительных активов или сложных долговых обязательств.</p>
+<p><b>2. Процесс</b><br>
+	Процедура включает в себя подачу заявления в суд, предоставление необходимой документации и возможное освобождение от долгов после рассмотрения дела.</p>
+<p><b>3. Преимущества</b><br>
+	Основное преимущество упрощённой процедуры заключается в сокращении времени и расходов на банкротство, что делает её доступной для более широкого круга должников.</p>
+<p><b>4. Ограничения</b><br>
+	Не все должники могут воспользоваться упрощённой процедурой, и она может не позволять решить все финансовые проблемы.</p>
+<p><b>5. Последствия</b><br>
+	После завершения упрощённой процедуры банкротства, должник может быть освобождён от большинства или всех долгов, что даёт возможность начать финансовую жизнь с чистого листа.</p>
+<p id="part4" style="font-size: 20px;"><b>Юридические последствия банкротства</b></p>
+<p>Банкротство юридического лица влечет за собой ряд юридических последствий, которые могут оказать значительное влияние на руководство и владельцев компании, а также на её кредиторов и бизнес-партнёров.</p>
+<p><b>1. Ответственность руководства</b><br>
+	Руководители компании могут быть привлечены к ответственности, если в ходе процедуры банкротства выявлены признаки недобросовестного управления. Это может включать злоупотребление полномочиями, преднамеренное сокрытие активов или фальсификацию финансовой отчётности.</p>
+<p><b>2. Административные и уголовные санкции</b><br>
+	В случае обнаружения нарушений, руководители могут подвергнуться административным штрафам или даже уголовному преследованию. Это особенно актуально, если действия руководства привели к умышленному банкротству компании.</p>
+<p><b>3. Права кредиторов</b><br>
+	Кредиторы имеют право требовать возмещения убытков, если они могут доказать, что банкротство было результатом неправомерных действий со стороны руководства. Они могут обратиться в суд для признания сделок недействительными или для взыскания средств с личного имущества руководителей.</p>
+<p><b>4. Процедура банкротства</b><br>
+	Процесс банкротства регулируется законодательством и включает назначение арбитражного управляющего, который осуществляет контроль над активами и долгами компании. Арбитражный управляющий также отвечает за проведение собраний кредиторов и распределение активов согласно установленным приоритетам.</p>
+<p><b>5. Реструктуризация долгов</b><br>
+	В некоторых случаях банкротство может привести к реструктуризации долгов, что позволяет компании продолжить деятельность в изменённом виде. Это может включать продажу части бизнеса, сокращение операций или изменение структуры управления.</p>
+<p><b>6. Защита от преследования</b><br>
+	Законодательство предусматривает защиту для руководства и владельцев компании от необоснованных претензий со стороны кредиторов, если банкротство произошло без нарушений со стороны управления.</p>
+<p id="part5" style="font-size: 20px;"><b>Инициирование процедуры банкротства компанией</b></p>
+<p>Если компания столкнулась с финансовыми трудностями и решает объявить о своем банкротстве, важно следовать определенным шагам:</p>
+<ol>
+	<li>Подготовьте документы:
+		<ul>
+			<li>Соберите все необходимые документы, такие как бухгалтерские отчеты, балансы, акты оценки имущества и другие документы, подтверждающие финансовое состояние компании.</li>
+		</ul>
+	</li>
+	<li>Обратитесь в арбитражный суд:
+		<ul>
+			<li>Должник (компания) должен подать заявление о банкротстве в арбитражный суд по месту своего регистрационного адреса.</li>
+			<li>В заявлении укажите причины банкротства, долги, кредиторов и другую необходимую информацию.</li>
+		</ul>
+	</li>
+	<li>Уведомите кредиторов:
+		<ul>
+			<li>После подачи заявления о банкротстве уведомите всех кредиторов о начале процедуры.</li>
+			<li>Укажите им контактные данные арбитражного управляющего, который будет участвовать в процедуре.</li>
+		</ul>
+	</li>
+	<li>Судебное заседание:
+		<ul>
+			<li>Арбитражный суд назначит судебное заседание, на котором будут рассматриваться вопросы банкротства.</li>
+			<li>Компания должна предоставить дополнительные документы и объяснения.</li>
+		</ul>
+	</li>
+	<li>Распределение имущества:
+		<ul>
+			<li>После признания компании банкротом, арбитражный управляющий начнет процесс распределения имущества между кредиторами.</li>
+		</ul>
+	</li>
+</ol>
+<br>
+<p><b>Документы и требования при инициировании</b></p>
+<table>
+	<tr>
+		<td><b>Название документа</b></td>
+		<td><b>Описание</b></td>
+	</tr>
+	<tr>
+		<td>Отчёт о финансовом положении</td>
+		<td>Отражает финансовую ситуацию компании на определенную дату. Включает баланс и отчет о прибылях и убытках.</td>
+	</tr>
+	<tr>
+		<td>Бухгалтерская отчетность</td>
+		<td>Включает в себя бухгалтерский баланс, отчет о прибылях и убытках, отчет о движении денежных средств и прочие финансовые документы.</td>
+	</tr>
+	<tr>
+		<td>Справка об имуществе</td>
+		<td>Подтверждает наличие активов у компании.</td>
+	</tr>
+	<tr>
+		<td>Документы об обязательствах</td>
+		<td>Включают информацию о долгах, кредитах, аренде и других обязательствах.</td>
+	</tr>
+	<tr>
+		<td>Документы о расчетах с кредиторами</td>
+		<td>Список кредиторов и долгов перед ними.</td>
+	</tr>
+	<tr>
+		<td>Уставные документы компании</td>
+		<td>Учредительные документы, устав, решения общего собрания участников.</td>
+	</tr>
+	<tr>
+		<td>Документы о деятельности компании</td>
+		<td>Любые документы, подтверждающие бизнес-процессы и операции компании.</td>
+	</tr>
+</table>
+<br>
+<p>При рассмотрении вопроса о банкротстве юридического лица следует учитывать множество рисков. Это включает проверку на предмет уголовных преступлений, возможное привлечение к субсидиарной ответственности и возможные задержки в процедуре. Для эффективного управления рисками и легального ускорения процессов рекомендуется обратиться к компетентным юристам.</p>
+    </article>
+
+<style>
+	
+	table {
+  width: 100%;
+
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+}
+
+td {
+  text-align: left;
+	padding: 10px;
+	border: 3px solid rgb(0, 0, 0);
+}
+ th {
+  text-align: center;
+  padding: 10px;
+	border: 3px solid rgb(0, 0, 0);
+ }
+ @media only screen and (max-width: 880px) {
+	table {
+   width: 100px !important;
+}
+ }
+</style>
+
+</main>
+
+<footer class="footer col">
+    <div class="footer__top row">
+        
+
+        
+
+        
+    </div>
+    <div class="footer__bottom row">
+        <div class="footer__bottom-content row">
+            
+<div class="row">
+
+			<a href="../../../index.htm" class="link footer-bottom__link" title="Услуги">Услуги</a>
+		
+
+			<a href="../../index.htm" class="link footer-bottom__link active" title="Новости">Блог</a>
+		
+
+			<button class="link footer-bottom__link openFormButton">Помощь</button>
+		
+
+			<button class="link footer-bottom__link openFormButton">Техническая поддержка</button>
+		
+
+			<a href="../../../index.htm" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
+		
+</div>
+           
+            <div class="row">
+                <p class="copyright">&#169;2021-
+                    2024 kupit-firm-u.ru
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+	document.querySelectorAll('.openFormButton').forEach(function(button) {
+		button.addEventListener('click', function() {
+			document.getElementById('formPopup').style.display = 'flex';
+		});
+	});
+	
+	document.getElementById('closeButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('cancelButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('formPopup').addEventListener('click', function(event) {
+		if (event.target === this) {
+			this.style.display = 'none';
+		}
+	});
+	</script>
+
+</body>
+
+</html>

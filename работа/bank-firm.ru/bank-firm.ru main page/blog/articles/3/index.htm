@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>СРО – что это, виды, структура, финансирование</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/fav/favicon-16x16.png">
+<meta name="yandex-verification" content="ba1fc38d9e081559">
+    <link rel="manifest" href="../../../assets/fav/site.webmanifest">
+    <link rel="mask-icon" href="../../../assets/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+        <script src="../../../local/templates/bankfirm/dist/js/vendor/jquery.min.js"></script>
+            <script>
+    var userFavorites = [];
+        var arSiteOptions = {
+        PHONE_MASK: "+7(999) 999-9999",
+        dadataToken: "57a95c59a42fce1a4698dd21769eeafc2748b705",
+        'DEFAULT_MAP_MARKET' : 'N',
+    }
+    </script>
+	<meta name="description" content="СРО (саморегулируемая организация) – некоммерческая организация, объединившая субъекты предпринимательства по отраслям их профессиональной деятельности.">
+	<link href="../../../bitrix/cache/css/s1/bankfirm/template_f944bcde5c2076852e948444aceadfd0/template_f944bcde5c2076852e948444aceadfd0_v1.css?1715933479435835" type="text/css" data-template-style="true" rel="stylesheet">
+<script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script>(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+
+
+
+<script>(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'Y','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1716405196','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'52518ea97aa2eb61010a2f9cd3ddab67'});</script>
+
+<link rel="canonical" href="index.htm">
+
+
+</head>
+
+<body>
+    <div id="panel">
+            </div>
+    <header class="header">
+        <div class="header__row row">
+                            <div class="logo-and-phone">
+                    <a class="header__logo" href="../../../index.htm" title="Банк фирм">
+                        <img alt="bankfirm logo" class="logo" src="../../../local/templates/bankfirm/assets/logotype-bankfirm-new.svg">
+                    </a>
+                    <a href="tel:88005508101" class="nice__phone" title="8 (800) 550-81-01">8 (800) 550-81-01</a>
+                </div>
+                        <button class="btn make-order__btn--mb openFormButton" title="Заказать фирму">Заказать фирму</button>
+            <button type="button" aria-label="menu" id="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <div class="links">
+                <div class="row row-header">
+                    
+<div class="header__group row __ul" data-menu="">
+			
+
+			
+		
+						<!-- <div class="menu-item"><a href="" class="header__link selected" title=""></a></div> -->
+			
+						<!-- Задача https://cp.niceneasy.ru/issues/20787 -->
+							<div class="menu-item"><a href="../../index.htm" class="header__link" title="Видео">Блог</a></div>
+
+<!-- nav -->                    
+                    <button class="btn make-order__btn openFormButton button-nav openFormButton" title="Заказать фирму">Заказать фирму</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+		    	<!-- ФОРМА ================================================= -->
+
+			<div class="form-popup" id="formPopup">
+				<div class="form-container" id="formContainer">
+					<div class="form-header">
+						<h2>ИНДИВИДУАЛЬНЫЙ ПОДБОР ФИРМЫ</h2>
+						<button class="close-button" id="closeButton">×</button>
+		
+					</div>
+					<form>
+						<label for="name">Ваше имя</label>
+						<input type="text" id="name" name="name" required>
+		
+						<label for="phone">Телефон</label>
+						<input type="tel" id="phone" name="phone" required>
+		
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+		
+						<label for="parameters">Параметры фирмы</label>
+						<textarea id="parameters" name="parameters" required></textarea>
+		
+						<div class="adv__checkbox text_confirmation">
+							<input tabindex="5" type="checkbox" required="" class="checkbox" id="offerAgreementformA03e" name="agreement" value="Y">
+							<label for="offerAgreementformA03e"><span></span><p class="sell__inline">Я ознакомился и согласен с <a class="link" href="/offer/" target="_blank" title="Оферта">договором оферты</a> и <a class="link" href="/contract-offer/" target="_blank" title="Политика конфиденциальности">пользовательским соглашением</a></p></label>
+						</div>
+		
+						
+						<div class="form-actions">
+						<button class="popup-submit-btn" type="submit">Отправить</button>
+						<button class="popup-cancel-btn" type="button" class="cancel-button" id="cancelButton">Отмена</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		
+		
+			<style>
+		
+		.form-popup {
+			display: none; 
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); 
+			justify-content: center;
+			align-items: center;
+			z-index: 99998;
+		}
+		
+		.form-actions {
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.adv__checkbox {
+			display: block !important;
+		}
+		
+		.adv__checkbox p {
+			color: black !important;
+		}
+		
+		.form-popup.open {
+			display: block;
+		}
+		
+		.form-container {
+			max-width: 500px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+			position: relative;
+		}
+		
+		
+		.form-header {
+			display: flex;
+			flex-wrap: wrap;
+			/* justify-content: space-between; */
+			align-items: center;
+		}
+		
+		.form-header h2 {
+			text-transform: uppercase;
+		  color: #1A345C;
+		  font-weight: bold;
+		  font-size: 24px;
+		  line-height: 31px;
+		  text-align: center;
+		  margin-top: 16px;
+		}
+		
+		.close-btn {
+			z-index: 401;
+		
+		}
+		
+		.close-button {
+			right: 20px;
+			display: inline-block;
+			visibility: inherit;
+			box-sizing: border-box;
+			position: absolute;
+			background: none;
+			border: none;
+			font-size: 24px;
+			cursor: pointer;
+			height: 36px !important;
+			width: 36px !important;
+		}
+		
+		.form-container label {
+			display: block;
+			margin-top: 10px;
+		}
+		
+		.form-container input:not(:last-child), textarea {
+			width: calc(100% - 20px);
+			padding: 10px;
+			margin-top: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		.form-container a:hover {
+			color: #FFA200 !important;
+		}
+		
+		.form-container input:last-child {
+			position: absolute;
+		}
+		
+		.form-container textarea {
+			height: 100px;
+			resize: vertical;
+		}
+		
+		.form-container button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 200px;
+			height: 50px;
+			padding: 10px;
+			margin-top: 20px;
+			border: none;
+			border-radius: 4px;
+			background-color: #ff9800;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		
+		
+		.form-container button:hover {
+		  background-color: #fff !important;
+		  border: 1px solid #FFA200;
+		  color: #FFA200 !important;
+		  transition: all 0.6s ease;
+		}
+		
+		.popup-submit-btn {
+		
+		}
+		
+		.popup-cancel-btn {
+		
+		}
+		
+		.form-container button:hover {
+			background-color: #e68900;
+		}
+		
+		.cancel-button {
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+		
+		.cancel-button:hover {
+			background-color: #bbb;
+		}
+		
+			</style>
+		
+			<!-- ФОРМА ================================================= -->
+
+	<style>
+		.button-nav {
+			position: absolute;
+			right: 0;
+		}
+	</style>
+
+    <script>
+        window.onscroll = (e) => {
+            if (this.scrollY > 20) {
+                if (this.oldScroll > this.scrollY) {
+                    document.querySelector(".header").classList.remove('header--mb')
+                } else {
+                    document.querySelector(".header").classList.add('header--mb')
+                }
+                this.oldScroll = this.scrollY;
+            }
+        }
+    </script>
+
+    <main id="main" class="main section news-page">
+        <div class="n-container"><nav class="breadcrumbs"><a class="breadcrumbs__link link" href="../../../index.htm" title="Главная">
+					<span>Главная</span>
+				</a><a class="breadcrumbs__link link" href="../../index.htm" title="Новости">
+					<span>Блог</span>
+				</a>
+			<div class="breadcrumbs__link link breadcrumbs__link--current">
+				
+				<span>Основные виды СРО</span>
+			</div></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"/","name":"Главная"}},{"@type":"ListItem","position":"2","item":{"@id":"/news/","name":"Новости"}}]}</script></div>        
+                <article class="main__content news__content">
+        <div class="catalog__wrapper wrapper">
+
+			
+	<aside class="filter anchor__aside">
+		<p class="filter__main-title title--white">Меню</p>
+		<ul class="menu__anchor">
+			<li><a href="#part1">Что такое СРО простыми словами</a></li>
+			<li><a href="#part2">Структура и финансирование</a></li>
+			<li><a href="#part3">Функции саморегулируемой организации</a></li>
+			<li><a href="#part4">Для чего вступать</a></li>
+			<li><a href="#part5">Допуск СРО — что это</a></li>
+			<li><a href="#part6">Ответственность за работу без допуска</a></li>
+			<li><a href="#part7">Вывод</a></li>
+		</ul>
+
+</aside>
+
+<style>
+
+	body {
+		background-image: none !important;
+	}
+	
+	.filter {
+		background: none !important;
+	}
+	.anchor__aside {
+		width: 350px;
+		background-image: none !important;
+	}
+	.menu__anchor li {
+		margin: 10px 15px;
+	}
+	.menu__anchor li a {
+		color: #FFA200;
+	}
+	.menu__anchor a:hover {
+		color: #c9953a !important;
+	}
+	@media screen and (max-width: 1244px) {
+		.anchor__aside {
+			width: 100%;
+		}
+	}
+
+</style>
+
+
+	<div class="news--single">
+		<h1 class="firm__title title">Что такое СРО простыми словами и какие есть виды</h1>
+		<div class="firm__row row row--between">
+
+	<div class="card-firm__labels">
+		<p class="card-firm__subtitle myCompanies__subtitle">
+			дата публикации:
+			<span>5 июня 2024</span>
+		</p>
+	</div>
+</div>
+<div class="firm__row col news__text news__text--single">
+	<img width="100%" alt="97637.jpg" src="./1.jpg" ><br>
+<p style="margin-top: 20px" id="part1"><b>Что такое СРО простыми словами</b></p>
+<ol>
+	<li>Сущность СРО: СРО — это организации, которые формируются на добровольной основе предпринимателями определенной отрасли. Они объединяются для саморегулирования своей деятельности и регулирования профессионального поведения своих членов.</li>
+	<li>Миссия СРО: Основная миссия СРО заключается в контроле за деятельностью своих членов. Это включает в себя контроль качества предоставляемых услуг или выполняемых работ, а также соблюдение профессиональных стандартов и этических норм. Таким образом, СРО призваны повышать доверие общества к профессионалам в своей отрасли.</li>
+	<li>Функции государства и СРО: Государство делегирует часть своих функций по регулированию и контролю за отраслью на СРО. Это помогает снизить бремя на государственные органы, а также способствует более оперативному и эффективному контролю за деятельностью предпринимателей.</li>
+	<li>Правовое основание: Работа СРО осуществляется на основании специального закона, который регулирует их деятельность. В России это закон № 315-ФЗ от 01 декабря 2007 года.</li>
+	<li>Отличия от других организаций: СРО имеют ряд отличий от других организаций. Они объединяют не менее 25 предпринимателей (в зависимости от отрасли), разрабатывают обязательные стандарты и правила для своих членов, а также несут дополнительную ответственность перед клиентами за качество услуг.</li>
+	<li>Разнообразие отраслей: СРО существуют в различных отраслях экономики, включая строительство, аудит, финансовый сектор и другие. Каждая СРО специализируется на регулировании деятельности в своей конкретной сфере.</li>
+</ol>
+<p>Таким образом, саморегулируемые организации играют важную роль в обеспечении качества работ и услуг в различных отраслях экономики, а также помогают снизить нагрузку на государственные органы по контролю за деятельностью предпринимателей.</p>
+<br>
+<img width="100%" src="./2.jpg">
+<p>Рис. 1. Что такое СРО </p>
+<p id="part2" style="font-size: 20px"><b>Структура и финансирование</b></p>
+<p><b>Структура:</b></p>
+<ul>
+	<li><b>Общее собрание членов:</b> Высший орган управления, на котором принимаются ключевые решения.</li>
+	<li><b>Правление:</b> Орган исполнительной власти, отвечающий за руководство повседневной деятельностью СРО.</li>
+	<li><b>Президент:</b> Руководитель СРО, часто является представителем организации во внешних отношениях.</li>
+</ul>
+<br>
+<p><b>Финансирование:</b></p>
+<ul>
+	<li><b>Вступительные взносы:</b> Сумма, которую новый член СРО должен уплатить при вступлении в организацию.</li>
+	<li><b>Членские взносы:</b> Регулярные платежи, которые члены СРО делают для поддержания своего членства.</li>
+	<li><b>Целевые взносы:</b> Дополнительные платежи, направляемые, например, в компенсационный фонд или на реализацию определенных программ.</li>
+	<li><b>Имущественные взносы и пожертвования:</b> Деньги или имущество, которые могут быть переданы СРО от граждан и компаний.</li>
+	<li><b>Доходы от платных услуг:</b> Доход, получаемый от оказания различных платных услуг, таких как образовательные программы или консультационные услуги.</li>
+	<li><b>Продажа информационных материалов:</b> Доход от продажи различных информационных материалов, таких как отчеты, стандарты и руководства.</li>
+	<li><b>Иные источники доходов:</b> Возможность получения дохода от других видов деятельности, которые не противоречат законодательству.</li>
+</ul>
+<p>Общее собрание, правление и президент обычно отвечают за управление и распределение финансовых ресурсов СРО в соответствии с целями и задачами организации.</p>
+<p id="part3" style="font-size: 20px;"><b>Функции саморегулируемой организации</b></p>
+<ol>
+	<li><b>Организация и управление:</b> СРО управляется общим собранием членов, правлением и президентом. Общее собрание принимает ключевые решения большинством голосов, а каждый член имеет один голос. Правление и президент отвечают за руководство деятельностью организации и реализацию стратегии.</li>
+	<li><b>Финансирование:</b> Организация финансируется членами через вступительные, регулярные членские и целевые взносы. Целевые взносы могут направляться, например, в компенсационный фонд. Кроме того, СРО может получать имущественные взносы и пожертвования от граждан и компаний.</li>
+	<li><b>Доходы:</b> Помимо взносов от членов, СРО может получать доход от оказания платных услуг, например, образовательных программ. Организация имеет право продавать информационные материалы, размещать деньги на банковских депозитах и заниматься другой деятельностью, если это не противоречит законодательству.</li>
+	<li><b>Контроль и обеспечение качества:</b> Одной из основных функций СРО является контроль за деятельностью своих членов. Это включает в себя контроль за качеством предоставляемых услуг или выполняемых работ, а также соблюдение профессиональных стандартов и этических норм.</li>
+</ol>
+<p>Таким образом, СРО выполняют ряд важных задач, связанных с организацией и управлением, финансированием, доходами и контролем качества в своей отрасли. Они играют ключевую роль в регулировании и обеспечении качества профессиональной деятельности предпринимателей и специалистов в различных сферах экономики.</p>
+<br>
+<p id="part4" style="font-size: 20px;"><b>Для чего вступать в СРО</b></p>
+<p>Вступление в саморегулируемую организацию (СРО) предпринимателю приносит ряд преимуществ:</p>
+<ol>
+	<li>Допуск к отдельным видам деятельности: Членство в СРО дает право на осуществление определенных видов деятельности без необходимости получения государственной лицензии. Это упрощает процесс запуска бизнеса и снижает административные барьеры.</li>
+	<li>Участие в государственных закупках: В некоторых случаях для участия в государственных закупках требуется быть членом СРО. Это расширяет возможности предпринимателя получить государственные заказы и контракты.</li>
+	<li>Повышение квалификации сотрудников: СРО часто проводят обучающие мероприятия и курсы для своих членов, что помогает повысить квалификацию персонала и повысить уровень профессионализма в компании.</li>
+	<li>Консультации: Членам СРО доступны консультации по различным вопросам, включая правовые и бухгалтерские, что помогает предпринимателям ориентироваться в сложной законодательной среде и принимать обоснованные решения.</li>
+	<li>Возмещение убытков клиентам: С помощью компенсационного фонда СРО предприниматели могут возмещать убытки клиентам в случае некачественного оказания услуг или выполнения работ. Это повышает уровень доверия со стороны потребителей.</li>
+	<li>Рост доверия клиентов: Членство в СРО может служить свидетельством профессионализма и надежности предпринимателя в глазах клиентов, что способствует привлечению новых заказов и клиентов.</li>
+</ol>
+<p>Однако важно учитывать, что все эти преимущества членства в СРО являются платными и могут потребовать значительных финансовых затрат. Однако такие расходы могут быть отнесены к расходам и не облагаются налогом, что является дополнительным плюсом для предпринимателей.</p>
+<br>
+<p id="part5" style="font-size: 20px;"><b>Допуск СРО — что это такое</b></p>
+<p>Допуск в саморегулируемую организацию (СРО) представляет собой разрешение на осуществление определенных видов деятельности в рамках конкретной отрасли. В контексте строительной отрасли, например, такой допуск может быть необходим для выполнения определенных видов работ, таких как земляные работы, устройство скважин, монтаж сборных бетонных и железобетонных конструкций, а также других видов строительных работ.</p>
+<p>Важно отметить следующие аспекты допуска в СРО:</p>
+<ol>
+	<li>Действие допуска: Допуск имеет бессрочную силу и действует на всей территории России. Это позволяет предпринимателям, имеющим допуск, свободно осуществлять соответствующие виды деятельности в любом регионе страны.</li>
+	<li>Процесс получения допуска: Для получения допуска необходимо быть членом соответствующей СРО. Обычно требуется предоставить минимальный пакет документов, установленный саморегулируемой организацией.</li>
+	<li>Приостановление действия допуска: Действие допуска может быть временно приостановлено в случае ряда обстоятельств, таких как решение предпринимателя прекратить членство в СРО, получение аналогичного документа от другой саморегулируемой организации, нарушения в работе или привлечение к ответственности со стороны СРО.</li>
+</ol>
+<br>
+<img width="100%" src="./3.jpg">
+<p>Рис. 2. Допуск СРО</p>
+<p>Таким образом, допуск в СРО является важным документом для предпринимателей, работающих в определенных сферах деятельности, и позволяет им легально и свободно осуществлять свою профессиональную деятельность в соответствии с установленными нормами и требованиями.</p>
+<br>
+<p id="part6" style="font-size: 20px;"><b>Можно ли работать без допуска </b></p>
+<p>Отсутствие допуска в саморегулируемую организацию (СРО) может повлечь за собой различные виды ответственности:</p>
+<ol>
+	<li>Административная ответственность: В случае нарушения требования о наличии допуска от СРО, предпринимателю может быть наложен административный штраф. Например, в сфере строительства размер штрафа может составлять от 40 до 50 тысяч рублей в соответствии с законодательством об административных правонарушениях.</li>
+	<li>Гражданско-правовая ответственность: Если компания обязана законом иметь допуск в СРО, но не обладает им, это может привести к отказу другой стороны от договора и потребованию возмещения убытков.</li>
+	<li>Уголовная ответственность: Если компания осуществляет незаконную предпринимательскую деятельность без необходимого допуска и при этом имеет значительный доход, это может привести к уголовной ответственности. Наказание может варьироваться в зависимости от суммы дохода и включать арест на срок до шести месяцев или лишение свободы на срок до пяти лет.</li>
+</ol>
+<p>Важно отметить, что вступление в СРО обычно является добровольным, а не обязательным по закону. Тем не менее, в определенных отраслях деятельности и наличие допуска в СРО может быть обязательным для заключения и выполнения договоров.</p>
+<p>В целом, допуск в СРО представляет собой важное регулирующее требование, которое помогает обеспечить соблюдение стандартов работы, защитить интересы предпринимателей и клиентов, а также обеспечить надлежащее качество оказываемых услуг.</p>
+<br>
+<p id="part7" style="font-size: 20px;"><b>Вывод </b></p>
+<p>Саморегулируемые организации (СРО) представляют собой важный инструмент регулирования профессиональной деятельности в различных отраслях экономики. Вступление в СРО обеспечивает предпринимателям доступ к определенным видам деятельности, защиту интересов клиентов, повышение квалификации персонала и возможность получения консультаций по различным вопросам.</p>
+<p>Членство в СРО также приносит ряд других преимуществ, таких как участие в государственных закупках, возможность компенсации убытков клиентам, а также рост доверия со стороны клиентов. Однако следует помнить, что членство в СРО является добровольным и связано с определенными финансовыми обязательствами.</p>
+<p>В целом, СРО играют важную роль в обеспечении качества работ и услуг, защите интересов предпринимателей и клиентов, а также способствуют развитию профессиональной среды и повышению доверия к предпринимателям в различных отраслях экономики.</p>
+
+
+    </article>
+
+<style>
+	
+	table {
+  width: 100%;
+
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+}
+
+td {
+  text-align: left;
+	padding: 10px;
+	border: 3px solid rgb(0, 0, 0);
+}
+ th {
+  text-align: center;
+  padding: 10px;
+	border: 3px solid rgb(0, 0, 0);
+ }
+ @media only screen and (max-width: 880px) {
+	table {
+   width: 100%;
+}
+ }
+</style>
+
+</main>
+
+<footer class="footer col">
+    <div class="footer__top row">
+        
+
+        
+
+        
+    </div>
+    <div class="footer__bottom row">
+        <div class="footer__bottom-content row">
+            
+<div class="row">
+
+			<a href="../../../index.htm" class="link footer-bottom__link" title="Услуги">Услуги</a>
+		
+
+			<a href="../../index.htm" class="link footer-bottom__link active" title="Новости">Блог</a>
+		
+
+			<button class="link footer-bottom__link openFormButton">Помощь</button>
+		
+
+			<button class="link footer-bottom__link openFormButton">Техническая поддержка</button>
+		
+
+			<a href="../../../index.htm" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
+		
+</div>
+           
+            <div class="row">
+                <p class="copyright">&#169;2021-
+                    2024 kupit-firm-u.ru
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+	document.querySelectorAll('.openFormButton').forEach(function(button) {
+		button.addEventListener('click', function() {
+			document.getElementById('formPopup').style.display = 'flex';
+		});
+	});
+	
+	document.getElementById('closeButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('cancelButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('formPopup').addEventListener('click', function(event) {
+		if (event.target === this) {
+			this.style.display = 'none';
+		}
+	});
+	</script>
+
+</body>
+
+</html>

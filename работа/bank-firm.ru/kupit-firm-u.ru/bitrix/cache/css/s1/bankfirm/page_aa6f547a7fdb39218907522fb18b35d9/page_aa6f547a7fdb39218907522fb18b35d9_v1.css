@@ -1,0 +1,25 @@
+
+
+/* Start:/local/components/nne/form/templates/sell/style.css?1644910318301*/
+label,
+.adv__checkbox{
+	position: relative;
+}
+
+.success .success-block{
+	margin: 25px auto 0 auto;
+	padding-bottom: 25px;
+}
+
+.success .success-block-inner{
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.success .success-block-inner .btn{
+	max-width: 100%;
+	width: auto;
+	margin: 25px 0 0 0;
+}
+/* End */
+/* /local/components/nne/form/templates/sell/style.css?1644910318301 */

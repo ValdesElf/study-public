@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Индивидуальный предприниматель – это юридическое лицо или физическое</title>
     <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/fav/favicon-32x32.png">
@@ -21,7 +21,7 @@
         'DEFAULT_MAP_MARKET' : 'N',
     }
     </script>
-    <meta name="description" content="Индивидуальный предприниматель – это юридическое лицо или физическое">
+    <meta name="description" content="Статус ИП – к кому относится к юридическому лицу или физическому? Чем юридические лица отличаются от физических, кто такой индивидуальный предприниматель и к какой из этих категорий он относится.">
 <link href="../../../bitrix/cache/css/s1/bankfirm/template_f944bcde5c2076852e948444aceadfd0/template_f944bcde5c2076852e948444aceadfd0_v1.css?1715933479435835" type="text/css" data-template-style="true" rel="stylesheet">
 <script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
 <script>(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
@@ -32,7 +32,6 @@
 
 <link rel="canonical" href="index.htm">
 
-<script src="../../../bitrix/cache/js/s1/bankfirm/template_22e06b58d845c45a6a37cebc452ad5a6/template_22e06b58d845c45a6a37cebc452ad5a6_v1.js?1715933479796020"></script>
 
 </head>
 
@@ -47,7 +46,7 @@
                     </a>
                     <a href="tel:88005508101" class="nice__phone" title="8 (800) 550-81-01">8 (800) 550-81-01</a>
                 </div>
-                        <button class="btn make-order__btn--mb" data-id="10" data-form="popup" title="Заказать фирму">Заказать фирму</button>
+                        <button class="btn make-order__btn--mb openFormButton" title="Заказать фирму">Заказать фирму</button>
             <button type="button" aria-label="menu" id="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
             <div class="links">
                 <div class="row row-header">
@@ -63,11 +62,204 @@
 							<div class="menu-item"><a href="../../index.htm" class="header__link" title="Видео">Блог</a></div>
 
 <!-- nav -->                    
-                    <button class="btn make-order__btn openFormButton button-nav" data-id="10" data-form="popup" title="Заказать фирму">Заказать фирму</button>
+                    <button class="btn make-order__btn openFormButton button-nav openFormButton" title="Заказать фирму">Заказать фирму</button>
                 </div>
             </div>
         </div>
     </header>
+
+
+		    	<!-- ФОРМА ================================================= -->
+
+			<div class="form-popup" id="formPopup">
+				<div class="form-container" id="formContainer">
+					<div class="form-header">
+						<h2>ИНДИВИДУАЛЬНЫЙ ПОДБОР ФИРМЫ</h2>
+						<button class="close-button" id="closeButton">×</button>
+		
+					</div>
+					<form>
+						<label for="name">Ваше имя</label>
+						<input type="text" id="name" name="name" required>
+		
+						<label for="phone">Телефон</label>
+						<input type="tel" id="phone" name="phone" required>
+		
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+		
+						<label for="parameters">Параметры фирмы</label>
+						<textarea id="parameters" name="parameters" required></textarea>
+		
+						<div class="adv__checkbox text_confirmation">
+							<input tabindex="5" type="checkbox" required="" class="checkbox" id="offerAgreementformA03e" name="agreement" value="Y">
+							<label for="offerAgreementformA03e"><span></span><p class="sell__inline">Я ознакомился и согласен с <a class="link" href="/offer/" target="_blank" title="Оферта">договором оферты</a> и <a class="link" href="/contract-offer/" target="_blank" title="Политика конфиденциальности">пользовательским соглашением</a></p></label>
+						</div>
+		
+						
+						<div class="form-actions">
+						<button class="popup-submit-btn" type="submit">Отправить</button>
+						<button class="popup-cancel-btn" type="button" class="cancel-button" id="cancelButton">Отмена</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		
+		
+			<style>
+		
+		.form-popup {
+			display: none; 
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5); 
+			justify-content: center;
+			align-items: center;
+			z-index: 99998;
+		}
+		
+		.form-actions {
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.adv__checkbox {
+			display: block !important;
+		}
+		
+		.adv__checkbox p {
+			color: black !important;
+		}
+		
+		.form-popup.open {
+			display: block;
+		}
+		
+		.form-container {
+			max-width: 500px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+			position: relative;
+		}
+		
+		
+		.form-header {
+			display: flex;
+			flex-wrap: wrap;
+			/* justify-content: space-between; */
+			align-items: center;
+		}
+		
+		.form-header h2 {
+			text-transform: uppercase;
+		  color: #1A345C;
+		  font-weight: bold;
+		  font-size: 24px;
+		  line-height: 31px;
+		  text-align: center;
+		  margin-top: 16px;
+		}
+		
+		.close-btn {
+			z-index: 401;
+		
+		}
+		
+		.close-button {
+			right: 20px;
+			display: inline-block;
+			visibility: inherit;
+			box-sizing: border-box;
+			position: absolute;
+			background: none;
+			border: none;
+			font-size: 24px;
+			cursor: pointer;
+			height: 36px !important;
+			width: 36px !important;
+		}
+		
+		.form-container label {
+			display: block;
+			margin-top: 10px;
+		}
+		
+		.form-container input:not(:last-child), textarea {
+			width: calc(100% - 20px);
+			padding: 10px;
+			margin-top: 5px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		.form-container a:hover {
+			color: #FFA200 !important;
+		}
+		
+		.form-container input:last-child {
+			position: absolute;
+		}
+		
+		.form-container textarea {
+			height: 100px;
+			resize: vertical;
+		}
+		
+		.form-container button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 200px;
+			height: 50px;
+			padding: 10px;
+			margin-top: 20px;
+			border: none;
+			border-radius: 4px;
+			background-color: #ff9800;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		
+		
+		.form-container button:hover {
+		  background-color: #fff !important;
+		  border: 1px solid #FFA200;
+		  color: #FFA200 !important;
+		  transition: all 0.6s ease;
+		}
+		
+		.popup-submit-btn {
+		
+		}
+		
+		.popup-cancel-btn {
+		
+		}
+		
+		.form-container button:hover {
+			background-color: #e68900;
+		}
+		
+		.cancel-button {
+			background-color: #ccc;
+			margin-top: 10px;
+		}
+		
+		.cancel-button:hover {
+			background-color: #bbb;
+		}
+		
+			</style>
+		
+			<!-- ФОРМА ================================================= -->
 
 	<style>
 		.button-nav {
@@ -103,9 +295,9 @@
         <div class="catalog__wrapper wrapper">
 
 			
-	<aside class="news__aside filter">
+	<aside class="filter anchor__aside">
 		<p class="filter__main-title title--white">Меню</p>
-		<ul>
+		<ul class="menu__anchor">
 			<li><a href="#part1">Что такое юридические и физические лица и чем они отличаются</a></li>
 			<li><a href="#part2">Что общего и в чём различия между ИП и юрлицом </a></li>
 			<li><a href="#part3">Преимущества ИП перед юрлицом</a></li>
@@ -116,9 +308,39 @@
 
 </aside>
 
+<style>
+
+	body {
+		background-image: none !important;
+	}
+	
+	.filter {
+		background: none !important;
+	}
+	.anchor__aside {
+		width: 350px;
+		background-image: none !important;
+	}
+	.menu__anchor li {
+		margin: 10px 15px;
+	}
+	.menu__anchor li a {
+		color: #FFA200;
+	}
+	.menu__anchor a:hover {
+		color: #c9953a !important;
+	}
+	@media screen and (max-width: 1244px) {
+		.anchor__aside {
+			width: 100%;
+		}
+	}
+
+</style>
+
 
 	<div class="news--single">
-		<h1 class="firm__title title">Индивидуальный предприниматель – это юридическое лицо или физическое</h1>
+		<h1 class="firm__title title">ИП – это юридическое лицо или физическое</h1>
 		<div class="firm__row row row--between">
 
 	<div class="card-firm__labels">
@@ -129,17 +351,14 @@
 	</div>
 </div>
 <div class="firm__row col news__text news__text--single">
-	<img width="750" alt="97637.jpg" src="./1.jpg" ><br>
-<h1 style="font-size: 30px"><b>ИП – это юридическое лицо или физическое </b></h1>
-<br>
-<p style="font-size: 15px; color: gray;">Статус ИП – к кому относится к юридическому лицу или физическому? Чем юридические лица отличаются от физических, кто такой индивидуальный предприниматель и к какой из этих категорий он относится.</p>
+	<img width="100%" alt="97637.jpg" src="./1.jpg" ><br>
 <p style="margin-top: 20px" id="part1"><b>Что такое юридические и физические лица и чем они отличаются</b></p>
 <p>Гражданский кодекс России подробно разъясняет, что такое физические и юридические лица, посвящая этому главы 3 и 4. В упрощённом виде, физическое лицо — это обычный человек, который становится физлицом с момента рождения и остаётся таковым всю свою жизнь.</p>
 <p>Юридическое лицо — это организация, созданная физическими лицами. В отличие от физического лица, оно существует, пока о нём есть запись в реестре юридических лиц, и прекращает своё существование при ликвидации. Юридическое лицо имеет имущество, права и отвечает по обязательствам, однако все действия от его имени осуществляет представитель — человек. Если юридическое лицо создано для ведения бизнеса и получения прибыли, его называют коммерческим, примером чего является ООО.
 </p>
 <p>Законодательство разрешает физическому лицу заниматься бизнесом без создания юридического лица. Статья 23 Гражданского кодекса РФ и пункт 2 статьи 11 Налогового кодекса РФ описывают индивидуального предпринимателя (ИП) как физлицо, зарегистрированное в налоговой службе особым образом. Этот статус наделяет человека новыми правами и обязанностями.</p>
 <br>
-<img width="750" src="./2.jpg">
+<img width="100%" src="./2.jpg">
 <p>Рис. 1. Индивидуальный предприниматель </p>
 <p>Рассмотрим пример. Катерина работает в ателье и, как физлицо, платит НДФЛ, налог на имущество и оплачивает коммунальные услуги. Решив самостоятельно шить и продавать женские платья, она зарегистрировалась как ИП на упрощённой системе налогообложения (УСН). Теперь у неё законное право заниматься бизнесом, но и дополнительные обязанности: ежегодно сдавать декларацию, платить единый налог и страховые взносы ИП.
 </p>
@@ -242,7 +461,7 @@
 	<li><b>Продажа бизнеса:</b> ИП должен закрыть бизнес и продать имущество отдельно, тогда как юридическое лицо можно продать как единое целое.</li>
 </ol>
 <br>
-<img width="550" src="./3.jpg">
+<img width="70%" src="./3.jpg">
 <p>Рис. 2. Статус ИП</p>
 
 <p id="part3"><b>Преимущества ИП перед юридическим лицом</b></p>
@@ -293,8 +512,9 @@
     </article>
 
 <style>
+	
 	table {
-  width: 850px;
+  width: 100%;
 
   border-collapse: collapse;
   text-align: center;
@@ -312,197 +532,74 @@ td {
   padding: 10px;
 	border: 3px solid rgb(0, 0, 0);
  }
+ @media only screen and (max-width: 880px) {
+	table {
+   width: 100px !important;
+}
+ }
 </style>
 
 </main>
 
 <footer class="footer col">
     <div class="footer__top row">
-        <div class="col">
-            <h2 class="footer__title title">Фирмы</h2>
-            <div class="row">
-                <div class="col footer__links">
-                    <a class="link footer__link" href="../../../catalog/filter/tax-is-ot_ocn/apply/index.htm" title="Фирмы с ОСНО">Фирмы
-                        с ОСНО</a>
-                    <a class="link footer__link" href="../../../catalog/filter/tax-is-usnic_8/apply/index.htm" title="Фирмы на УСН">Фирмы
-                        на УСН</a>
-                    <a class="link footer__link" href="../../../catalog/filter/cheking_account-is-yes/apply/index.htm" title="С расчётным счётом">С расчётным счётом</a>
-                    <a class="link footer__link" href="../../../catalog/filter/clear/apply/index.htm" title="Фирмы с лицензиями">Фирмы с
-                        лицензиями</a>
-                    <a class="link footer__link" href="../../../catalog/filter/clear/apply/index.htm" title="Строительные компании (с СРО)">Строительные компании (с СРО)</a>
-                </div>
-                <div class="col footer__links">
-                    <a class="link footer__link" href="../../../catalog/index.htm" title="С историей">С историей</a>
-                    <a class="link footer__link" href="../../../catalog/index.htm" title="С оборотами">С оборотами</a>
-                    <a class="link footer__link" href="../../../catalog/index.htm" title="Фирмы по городам">Фирмы по городам</a>
-                    <a class="link footer__link" href="../../../catalog/index.htm" title="Фирмы по видам деятельности">Фирмы по видам
-                        деятельности</a>
-                </div>
-            </div>
-        </div>
+        
 
-        <div class="col">
-            <h2 class="footer__title title">Покупателю</h2>
-            
-<div class="col footer__links">
+        
 
-			<a href="../../../catalog/index.htm" class="link footer__link" title="Каталог">Каталог</a>
-		
-
-			<a href="../../../get-firm/index.htm" class="link footer__link" title="Индивидуальный подбор фирмы">Индивидуальный подбор фирмы</a>
-		
-
-			<a href="../../../feedback/index.htm" class="link footer__link" title="Консультация">Консультация</a>
-		
-</div>
-        </div>
-
-        <div class="col">
-            <h2 class="footer__title title">Продавцу</h2>
-            
-<div class="col footer__links">
-
-			<a href="../../../sell/index.htm" class="link footer__link" title="Добавить компанию">Добавить компанию</a>
-		
-
-			<a href="../../../sell/index.htm" class="link footer__link" title="Срочная продажа">Срочная продажа</a>
-		
-
-			<a href="../../../sell/index.htm#calc" class="link footer__link" title="Калькулятор стоимости фирмы">Калькулятор стоимости фирмы</a>
-		
-</div>
-        </div>
-        <div class="col col--last">
-            <img alt="bankfirm logo" class="logo" src="../../../local/templates/bankfirm/assets/logotype-bankfirm-new.svg">
-            <div class="col footer__links">
-                <a class="link footer__link" href="../../../about/index.htm" title="О компании">О компании</a>
-                <a class="link footer__link" href="../../../contacts/index.htm" title="Контакты">Контакты</a>
-                <a class="link footer__link" href="../../../video-answer/index.htm" title="Контакты">Видео</a>
-                <!-- <a class="link footer__link" href="/images/ip-fenko.doc" title="Скачать реквизиты компании Банк фирм в формате Word">Реквизиты</a> -->
-                <h2 class="title footer__social-title"> Наши социальные сети</h2>
-                <div class="row social-links">
-                    <a class="social-links__link" href="https://www.youtube.com/@bank-firm/" target="_blank" title="YouTube">
-                        <img style="width: 48px;" alt="YouTube" src="../../../local/templates/bankfirm/assets/youtube_social_circle_red.svg">
-                    </a>
-                    <a class="social-links__link" href="https://vk.com/bankfirm" target="_blank" title="VK">
-                        <img alt="vk" src="../../../local/templates/bankfirm/assets/vk.svg">
-                    </a>
-                    <!-- <a class="social-links__link" href="#">
-                            <img alt="telegram" src="/local/templates/bankfirm/assets/telegram.svg" />
-                        </a>
-                        <a class="social-links__link" href="#">
-                            <img alt="facebook" src="/local/templates/bankfirm/assets/facebook.svg" />
-                        </a>-->
-                </div>
-            </div>
-        </div>
+        
     </div>
     <div class="footer__bottom row">
         <div class="footer__bottom-content row">
             
 <div class="row">
 
-			<a href="../../../services/index.htm" class="link footer-bottom__link" title="Услуги">Услуги</a>
+			<a href="../../../index.htm" class="link footer-bottom__link" title="Услуги">Услуги</a>
 		
 
-			<a href="../../index.htm" class="link footer-bottom__link active" title="Новости">Новости</a>
+			<a href="../../index.htm" class="link footer-bottom__link active" title="Новости">Блог</a>
 		
 
-			<a href="../../../feedback/index.htm" class="link footer-bottom__link" title="Помощь">Помощь</a>
+			<button class="link footer-bottom__link openFormButton">Помощь</button>
 		
 
-			<a href="../../../catalog/index.htm" class="link footer-bottom__link" title="Поиск">Поиск</a>
+			<button class="link footer-bottom__link openFormButton">Техническая поддержка</button>
 		
 
-			<a href="../../../offer/index.htm" class="link footer-bottom__link" title="Оферта">Оферта</a>
-		
-
-			<a href="../../../feedback/index.htm" class="link footer-bottom__link" title="Техническая поддержка">Техническая поддержка</a>
-		
-
-			<a href="../../../faq/index.htm" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
+			<a href="../../../index.htm" class="link footer-bottom__link" title="F.A.Q.">F.A.Q.</a>
 		
 </div>
-            <div class="row social-links">
-                <a class="social-links__link" href="https://vk.com/bankfirm" target="_blank" title="VK">
-                    <img alt="vk" width="32" height="18" src="../../../local/templates/bankfirm/assets/vk.svg">
-                </a>
-                <!--<a class="social-links__link" href="#">
-                        <img alt="telegram" width="32" height="30" src="/local/templates/bankfirm/assets/telegram.svg" />
-                    </a>
-                    <a class="social-links__link" href="#">
-                        <img alt="facebook" width="18" height="32" src="/local/templates/bankfirm/assets/facebook.svg" />
-                    </a>-->
-            </div>
+           
             <div class="row">
                 <p class="copyright">&#169;2021-
-                    2024 bank-firm.ru
+                    2024 kupit-firm-u.ru
                 </p>
             </div>
         </div>
     </div>
 </footer>
-<div id="GlobalIconSymbols" style="display: none;">
-    <svg xmlns="http://www.w3.org/2000/svg">
-        <symbol id="empty-search">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewbox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
-                <g>
-                    <path xmlns="http://www.w3.org/2000/svg" d="m506.142 5.858c-7.811-7.811-20.474-7.811-28.284 0l-55.536 55.536c-46.339-39.704-104.761-61.394-166.322-61.394-68.38 0-132.667 26.628-181.02 74.98s-74.98 112.64-74.98 181.02c0 61.619 21.671 120 61.384 166.332l-55.526 55.526c-7.811 7.811-7.811 20.474 0 28.284 3.905 3.905 9.023 5.858 14.142 5.858s10.237-1.953 14.142-5.858l472-472c7.811-7.81 7.811-20.474 0-28.284zm-466.142 250.142c0-119.103 96.897-216 216-216 50.888 0 99.231 17.567 137.937 49.779l-304.159 304.159c-32.218-38.7-49.778-87.004-49.778-137.938zm447.428-109.57c16.305 34.383 24.572 71.247 24.572 109.57 0 50.531-14.999 99.674-43.374 142.116-3.856 5.768-10.191 8.886-16.645 8.886-3.821 0-7.683-1.092-11.098-3.375-9.183-6.139-11.65-18.56-5.511-27.742 23.963-35.841 36.628-77.296 36.628-119.885 0-32.348-6.969-63.446-20.714-92.43-4.733-9.98-.479-21.908 9.501-26.641 9.982-4.735 21.908-.479 26.641 9.501zm-92.222 301.209c5.723 9.447 2.703 21.746-6.745 27.468-39.844 24.136-85.648 36.893-132.461 36.893-37.489 0-73.623-7.925-107.399-23.555-10.024-4.639-14.39-16.526-9.751-26.55s16.526-14.388 26.55-9.751c28.473 13.175 58.955 19.856 90.6 19.856 39.505 0 78.143-10.756 111.738-31.106 9.446-5.724 21.745-2.704 27.468 6.745z" fill="#FFA200" data-original="#000000" style="" class=""></path>
-                </g>
-            </svg>
-        </symbol>
-    </svg>
-</div>
-    <script id="dealFileItem" type="text/x-handlebars-template">
-	<div class="deal_files_item" title="{{title}}" id="dealFile{{fileId}}" data-tippy-content="{{tip}}">
-		<button role="button" class="deal_files_item__delete" type="button" data-id="{{fileId}}" data-action="deleteFile"><i class="far fa-trash-alt"></i></button>
-		<div class="deal_files_item__header">
-			<div class="deal_files_item__type">
-				<div class="deal_files_item__icon"><i class="far {{icon}}"></i></div>
-				<div class="deal_files_item__ext">.{{ext}}</div>
-			</div>
-			<div class="deal_files_item__name">
-				{{name}}
-				<div class="deal_files_item__size">
-				{{size}}
-				</div>
-			</div>
-		</div>
-		<div class="deal_files_item__footer">
-			<date class="deal_files_item__date">
-				{{dateCreate}}
-			</date>
-			<div class="deal_files_item__download">
-				<a class="link" download href="{{src}}">Скачать <i class="fas fa-file-download"></i></a>
-			</div>
-		</div>
-	</div>
-</script>
-<script id="dealFileItemEdit" type="text/x-handlebars-template">
-<div class="deal_files_item deal_files_item_edit" title="Доступ к файлу" id="fileEdit{{fileId}}" data-item-edit="{{fileId}}">
-	<form id="formSaveFile{{fileId}}" method="POST" class="deal_files_item__content" data-action="saveFile">
-		<div class="deal_files_item_title">Предоставить доступ:</div>
-		<ul>
-			<li>
-				<div class="item_modal--cb">
-					<input class="checkbox" type="checkbox" name="ACCESS[]" value="01" id="fileAccessSeller{{fileId}}">
-					<label class="calculator-label" for="fileAccessSeller{{fileId}}"><span></span>Продавцу</label>
-				</div>
-			</li>
-			<li>
-				<div class="item_modal--cb">
-					<input class="checkbox" type="checkbox" name="ACCESS[]" value="10" id="fileAccessBuyer{{fileId}}">
-					<label class="calculator-label" for="fileAccessBuyer{{fileId}}"><span></span>Покупателю</label>
-				</div>
-			</li>
-		</ul>
-		<div class="deal_files_item__footer">
-			<button type="submit" class="btn btn-xs">Сохранить</button>
-		</div>
-		<input type="hidden" name="FILE_ID" value="{{fileId}}" />
-	</form>
-</div>
-</script>  
+
+<script>
+	document.querySelectorAll('.openFormButton').forEach(function(button) {
+		button.addEventListener('click', function() {
+			document.getElementById('formPopup').style.display = 'flex';
+		});
+	});
+	
+	document.getElementById('closeButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('cancelButton').addEventListener('click', function() {
+	document.getElementById('formPopup').style.display = 'none';
+	});
+	
+	document.getElementById('formPopup').addEventListener('click', function(event) {
+		if (event.target === this) {
+			this.style.display = 'none';
+		}
+	});
+	</script>
 
 </body>
 
