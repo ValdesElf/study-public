@@ -1,0 +1,155 @@
+.desktop{
+	display:block;
+	margin:0px auto;
+}
+
+.desktop button{
+	cursor:pointer;
+}
+
+.desktop h2{
+	font-size:24px;
+}
+
+.desktop h3{
+	font-size:18px;
+}
+
+.desktop ul > li{
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	
+}
+
+.desktop ul.list{
+	display: block;
+  padding: 0px;
+	margin: 0px;
+	
+}
+
+
+.desktop ul.list > li{
+	display: block;
+	position: relative;
+	padding-left: 30px;
+}
+
+
+.desktop ul.list.red-circles > li:before{
+	content: "";
+	
+	display: block;
+	position: absolute;
+	
+	left: 5px; top: 50%;
+	width:14px; height:14px;
+	
+	margin: -7px 0px 0px 0px;
+	
+	border: solid 0px;
+	border-radius: 50%;
+	
+	background-color: #f00;
+}
+
+
+.section{
+	display: block;
+	position: relative;
+}
+
+.section .media-sizing{
+	display: block;
+	position: relative;
+	width:1200px;
+	margin:0px auto;
+	overflow:auto;
+}
+
+
+.desktop .button{
+	
+	padding: 15px 20px;
+	
+	border-style: solid;
+	border-width: 0px;
+	
+	border-radius: 8px;
+	
+	box-sizing: border-box;
+	
+	font-size: 17px;
+	font-weight: 700;
+	
+	text-decoration: none;
+	
+	cursor: pointer;
+}
+
+.desktop .button.border-orange{
+	color: #fff;
+	border-width: 2px;
+}
+
+.desktop .button.background-orange{
+	color: #000;
+}
+
+
+
+
+.desktop .tiles{
+	display:block;
+	position:relative;
+	
+	width:100%;
+	overflow:auto;
+}
+
+.desktop .tiles a{
+	text-decoration:none;
+}
+
+.desktop .tiles.cols3 > *{
+	display:block;
+	
+	float:left;
+	
+	width:33.33%;
+	margin:0px 0px 60px 0px;
+}
+
+.desktop .tiles.cols3 > * img{
+	display:block;
+	margin:0px auto 10px auto;
+	
+	width:87%;
+}
+
+.desktop .tiles.cols3 > * div{
+	display:block;
+	
+	width:initial;
+	
+	font-size:22px;
+	font-weight:600;
+	
+	text-align:center;
+	text-decoration:underline;
+	color:#000;
+	
+	margin:0px auto;
+	
+	border-bottom:solid 0px rgba(0, 0, 0, .4);
+}
+
+.desktop .tiles.cols3 > *:nth-last-child(1), .desktop .tiles.cols3 > *:nth-last-child(2), .desktop .tiles.cols3 > *:nth-last-child(3){
+	margin-bottom: 0px;
+}
+
+
+
+

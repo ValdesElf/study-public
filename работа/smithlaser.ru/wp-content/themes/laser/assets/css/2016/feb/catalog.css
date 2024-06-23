@@ -1,0 +1,286 @@
+catalog.lc2016 item.catalog_items{
+	
+	display:block;
+	margin:0px 10px 0px 0px;
+	
+}
+
+catalog .table{	
+	display:table;
+	width:100%;
+}
+
+catalog .table > *{	
+	display:table-cell;
+	vertical-align:top;
+}
+
+catalog.lc2016 item.catalog_items *{
+	display:block;
+}
+
+catalog.lc2016 .title{
+	
+	margin:0px 0px 6px 0px;
+	
+}
+
+catalog.lc2016 .title a{
+	
+	text-decoration:none;
+	
+	font-size:17px;
+	font-weight:bold;
+	
+	color:#000;	
+	
+	border-bottom:solid 2px rgba(0, 0, 0, .4);
+	
+}
+
+catalog.lc2016 .title:hover a{	
+	color:#333;
+	border-bottom:solid 2px rgba(0, 0, 0, .7);
+}
+
+
+catalog.lc2016 item .picture a{	
+	margin:0px 0px 0px 20px;
+}
+
+catalog.lc2016 item .picture a img{
+	width:200px;
+}
+
+
+
+catalog.lc2016 item .summary{
+	font-size:15px;
+	/*height:147px;*/
+	margin:0px 0px 10px 0px;
+}
+
+catalog.lc2016 item .summary p{
+	margin:0px 0px 0px 0px;
+}
+
+catalog.lc2016 item .summary .property{
+	margin:5px 0px 10px 0px;
+}
+
+catalog.lc2016 item .summary .property li{
+	display: table;
+	
+	margin: 0px 0px 6px 0px;
+}
+
+catalog.lc2016 item .summary .property li > *{
+	display: table-cell;
+	
+	font-size: 12px;
+	line-height: 14px;
+	
+	vertical-align: bottom;
+		
+}
+
+catalog.lc2016 item .summary .property li dots{
+	
+	width: 100%;
+}
+
+catalog.lc2016 item .summary .property li dots:before{
+	
+	content: "";
+	
+	display: block;
+	width: 100%;
+	height: 20px;
+	
+	border: solid 0px #000;
+	margin: 0px 0px !important;
+	
+	background-color: #f00;
+	background-image: url(../../../images/lcut-dots.gif);
+	background-repeat: repeat-x;
+	background-position: center -4px;
+}
+
+catalog.lc2016 item .summary .property li property{
+	white-space: nowrap;
+}
+
+catalog.lc2016 item .summary .property li val{
+	white-space: nowrap;
+	text-align: right;
+}
+
+
+
+
+catalog.lc2016 button{
+	cursor:pointer;
+	
+	border:solid 0px #000;
+	border-radius: 4px;
+	
+	outline:none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; 
+  
+	padding:6px 10px;
+	color:#fff;	
+	
+	white-space:nowrap;
+	
+	height:32px;
+}
+
+catalog.lc2016 button.by_now{
+	background: #ff614e;
+    margin: 0px 0px 0px 10px;
+    border-bottom: 2px solid #cf412e !important;
+}
+
+catalog.lc2016 button:active{
+	border:solid 0px #000;
+}
+
+catalog.lc2016 item price{
+	font-size:14px;
+	padding: 0px;
+}
+
+catalog.lc2016 item price:before{
+	display:none;
+	content:"";
+}
+
+
+catalog.lc2016 .prices{	
+	padding: 13px 0px 0px 0px;	
+}
+
+
+catalog.lc2016 .prices > div{
+	font-size: 14px;
+	padding: 0px 0px 0px 0px;
+	
+	vertical-align: bottom;
+}
+
+catalog.lc2016 .prices > div:nth-child(3){
+	padding: 0px 0px 0px 12px;
+}
+
+catalog.lc2016 .prices *{
+	white-space: nowrap;
+	
+}
+
+
+catalog.lc2016 item .banners{
+	display:none;	
+	width:100%;
+	
+	perspective: 2000px;
+}
+
+catalog.lc2016 item .banners .banner{
+	
+	transform: rotateX(90deg);
+	
+	display:block;	
+	width:100%;
+	overflow: visible;
+	
+}
+
+catalog.lc2016 item .banners .banner img{	
+	width:100%;
+}
+
+@keyframes lc2016_banner_001{
+	0%{
+		height: 0px;
+		opacity:0;
+		margin:0px;
+	}
+	30%{
+		height: unset;
+		margin:10px 0px 20px 0px;
+	}
+	70%{
+		height: unset;
+		margin:10px 0px 20px 0px;
+		transform: scale(.4);
+		opacity:0;
+	}
+	to{
+		height: unset;
+		margin:10px 0px 20px 0px;
+		opacity:1;
+		transform: scale(1);
+	}
+}
+
+catalog.lc2016 item:nth-of-type(3) .banners{
+	display: block;
+}
+
+catalog.lc2016 item:nth-of-type(3) .banners .banner{
+	display: none;
+}
+
+catalog.lc2016 item:nth-of-type(3) .banners .banner:nth-child(1){
+	display: block;
+	animation: lc2016_banner_001 1s linear;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+}
+
+
+
+
+catalog.lc2016 item:nth-of-type(5) .banners{
+	display: block;
+}
+
+catalog.lc2016 item:nth-of-type(5) .banners .banner{
+	display: none;
+}
+
+catalog.lc2016 item:nth-of-type(5) .banners .banner:nth-child(2){
+	display: block;
+	animation: lc2016_banner_001 1s linear;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+}
+
+
+
+catalog.lc2016 item[shop_item_id="23"] .banners{
+	display: block;
+}
+
+catalog.lc2016 item[shop_item_id="23"] .banners .banner{
+	display: none;
+}
+
+catalog.lc2016 item[shop_item_id="23"] .banners .banner:nth-child(3){
+	display: block;
+	animation: lc2016_banner_001 1s linear;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;	
+}
+
+
+
+
+catalog.hoverStyledItems-001 item *{	
+	transition: background 200ms;	
+}
+
+

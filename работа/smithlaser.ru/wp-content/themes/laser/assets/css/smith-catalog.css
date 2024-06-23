@@ -1,0 +1,278 @@
+
+section.main{
+    display: block;
+    width:100%;
+    margin:auto;
+}
+
+catalog{
+	display:block;
+	width:100%;
+	
+	border:0;
+	margin: 0px 0px;
+}
+
+catalog *:before{
+	cursor:default;
+}
+
+catalog item{
+	display:table;
+	width:100%;
+	border:0;
+	
+}
+
+catalog item .brand{
+	display:none;
+}
+
+catalog item .rating{
+	display:none;
+}
+
+catalog item .meta{
+	display:none;
+}
+
+catalog item section{
+	display: table-cell;
+	vertical-align: top;
+	border:0;
+}
+
+
+catalog item section:nth-child(1){
+	min-width: 230px;
+	
+}
+
+catalog item section:nth-child(3){
+	min-width: 220px;
+}
+
+catalog item price{
+  display: table-cell;
+  position: relative;
+  border:0;
+	text-align: center;
+	
+	padding: 0px 10px 0px 0px;
+}
+
+rub:after{
+	content:"руб";
+	margin: 0 0 0 5px;
+}
+
+catalog item price rub{
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    padding-left: 10px;
+}
+
+
+
+catalog item price div{
+	display: block;
+	width: 100%;
+	border:solid 0px;
+}
+
+catalog item price div button{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    padding: 10px 0px;
+    margin: 10px 0;
+    color: #fff;
+    cursor: pointer;
+    border:0;
+    border-radius: 2px;
+    background: #ff614e;
+    border-bottom: 2px solid #ed3a26;
+    transition: background 250ms;
+    outline: none;
+    font-weight: normal;
+}
+
+catalog item price div button:hover{
+    background: rgba(238, 89, 70,0.8);
+}
+
+.consalt{
+    background: #4dadff;
+}
+
+.consalt:hover{
+    background: rgba(76, 195, 230, 0.7);
+}
+
+
+
+catalog item price:nth-of-type(2) div button:nth-of-type(1){
+	display: block;
+}
+
+
+catalog item price available:before{
+	content:"";
+}
+
+
+catalog item price available{
+	display: block;
+	position: absolute;	
+	left:135px;
+	top:16px;
+	color: #2d2;
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	margin: 0;
+}
+
+
+/* -- Pages -- */
+
+catalog item section pages tabs{
+	display: block;
+	width: 100%;	
+}
+
+catalog item section pages tabs tab{
+	display: inline-block;
+	cursor: pointer;
+	border-bottom: dashed 1px #5af;
+	margin: 0 20px 0 0;
+}
+
+catalog item section pages tabs tab.selected{
+	cursor: default;
+	border-bottom: dashed 0 #5af;
+}
+
+
+catalog item section pages tabs tab, catalog item section pages tabs tab *{
+	font-size: 14px;
+	font-style: italic;	
+	color:#5af;
+}
+
+
+
+
+catalog item section pages{
+	display: block;
+	width: 100%;
+	
+	position:relative;
+}
+
+catalog item section pages page{
+	display: none;
+	width: 100%;
+	
+}
+
+
+
+catalog item section pages page.selected{
+	display: block;
+}
+
+/* ------ */
+
+
+catalog item section recommend:before{
+	display: block;
+	content:"Рекомендованные товары:";
+	width:50%;	
+	min-width: 155px;
+	text-align: center;
+	font-style: italic;
+	border-bottom: dashed 1px;
+	color: #22a;
+	margin: 80px auto 10px auto;
+    clear:both;
+}
+
+catalog item section recommend{
+	display: block;
+	width: 100%;
+}
+
+catalog item section recommend item{
+	display: block;
+	width: 100%;
+	
+	text-align: center;
+	margin: 30px 0 0 0;
+	padding:0;
+	border:0;
+}
+
+catalog item section recommend item a{
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+
+catalog item section recommend:hover item img{
+	filter: brightness(100%);
+}
+
+catalog item section recommend:hover item:hover img{
+	filter: brightness(110%);
+}
+
+
+
+
+catalog item section recommend item a *{
+	transition: color 300ms, filter 300ms;
+}
+
+catalog item section recommend item a rub{
+    display:block;
+    margin:5px auto;
+	color: rgba(0, 0, 0, 0.2);
+}
+
+catalog item section recommend item:hover a{
+	color: rgba(0, 0, 0, 0.8);
+}
+
+catalog item section recommend item:hover a rub{
+	color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+catalog item section recommend img{
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+}
+catalog section.video{
+	display: block;
+	width: 100%;
+	margin: 20px 0 0 0;
+	padding: 0 !important;
+}
+
+catalog section.video iframe{
+	width: 100%;
+	height: 310px;
+}
+.compare{
+    /*display: none!important;*/
+}

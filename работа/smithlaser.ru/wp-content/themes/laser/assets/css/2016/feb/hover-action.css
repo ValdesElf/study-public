@@ -1,0 +1,77 @@
+hover-action{
+	position:relative;
+	cursor:none;
+}
+
+hover-action[type="span"]{
+	display:inline;
+	position:relative;
+}
+
+
+hover-action.lasercut-2016-hint{
+  display:inline-block;
+	
+	border:solid 1px rgba(0, 0, 0, 0.25);
+	border-radius:50%;	
+	
+	width:18px;
+	height:18px;
+	
+	color:#57e;
+	background:#fff;
+	
+	font-size: 12px;
+	line-height: 18px;
+	
+	padding:0px;
+	margin:-0px;
+	
+		
+	text-align: center;
+	
+	transform:translateY(-1px);
+	
+	perspective:2500px;
+}
+
+hover-action.lasercut-2016-hint:hover{
+	color:#fff;
+	background:#59f;
+	
+}
+
+hover-action.lasercut-2016-hint .frame:before{
+	
+	content:"";
+	
+	display:block;
+	position:absolute;
+	
+	right:12px;
+	top:-7px;
+	
+	width:12px;
+	height:12px;
+	
+	background:#fff;
+	
+	border-left:solid 1px;
+	border-top:solid 1px;
+	border-color:rgba(0, 0, 0, .4);
+	transform:rotate(45deg);
+}
+
+hover-action.lasercut-2016-hint .frame{    display: block;    position: absolute;    border: solid 1px rgba(0, 0, 0, .4);    border-radius: 4px;    color: #59f;    background: rgba(255, 255, 255, 1);    padding: 5px;    right: -10px;    top: 26px;    width: 150px;    opacity: 0;    transform-origin: right top;    transform: scale(.2);    transition: transform 500ms 200ms, opacity 500ms 200ms;
+}
+
+
+hover-action.lasercut-2016-hint:hover .frame{
+	opacity:1;
+	transform:scale(1);
+}
+
+
+
+
+

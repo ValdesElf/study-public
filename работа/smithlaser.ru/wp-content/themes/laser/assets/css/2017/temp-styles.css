@@ -1,0 +1,13 @@
+.contacts * {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.contacts__addresses-list {
+  margin-right: 25px;
+}
+
+.banner--draw {width: 100%;min-height: 300px;background: url("../../../../img/banner-draw.jpg") no-repeat top right/contain;}
+@media (max-width: 1400px) {.banner--draw {background: url("../../../../img/banner-draw-1400.png") no-repeat top right/contain;}}
+@media (max-width: 1023px) {.banner--draw {margin-top: 25px;}}
+@media (max-width: 600px) {.banner--draw {min-height: 528px;background: url("../../../../img/banner-draw-600.jpg") no-repeat top right/contain;}}

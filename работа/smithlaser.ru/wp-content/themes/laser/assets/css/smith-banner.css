@@ -1,0 +1,155 @@
+banner-frame{
+	display:block;
+	opacity: 1;
+	position: absolute;
+	
+	width:100%;
+	height:100%;
+	
+	border:solid 0px #000;
+	overflow:hidden;
+	
+	transition: opacity 500ms;
+}
+
+banner-frame.hidden{
+	opacity: 0;
+}
+
+banner-frame.machine img{
+	display: block;
+	position: absolute;
+	
+	top: -85px;
+	left:-20px;
+	height: 140%;
+	
+	padding-top: 0px;
+	opacity: 1;
+	
+	transition:padding-top 700ms 100ms, opacity 1200ms 600ms;
+}
+
+banner-frame.hidden img{
+	opacity: 0;
+	padding-top: 10px;
+}
+
+banner-frame.machine div{
+	display: block;
+	position:absolute;
+		
+}
+
+banner-frame.machine .desc{
+	border: solid 0px #000;
+	
+	width: 335px;
+	height:100px;
+	
+	top:50px;
+	right:0px;
+}
+
+
+banner-frame.machine .desc .name{
+	font-size: 34px;
+	font-weight: bold;
+	
+	top:5px;
+}
+
+banner-frame.machine .desc .chars{
+	font-size: 28px;
+	top:45px;
+	font-style: italic;
+}
+
+
+
+banner-frame.machine .cost{
+	border: solid 0px #000;
+	
+	width: 330px;
+	height: 50px;
+	right: 0px;
+	top:155px;
+	
+	padding: 15px 0px 15px 80px;
+	
+	font-size: 34px;
+	font-weight: bold;
+	
+	text-align: left;
+	
+	overflow: hidden;
+	
+	transition:right 700ms 100ms;
+}
+
+banner-frame.hidden .cost{
+	right: -120px;	
+}
+
+
+banner-frame.machine .cost span{
+	display: block;	
+	position: absolute;
+	left:75px;
+	top:20px;
+	color:#fff;
+}
+
+banner-frame.machine .cost orange{
+	display: block;
+	position: absolute;
+	
+	width: 400px;
+	height: 400px;
+	
+	left: 50px;
+	top:-100px;
+	
+	background: rgba(232, 167, 101, 1);
+	
+	transform: rotate(30deg);
+	
+}
+
+
+banner-frame.machine .buy{
+	border: solid 0px #000;
+	top:260px;
+	right: 0px;
+	
+	font-size: 15px;
+	
+	width:330px;
+}
+
+banner-frame.machine .buy a{
+	display: inline-block;
+	
+	text-decoration: none;
+	
+	padding: 10px 15px;
+	margin: 0px 20px 0px 0px;
+	border:solid 2px #e41;
+	border-radius: 4px;
+	
+	color: #fff;	
+	background: #e41;
+	
+}
+
+banner-frame.machine .buy a span{
+	padding: 0px 2px;
+	border-bottom: dashed 2px rgba(255, 255, 255, 0.78);
+}
+
+
+banner-frame.machine .buy a:nth-of-type(2){
+	
+	color: #000;
+	background: none;
+}

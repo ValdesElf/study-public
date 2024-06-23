@@ -1,0 +1,82 @@
+:root{
+	--desktop_table_lcut_form_001_color: #ff7562;
+}
+
+.desktop .lcut-form-001{
+	
+}
+
+.desktop .table.lcut-form-001{
+	
+}
+
+.desktop .table.lcut-form-001 *{
+	font-size: inherit;
+}
+
+.desktop .lcut-form-001 input{
+	display:block;
+	border:solid 1px;
+	border-color: var(--desktop_table_lcut_form_001_color);
+	padding: 7px 10px;
+}
+
+@keyframes lcut_form_001_input_wrong{
+	from{
+		box-shadow:0px 0px 6px rgba(255, 0, 0, .2);
+	}
+	50%{
+		box-shadow:0px 0px 10px rgba(255, 0, 0, .5);
+	}
+	to{
+		box-shadow:0px 0px 6px rgba(255, 0, 0, .2);
+	}
+}
+
+.desktop .lcut-form-001 input.wrong{
+	box-shadow:0px 0px 6px rgba(255, 0, 0, .2);
+	animation:lcut_form_001_input_wrong infinite 800ms;
+}
+
+
+.desktop .table.lcut-form-001 > .row > .cell:nth-child(1){
+	color: var(--desktop_table_lcut_form_001_color);
+	padding: 0px 20px 0px 0px;
+}
+
+.desktop .table.lcut-form-001 > .row > .cell:nth-child(2){
+	
+	padding: 5px 0px;
+	
+}
+
+.desktop .lcut-form-001 button{
+	display: block;
+	width: 100%;
+	color: #fff;
+	font-size: 18px !important;
+	font-weight: 700;
+	
+	border: solid 0px;
+	
+	padding: 5px 0px;
+	
+	background-color: var(--desktop_table_lcut_form_001_color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
